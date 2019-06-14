@@ -1,0 +1,82 @@
+<%
+let title = req.query.title;
+let params = {
+  items: [{
+    title: 'Стационарная связь',
+    url: '/report/public/telecom-ru@summaryArea/pivotArea/stationArea'
+  }, {
+    title: 'Мобильная связь',
+    url: '/report/public/telecom-ru@summaryArea/pivotArea/mobileArea'
+  }, {
+    title: 'Интернет',
+    url: '/report/public/telecom-ru@summaryArea/pivotArea/internetArea'
+  }, {
+    title: 'Телевидение',
+    url: '/report/public/telecom-ru@summaryArea/pivotArea/tvArea'
+  }, {
+    title: 'Радиовещание',
+    url: '/report/public/telecom-ru@summaryArea/pivotArea/radioArea'
+  }, {
+    title: 'ОПС',
+    url: '/report/public/telecom-ru@summaryArea/pivotArea/opsArea'
+  }]
+};
+%>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Summary area report</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0"/>
+  <style>
+    body { font-family: Arial; }
+    .report-title { font-size:18px; text-transform: uppercase; margin:10px 0 20px; }
+    .report-lead { font-size:13px; margin:0 0 20px; }
+    .report-lead p { margin:5px 0 0 0; }
+    .report-item { margin:0 0 20px 0; }
+    .report-item-title { font-size:15px; margin: 0 0 10px; }
+    .report-item iframe { width:100%; border:0; height:50px; }
+  </style>
+  <script src="/geomap/vendor/jquery/jquery.min.js"></script>
+</head>
+<body>
+  <!-- applications\khv-svyaz-info\templates\geo\reports\summaryRegion -->
+  <div id="report-zone" class="report-zone" data-params="<%= JSON.stringify(params) %>">
+    <div class="report-title">Хабаровский край</div>
+    <div class="report-content"></div>
+  </div>
+
+<script>
+  (function () {
+    var $zone = $('#report-zone');
+    var $content = $zone.find('.report-content');
+    var params = $zone.data('params');
+    var loadingIndex = 0;
+
+    for (var i = 0; i < params.items.length; ++i) {
+      var item = params.items[i];
+      var query = item.query ? ('?'+ serializeQuery(item.query)) : '';
+      var result = '<div class="report-item"><h3 class="report-item-title">'+ item.title +'</h3><iframe src="'+
+        item.url + query +'"></iframe></div>';
+      $content.append(result);
+    }
+
+    $content.find('iframe').load(function (event) {
+      var doc = this.contentWindow.document;
+      this.style.height = (doc.body.scrollHeight + 5)+ 'px';
+    });
+
+    function serializeQuery(obj) {
+      var items = [];
+      for (var name in obj) {
+        if (obj.hasOwnProperty(name)) {
+          items.push(name +'='+ obj[name]);
+        }
+      }
+      return items.join('&');
+    }
+
+  })();
+</script>
+</body>
+</html>

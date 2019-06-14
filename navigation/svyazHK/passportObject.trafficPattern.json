@@ -1,0 +1,15 @@
+{
+  "code": "passportObject.trafficPattern",
+  "type": 1,
+  "caption": "Схемы движения",
+  "classname": "trafficPattern",
+  "container": null,
+  "collection": null,
+  "url": null,
+  "hint": "Схемы движения маршрутов до почтовых отделений",
+  "conditions": [],
+  "sorting": [],
+  "pathChains": [],
+  "title": "",
+  "metaVersion": "2.0.0"
+}

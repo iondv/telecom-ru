@@ -1,0 +1,14 @@
+{
+  "code": "television.com",
+  "orderNumber": 2,
+  "type": 0,
+  "caption": "Коммерческое ТВ",
+  "classname": null,
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "pathChains": [],
+  "title": "",
+  "metaVersion": "2.0.0"
+}

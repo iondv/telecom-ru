@@ -1,0 +1,1413 @@
+name: summaryArea
+caption: Доступ к услугам связи
+sources:
+  - name: internetInAdministartion
+    caption: Интернет в администрациях
+    load:
+      - className: adminTerritory
+        filter:
+          nempty:
+            - $internet
+        results:
+          - field: area
+            expr: $centNasPunkt.supOktmo.name
+          - field: locality
+            expr: $centNasPunkt.name
+          - field: operator
+            expr: $internet.operator.name
+          - field: channelLink
+            expr: $internet.typeTKS.type
+          - field: capacity
+            expr: $internet.volum
+  - name: station
+    caption: Стационарная связь
+    load:
+      - className: svyaz
+        filter:
+          contains:
+            - $statsionar
+            - nempty:
+              - $stacionSvyaz
+        results:
+          - field: city
+            expr: $okato.name
+          - field: oktmo
+            expr: $okato.supOktmo.oktmo
+          - field: area
+            expr: $okato.supOktmo.name
+          - field: population
+            expr: $okato.chislennost.chislennost
+          - field: service
+            expr: Доступно
+      - className: svyaz
+        filter:
+          not:
+            - contains:
+              - $statsionar
+              - nempty:
+                - $stacionSvyaz
+        results:
+          - field: city
+            expr: $okato.name
+          - field: oktmo
+            expr: $okato.supOktmo.oktmo
+          - field: area
+            expr: $okato.supOktmo.name
+          - field: population
+            expr: $okato.chislennost.chislennost
+          - field: service
+            expr: Отсутствует
+  - name: mobiles
+    caption: Обеспечение мобильной связью в населенном пункте
+    load:
+      - className: mobile
+        filter:
+          and:
+          - in:
+            - $mobileOperator.id
+            -
+              - f60cd3c70114e4f4251bbd19
+              - c252955203d622ba41f6c596
+              - 295b279e010fc01f336ba937
+          - contains:
+            - $mobileStandart
+            - in:
+              - $standart
+              -
+                - 2G
+                - 3G
+                - 4G
+                - частично
+                - фемто
+        results:
+          - field: okato
+            expr: $okato.okato.okato
+  - name: sector_svyaz
+    caption: Вся информация о секторе связи
+    load:
+      - className: svyaz
+        results:
+          - field: okato
+            expr: $okato.okato
+          - field: city
+            expr: $okato.name
+          - field: oktmo
+            expr: $okato.supOktmo.oktmo
+          - field: area
+            expr: $okato.supOktmo.name
+          - field: population
+            expr: $okato.chislennost.chislennost
+  - name: mobile
+    caption: Мобильная связь
+    load:
+      - source: sector_svyaz
+        joins:
+          - table: mobiles
+            alias: mobiles
+            left: okato
+            right: okato
+        filter:
+          nempty:
+            - $mobiles.okato
+        results:
+          - field: city
+            expr: $city
+          - field: oktmo
+            expr: $oktmo
+          - field: area
+            expr: $area
+          - field: population
+            expr: $population
+          - field: service
+            expr: Доступно
+      - source: sector_svyaz
+        joins:
+          - table: mobiles
+            alias: mobiles
+            left: okato
+            right: okato
+        filter:
+          empty:
+            - $mobiles.okato
+        results:
+          - field: city
+            expr: $city
+          - field: oktmo
+            expr: $oktmo
+          - field: area
+            expr: $area
+          - field: population
+            expr: $population
+          - field: service
+            expr: Отсутствует
+  - name: internet
+    caption: Доступ к интернет
+    load:
+      - className: svyaz
+        filter:
+          contains:
+            - $internet
+            - nempty:
+              - $operatorwww
+        results:
+          - field: city
+            expr: $okato.name
+          - field: oktmo
+            expr: $okato.supOktmo.oktmo
+          - field: area
+            expr: $okato.supOktmo.name
+          - field: population
+            expr: $okato.chislennost.chislennost
+          - field: service
+            expr: Проводной
+      - className: svyaz
+        filter:
+          contains:
+            - $mobile
+            - contains:
+              - $mobileStandart
+              - in:
+                - $standart
+                -
+                  - 3G
+                  - 4G
+        results:
+          - field: city
+            expr: $okato.name
+          - field: oktmo
+            expr: $okato.supOktmo.oktmo
+          - field: area
+            expr: $okato.supOktmo.name
+          - field: population
+            expr: $okato.chislennost.chislennost
+          - field: service
+            expr: Мобильный
+      - className: svyaz
+        filter:
+          contains:
+            - $other
+            - nempty:
+              - $bsIskra
+        results:
+          - field: city
+            expr: $okato.name
+          - field: oktmo
+            expr: $okato.supOktmo.oktmo
+          - field: area
+            expr: $okato.supOktmo.name
+          - field: population
+            expr: $okato.chislennost.chislennost
+          - field: service
+            expr: БШПД
+      - className: svyaz
+        filter:
+          and:
+            - not:
+              - contains:
+                - $internet
+                - nempty:
+                  - $operatorwww
+            - not:
+              - contains:
+                - $mobile
+                - contains:
+                  - $mobileStandart
+                  - in:
+                    - $standart
+                    -
+                      - 3G
+                      - 4G
+            - not:
+              - contains:
+                - $other
+                - nempty:
+                  - $bsIskra
+        results:
+          - field: city
+            expr: $okato.name
+          - field: oktmo
+            expr: $okato.supOktmo.oktmo
+          - field: area
+            expr: $okato.supOktmo.name
+          - field: population
+            expr: $okato.chislennost.chislennost
+          - field: service
+            expr: Отсутствует
+  - name: television
+    caption: Телевидение
+    load:
+      - className: svyaz
+        filter:
+          contains:
+            - $tv
+            - nempty:
+              - $digitalTV
+        results:
+          - field: city
+            expr: $okato.name
+          - field: oktmo
+            expr: $okato.supOktmo.oktmo
+          - field: area
+            expr: $okato.supOktmo.name
+          - field: population
+            expr: $okato.chislennost.chislennost
+          - field: service
+            expr: Цифровое
+      - className: svyaz
+        filter:
+          contains:
+            - $tv
+            - nempty:
+              - $analogTV
+        results:
+          - field: city
+            expr: $okato.name
+          - field: oktmo
+            expr: $okato.supOktmo.oktmo
+          - field: area
+            expr: $okato.supOktmo.name
+          - field: population
+            expr: $okato.chislennost.chislennost
+          - field: service
+            expr: Аналоговое
+      - className: svyaz
+        filter:
+          contains:
+            - $tv
+            - contains:
+              - $analogTV
+              - eq:
+                - $name.name
+                - Губерния
+        results:
+          - field: city
+            expr: $okato.name
+          - field: oktmo
+            expr: $okato.supOktmo.oktmo
+          - field: area
+            expr: $okato.supOktmo.name
+          - field: population
+            expr: $okato.chislennost.chislennost
+          - field: service
+            expr: Kраевое ТВ
+      - className: svyaz
+        filter:
+          and:
+          - not:
+            - contains:
+              - $tv
+              - nempty:
+                - $digitalTV
+          - not:
+            - contains:
+              - $tv
+              - nempty:
+                - $analogTV
+        results:
+          - field: city
+            expr: $okato.name
+          - field: oktmo
+            expr: $okato.supOktmo.oktmo
+          - field: area
+            expr: $okato.supOktmo.name
+          - field: population
+            expr: $okato.chislennost.chislennost
+          - field: service
+            expr: Отсутствует
+  - name: radio
+    caption: Радиовещание
+    load:
+      - className: svyaz
+        filter:
+          contains:
+            - $radio
+            - nempty:
+              - $radioCanals
+        results:
+          - field: city
+            expr: $okato.name
+          - field: oktmo
+            expr: $okato.supOktmo.oktmo
+          - field: area
+            expr: $okato.supOktmo.name
+          - field: population
+            expr: $okato.chislennost.chislennost
+          - field: service
+            expr: Ведется радиовещание
+      - className: svyaz
+        filter:
+          contains:
+            - $radio
+            - contains:
+              - $radioCanals
+              - like:
+                - $name.name
+                - Восток Рос
+        results:
+          - field: city
+            expr: $okato.name
+          - field: oktmo
+            expr: $okato.supOktmo.oktmo
+          - field: area
+            expr: $okato.supOktmo.name
+          - field: population
+            expr: $okato.chislennost.chislennost
+          - field: service
+            expr: Восток России
+      - className: svyaz
+        filter:
+          not:
+            - contains:
+              - $radio
+              - nempty:
+                - $radioCanals
+        results:
+          - field: city
+            expr: $okato.name
+          - field: oktmo
+            expr: $okato.supOktmo.oktmo
+          - field: area
+            expr: $okato.supOktmo.name
+          - field: population
+            expr: $okato.chislennost.chislennost
+          - field: service
+            expr: Отсутствует
+  - name: ops
+    caption: Почтовая связь
+    load:
+      - className: svyaz
+        filter:
+          contains:
+            - $ops
+            - eq:
+              - $gops
+              - a
+        results:
+          - field: city
+            expr: $okato.name
+          - field: oktmo
+            expr: $okato.supOktmo.oktmo
+          - field: area
+            expr: $okato.supOktmo.name
+          - field: service
+            expr: Городские
+      - className: svyaz
+        filter:
+          contains:
+            - $ops
+            - eq:
+              - $gops
+              - b
+        results:
+          - field: city
+            expr: $okato.name
+          - field: oktmo
+            expr: $okato.supOktmo.oktmo
+          - field: area
+            expr: $okato.supOktmo.name
+          - field: service
+            expr: Сельские
+  - name: population
+    caption: Население
+    load:
+      - className: svyaz
+        results:
+          - field: city
+            expr: $okato.name
+          - field: oktmo
+            expr: $okato.supOktmo.oktmo
+          - field: area
+            expr: $okato.supOktmo.name
+          - field: population
+            expr: $okato.chislennost.chislennost
+  - name: serviceGrid
+    caption: Сетка сервисов по н.п.
+    load:
+      - className: svyaz
+        results:
+          - field: city
+            expr: $okato.name
+          - field: oktmo
+            expr: $okato.supOktmo.oktmo
+          - field: area
+            expr: $okato.supOktmo.name
+          - field: population
+            expr: $okato.chislennost.chislennost
+          - field: station
+            expr:
+              sum:
+                - if:
+                  - $statsionar.stacionSvyaz
+                  - 1
+                  - 0
+          - field: mobileFull
+            expr:
+              sum:
+                - if:
+                  - and:
+                      - in:
+                        - $mobile.mobileOperator.id
+                        -
+                          - f60cd3c70114e4f4251bbd19
+                          - c252955203d622ba41f6c596
+                          - 295b279e010fc01f336ba937
+                      - in:
+                        - $mobile.mobileStandart.standart
+                        -
+                          - 2G
+                          - 3G
+                          - 4G
+                          - частично
+                          - фемто
+                  - 1
+                  - 0
+          - field: line
+            expr:
+              sum:
+                - if:
+                  - $internet.operatorwww.name
+                  - 1
+                  - 0
+          - field: mobile
+            expr:
+              sum:
+                - if:
+                  - in:
+                    - $mobile.mobileStandart.standart
+                    -
+                      - 3G
+                      - 4G
+                  - 1
+                  - 0
+          - field: digitalTV
+            expr:
+              sum:
+                - if:
+                  - $tv.digitalTV
+                  - 1
+                  - 0
+          - field: analogTV
+            expr:
+              sum:
+                - if:
+                  - $tv.analogTV
+                  - 1
+                  - 0
+          - field: radio
+            expr:
+              sum:
+                - if:
+                  - $radio.radioCanals
+                  - 1
+                  - 0
+          - field: bshpd
+            expr:
+              sum:
+                - if:
+                  - $other.bsIskra
+                  - 1
+                  - 0
+          - field: gops
+            expr:
+              sum:
+                - if:
+                  - eq:
+                      - $ops.gops
+                      - a
+                  - 1
+                  - 0
+          - field: sops
+            expr:
+              sum:
+                - if:
+                  - eq:
+                      - $ops.gops
+                      - b
+                  - 1
+                  - 0
+reports:
+  - name: pivotArea
+    caption: Сводный по краю
+    sheets:
+      - name: stationArea
+        caption: Стационарная связь по краю
+        type: aggregation
+        source: station
+        fetch:
+          service: $service
+          cities:
+            count:
+            - 1
+          population:
+            sum:
+              - $population
+        filter:
+          ne:
+            - $service
+            - Отсутствует
+        sort:
+          service: asc
+        columns:
+          - field: service
+            caption: Стационарная связь
+          - field: cities
+            caption: Количество н.п.
+            format: number
+          - field: population
+            caption: Проживает чел.
+            format: number
+          - field: fraction
+            caption: Проживает %
+            format: number
+        groups:
+          totals:
+            - name: areaPopulation
+              hidden: true
+              query:
+                source: population
+                fetch:
+                  cities:
+                    count:
+                    - 1
+                  population:
+                    sum:
+                      - $population
+            - name: areaStationAbsent
+              caption: Отсутствует
+              alarm: true
+              query:
+                source: serviceGrid
+                filter:
+                  eq:
+                    - $station
+                    - 0
+                fetch:
+                  cities:
+                    count:
+                    - 1
+                  population:
+                    sum:
+                      - $population
+        process:
+          fraction: >-
+            concat(round(mul(div($population, $areaPopulation.population), 100), 2), %)
+      - name: mobileArea
+        caption: Мобильная связь по краю
+        type: aggregation
+        source: mobile
+        fetch:
+          service: $service
+          cities:
+            count:
+            - 1
+          population:
+            sum:
+              - $population
+        filter:
+          ne:
+            - $service
+            - Отсутствует
+        sort:
+          service: asc
+        columns:
+          - field: service
+            caption: Мобильная связь
+          - field: cities
+            caption: Количество н.п.
+            format: number
+          - field: population
+            caption: Проживает чел.
+            format: number
+          - field: fraction
+            caption: Проживает %
+            format: number
+        groups:
+          totals:
+            - name: areaPopulation
+              hidden: true
+              query:
+                source: population
+                fetch:
+                  cities:
+                    count:
+                    - 1
+                  population:
+                    sum:
+                      - $population
+            - name: areaMobileAbsent
+              caption: Отсутствует
+              alarm: true
+              query:
+                source: serviceGrid
+                filter:
+                  eq:
+                    - $mobileFull
+                    - 0
+                fetch:
+                  cities:
+                    count:
+                    - 1
+                  population:
+                    sum:
+                      - $population
+        process:
+          fraction: >-
+            concat(round(mul(div($population, $areaPopulation.population), 100), 2), %)
+      - name: internetArea
+        caption: Доступ к интернет по краю
+        type: aggregation
+        source: internet
+        fetch:
+          service: $service
+          cities:
+            count:
+            - 1
+          population:
+            sum:
+              - $population
+        filter:
+          ne:
+            - $service
+            - Отсутствует
+        sort:
+          service: desc
+        columns:
+          - field: service
+            caption: Интернет
+          - field: cities
+            caption: Количество н.п.
+            format: number
+          - field: population
+            caption: Проживает чел.
+            format: number
+          - field: fraction
+            caption: Проживает %
+            format: number
+        groups:
+          totals:
+            - name: areaInternet
+              caption: Всего
+              query:
+                source: serviceGrid
+                filter:
+                  or:
+                    - gt:
+                      - $line
+                      - 0
+                    - gt:
+                      - $mobile
+                      - 0
+                    - gt:
+                      - $bshpd
+                      - 0
+                fetch:
+                  cities:
+                    count:
+                    - 1
+                  population:
+                    sum:
+                      - $population
+            - name: areaPopulation
+              hidden: true
+              query:
+                source: population
+                fetch:
+                  cities:
+                    count:
+                    - 1
+                  population:
+                    sum:
+                      - $population
+            - name: areaInternetAbsent
+              caption: Отсутствует
+              alarm: true
+              query:
+                source: serviceGrid
+                filter:
+                  and:
+                    - eq:
+                      - $line
+                      - 0
+                    - eq:
+                      - $mobile
+                      - 0
+                    - eq:
+                      - $bshpd
+                      - 0
+                fetch:
+                  cities:
+                    count:
+                    - 1
+                  population:
+                    sum:
+                      - $population
+        process:
+          fraction: >-
+            concat(round(mul(div($population, $areaPopulation.population), 100), 2), %)
+      - name: tvArea
+        caption: Телевидение по краю
+        type: aggregation
+        source: television
+        fetch:
+          service: $service
+          cities:
+            count:
+            - 1
+          population:
+            sum:
+              - $population
+        filter:
+          ne:
+            - $service
+            - Отсутствует
+        sort:
+          service: desc
+        columns:
+          - field: service
+            caption: Телевидение
+          - field: cities
+            caption: Количество н.п.
+            format: number
+          - field: population
+            caption: Проживает чел.
+            format: number
+          - field: fraction
+            caption: Проживает %
+            format: number
+        groups:
+          totals:
+            - name: areaPopulation
+              hidden: true
+              query:
+                source: population
+                fetch:
+                  cities:
+                    count:
+                      - 1
+                  population:
+                    sum:
+                      - $population
+            - name: areaTelevisionAbsent
+              caption: Отсутствует
+              alarm: true
+              query:
+                source: serviceGrid
+                filter:
+                  and:
+                    - eq:
+                      - $digitalTV
+                      - 0
+                    - eq:
+                      - $analogTV
+                      - 0
+                fetch:
+                  cities:
+                    count:
+                      - 1
+                  population:
+                    sum:
+                      - $population
+        process:
+          fraction: >-
+            concat(round(mul(div($population, $areaPopulation.population), 100), 2), %)
+      - name: radioArea
+        caption: Радиовещание по краю
+        type: aggregation
+        source: radio
+        fetch:
+          service: $service
+          cities:
+            count:
+              - 1
+          population:
+            sum:
+              - $population
+        filter:
+          ne:
+            - $service
+            - Отсутствует
+        sort:
+          service: asc
+        columns:
+          - field: service
+            caption: Радиовещание
+          - field: cities
+            caption: Количество н.п.
+            format: number
+          - field: population
+            caption: Проживает чел.
+            format: number
+          - field: fraction
+            caption: Проживает %
+            format: number
+        groups:
+          totals:
+            - name: areaPopulation
+              hidden: true
+              query:
+                source: population
+                fetch:
+                  cities:
+                    count:
+                      - 1
+                  population:
+                    sum:
+                      - $population
+            - name: areaRadioAbsent
+              caption: Отсутствует
+              alarm: true
+              query:
+                source: serviceGrid
+                filter:
+                  eq:
+                    - $radio
+                    - 0
+                fetch:
+                  cities:
+                    count:
+                      - 1
+                  population:
+                    sum:
+                      - $population
+        process:
+          fraction: >-
+            concat(round(mul(div($population, $areaPopulation.population), 100), 2), %)
+      - name: opsArea
+        caption: Почтовая связь по краю
+        type: aggregation
+        source: ops
+        fetch:
+          service: $service
+          cities:
+            count:
+              - 1
+        sort:
+          service: desc
+        columns:
+          - field: service
+            caption: ОПС
+          - field: cities
+            caption: Количество н.п.
+            format: number
+        groups:
+          totals:
+            - name: areaOps
+              caption: Всего
+              query:
+                source: serviceGrid
+                filter:
+                  or:
+                    - gt:
+                      - $gops
+                      - 0
+                    - gt:
+                      - $sops
+                      - 0
+                fetch:
+                  cities:
+                    count:
+                      - 1
+  - name: stationArea
+    caption: Стационарная связь
+    sheets:
+      - name: stationArea
+        caption: Стационарная связь по районам
+        type: aggregation
+        source: station
+        fetch:
+          oktmo: $oktmo
+          area: $area
+          service: $service
+          cities:
+            count:
+              - 1
+          population:
+            sum:
+              - $population
+        filter:
+          ne:
+            - $service
+            - Отсутствует
+        sort:
+          area: asc
+          service: asc
+        columns:
+          - field: area
+            caption: Район
+            filter: true
+          - field: service
+            caption: Стационарная связь
+          - field: cities
+            caption: Количество н.п.
+            format: number
+          - field: population
+            caption: Проживает чел.
+            format: number
+          - field: fraction
+            caption: Проживает %
+            format: number
+        groups:
+          fields:
+            - area
+          totals:
+            - name: areaPopulation
+              hidden: true
+              query:
+                source: population
+                fetch:
+                  area: $area
+                  oktmo: $oktmo
+                  cities:
+                    count:
+                      - 1
+                  population:
+                    sum:
+                      - $population
+            - name: areaStationAbsent
+              caption: Отсутствует
+              alarm: true
+              query:
+                source: serviceGrid
+                filter:
+                  eq:
+                    - $station
+                    - 0
+                fetch:
+                  area: $area
+                  oktmo: $oktmo
+                  cities:
+                    count:
+                      - 1
+                  population:
+                    sum:
+                      - $population
+        process:
+          fraction: >-
+            concat(round(mul(div($population, $areaPopulation.population), 100), 2), %)
+  - name: mobileArea
+    caption: Мобильная связь
+    sheets:
+      - name: mobileArea
+        caption: Мобильная связь по районам
+        type: aggregation
+        source: mobile
+        fetch:
+          oktmo: $oktmo
+          area: $area
+          service: $service
+          cities:
+            count:
+              - 1
+          population:
+            sum:
+              - $population
+        filter:
+          ne:
+            - $service
+            - Отсутствует
+        sort:
+          area: asc
+          service: asc
+        columns:
+          - field: area
+            caption: Район
+            filter: true
+          - field: service
+            caption: Мобильная связь
+          - field: cities
+            caption: Количество н.п.
+            format: number
+          - field: population
+            caption: Проживает чел.
+            format: number
+          - field: fraction
+            caption: Проживает %
+            format: number
+        groups:
+          fields:
+            - area
+          totals:
+            - name: areaPopulation
+              hidden: true
+              query:
+                source: population
+                fetch:
+                  area: $area
+                  oktmo: $oktmo
+                  cities:
+                    count:
+                      - 1
+                  population:
+                    sum:
+                      - $population
+            - name: areaMobileAbsent
+              caption: Отсутствует
+              alarm: true
+              query:
+                source: serviceGrid
+                filter:
+                  eq:
+                    - $mobileFull
+                    - 0
+                fetch:
+                  area: $area
+                  oktmo: $oktmo
+                  cities:
+                    count:
+                      - 1
+                  population:
+                    sum:
+                      - $population
+        process:
+          fraction: >-
+            concat(round(mul(div($population, $areaPopulation.population), 100), 2), %)
+  - name: internetArea
+    caption: Доступ к Интернет
+    sheets:
+      - name: internetArea
+        caption: Доступ к интернет по районам
+        type: aggregation
+        source: internet
+        fetch:
+          oktmo: $oktmo
+          area: $area
+          service: $service
+          cities:
+            count:
+              - 1
+          population:
+            sum:
+              - $population
+        filter:
+          ne:
+            - $service
+            - Отсутствует
+        sort:
+          area: asc
+          service: desc
+        columns:
+          - field: area
+            caption: Район
+            filter: true
+          - field: service
+            caption: Интернет
+            filter: true
+          - field: cities
+            caption: Количество н.п.
+            format: number
+          - field: population
+            caption: Проживает чел.
+            format: number
+          - field: fraction
+            caption: Проживает %
+            format: number
+        groups:
+          fields:
+            - area
+          totals:
+            - name: areaInternet
+              caption: Всего
+              query:
+                source: serviceGrid
+                filter:
+                  or:
+                    - gt:
+                      - $line
+                      - 0
+                    - gt:
+                      - $mobile
+                      - 0
+                    - gt:
+                      - $bshpd
+                      - 0
+                fetch:
+                  area: $area
+                  oktmo: $oktmo
+                  cities:
+                    count:
+                      - 1
+                  population:
+                    sum:
+                      - $population
+            - name: areaPopulation
+              hidden: true
+              query:
+                source: population
+                fetch:
+                  area: $area
+                  oktmo: $oktmo
+                  cities:
+                    count:
+                      - 1
+                  population:
+                    sum:
+                      - $population
+            - name: areaInternetAbsent
+              caption: Отсутствует
+              alarm: true
+              query:
+                source: serviceGrid
+                filter:
+                  and:
+                    - eq:
+                      - $line
+                      - 0
+                    - eq:
+                      - $mobile
+                      - 0
+                    - eq:
+                      - $bshpd
+                      - 0
+                fetch:
+                  area: $area
+                  oktmo: $oktmo
+                  cities:
+                    count:
+                      - 1
+                  population:
+                    sum:
+                      - $population
+        process:
+          fraction: >-
+            concat(round(mul(div($population, $areaPopulation.population), 100), 2), %)
+  - name: tvArea
+    caption: Телевидение
+    sheets:
+      - name: tvArea
+        caption: Телевидение по районам
+        type: aggregation
+        source: television
+        fetch:
+          oktmo: $oktmo
+          area: $area
+          service: $service
+          cities:
+            count:
+              - 1
+          population:
+            sum:
+              - $population
+        filter:
+          ne:
+            - $service
+            - Отсутствует
+        sort:
+          area: asc
+          service: desc
+        columns:
+          - field: area
+            caption: Район
+            filter: true
+          - field: service
+            caption: Телевидение
+            filter: true
+          - field: cities
+            caption: Количество н.п.
+            format: number
+          - field: population
+            caption: Проживает чел.
+            format: number
+          - field: fraction
+            caption: Проживает %
+            format: number
+        groups:
+          fields:
+            - area
+          totals:
+            - name: areaPopulation
+              hidden: true
+              query:
+                source: population
+                fetch:
+                  area: $area
+                  oktmo: $oktmo
+                  cities:
+                    count:
+                      - 1
+                  population:
+                    sum:
+                      - $population
+            - name: areaTelevisionAbsent
+              caption: Отсутствует
+              alarm: true
+              query:
+                source: serviceGrid
+                filter:
+                  and:
+                    - eq:
+                      - $digitalTV
+                      - 0
+                    - eq:
+                      - $analogTV
+                      - 0
+                fetch:
+                  area: $area
+                  oktmo: $oktmo
+                  cities:
+                    count:
+                      - 1
+                  population:
+                    sum:
+                      - $population
+        process:
+          fraction: >-
+            concat(round(mul(div($population, $areaPopulation.population), 100), 2), %)
+  - name: radioArea
+    caption: Радиовещание
+    sheets:
+      - name: radioArea
+        caption: Радиовещание по районам
+        type: aggregation
+        source: radio
+        fetch:
+          oktmo: $oktmo
+          area: $area
+          service: $service
+          cities:
+            count:
+              - 1
+          population:
+            sum:
+              - $population
+        filter:
+          ne:
+            - $service
+            - Отсутствует
+        sort:
+          area: asc
+          service: asc
+        columns:
+          - field: area
+            caption: Район
+            filter: true
+          - field: service
+            caption: Радиовещание
+            filter: true
+          - field: cities
+            caption: Количество н.п.
+            format: number
+          - field: population
+            caption: Проживает чел.
+            format: number
+          - field: fraction
+            caption: Проживает %
+            format: number
+        groups:
+          fields:
+            - area
+          totals:
+            - name: areaPopulation
+              hidden: true
+              query:
+                source: population
+                fetch:
+                  area: $area
+                  oktmo: $oktmo
+                  cities:
+                    count:
+                      - 1
+                  population:
+                    sum:
+                      - $population
+            - name: areaRadioAbsent
+              caption: Отсутствует
+              alarm: true
+              query:
+                source: serviceGrid
+                filter:
+                  eq:
+                    - $radio
+                    - 0
+                fetch:
+                  area: $area
+                  oktmo: $oktmo
+                  cities:
+                    count:
+                      - 1
+                  population:
+                    sum:
+                      - $population
+        process:
+          fraction: >-
+            concat(round(mul(div($population, $areaPopulation.population), 100), 2), %)
+  - name: opsArea
+    caption: Почтовая связь
+    sheets:
+      - name: opsArea
+        caption: Почтовая связь по районам
+        type: aggregation
+        source: ops
+        fetch:
+          oktmo: $oktmo
+          area: $area
+          service: $service
+          cities:
+            count:
+              - 1
+        sort:
+          area: asc
+          service: desc
+        columns:
+          - field: area
+            caption: Район
+            filter: true
+          - field: service
+            caption: ОПС
+            filter: true
+          - field: cities
+            caption: Количество н.п.
+            format: number
+        groups:
+          fields:
+            - area
+          totals:
+            - name: areaOps
+              caption: Всего
+              query:
+                source: serviceGrid
+                filter:
+                  or:
+                    - gt:
+                      - $gops
+                      - 0
+                    - gt:
+                      - $sops
+                      - 0
+                fetch:
+                  area: $area
+                  oktmo: $oktmo
+                  cities:
+                    count:
+                      - 1
+  - name: internetInAdministartions
+    caption: Интернет в администрациях
+    sheets:
+      - name: internetInAdministartions
+        caption: Наличие доступа к интернету в администрациях
+        type: aggregation
+        source: internetInAdministartion
+        fetch:
+          area: $area
+          locality: $locality
+          operator: $operator
+          channelLink: $channelLink
+          capacity: $capacity
+        sort:
+          area: asc
+        columns:
+          - field: area
+            caption: Район
+            filter: true
+          - field: locality
+            caption: Администрация
+          - field: operator
+            caption: Оператор
+            filter: true
+          - field: channelLink
+            caption: Тип канала связи
+          - field: capacity
+            caption: Ёмкость
+            format: number
+        groups:
+          fields:
+            - area

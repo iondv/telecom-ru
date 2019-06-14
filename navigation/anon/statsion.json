@@ -1,0 +1,16 @@
+{
+  "code": "statsion",
+  "orderNumber": 0,
+  "type": 1,
+  "title": "",
+  "caption": "Стационарная связь",
+  "classname": "statsionar",
+  "container": null,
+  "collection": null,
+  "url": null,
+  "hint": null,
+  "conditions": [],
+  "sorting": [],
+  "pathChains": [],
+  "metaVersion": "2.0.61"
+}

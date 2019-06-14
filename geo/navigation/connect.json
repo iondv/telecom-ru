@@ -1,0 +1,39 @@
+{
+  "type": "data",
+  "order": 4,
+  "code": "connect",
+  "caption": "Связь по населенным пунктам",
+  "hint": "Связь по населенным пунктам",
+  "layers": [
+    "connect"
+  ],
+  "viewer": {
+    "type": "regionReport",
+    "panel": "rightInfo",
+    "url": "geomap/render/telecom-ru/municipalnieObrazovaniya/0/{oktmo}?template=geo/reports/summaryArea&notFound=geo/reports/summaryRegion",
+    "defaultOktmo": "08000000",
+    "excludes": null
+  },
+  "filter": [
+    {
+      "caption": "Тип населенного пункта",
+      "fields": [
+        {
+          "caption": "Список параметров для фильтра",
+          "type": "select",
+          "multiple": true,
+          "filteredClass": "naselenniyPunkt@telecom-ru",
+          "targetProp": "type.id",
+          "source": {
+            "className": "typeNasPunk@telecom-ru",
+            "valueProp": null,
+            "labelProp": null
+          },
+          "eagerLoading": [
+            "type"
+          ]
+        }
+      ]
+    }
+  ]
+}

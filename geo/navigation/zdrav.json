@@ -1,0 +1,32 @@
+{
+  "type": "data",
+  "order": 5,
+  "code": "zdrav",
+  "caption": "Здравоохранение",
+  "hint": "Здравоохранение",
+  "layers": [
+    "zdrav"
+  ],
+  "filter": [
+    {
+      "caption": "Медицинская организация",
+      "fields": [
+        {
+          "caption": "Список параметров для фильтра",
+          "type": "select",
+          "multiple": true,
+          "filteredClass": "zdrav@telecom-ru",
+          "targetProp": "medicalOrg.id",
+          "source": {
+            "className": "medicalOrg@telecom-ru",
+            "valueProp": null,
+            "labelProp": null
+          },
+          "eagerLoading": [
+            "medicalOrg"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "code": "television.efi.tvAnalog",
+  "orderNumber": 6,
+  "type": 1,
+  "caption": "Паспорта эфирного аналогового ТВ",
+  "classname": "tvAnalog",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "pathChains": [],
+  "title": "",
+  "metaVersion": "2.0.0"
+}

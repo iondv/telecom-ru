@@ -1,0 +1,69 @@
+<%
+let result = {
+  title: item.get('name'),
+  subtitle: '',
+  statsionar: '',
+  internet: '',
+  mobile: '',
+  tv: '',
+  radio: '',
+  ops: ''
+};
+
+if (item.get('supOktmo')) {
+  result.title += ', '+item.property('supOktmo').evaluate() +'<br>';
+}
+if (item.get('chislennost')) {
+  result.subtitle += 'Численность '+ item.property('chislennost').evaluate() + ' чел.';
+}
+
+let itemSvyaz = item.property('svyaz').evaluate();
+if (itemSvyaz) {
+  let coll = itemSvyaz.property('statsionar').evaluate();
+}
+%>
+
+<style>
+  .report-balloon .map-modal-link {
+    margin-top: 0;
+    background: transparent;
+    border:1px solid #ccc;
+  }
+
+  .report-balloon .report-title {
+    font-size: 16px;
+    margin: 10px 0 10px 0;
+  }
+
+  .report-balloon .report-subtitle {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 10px 0 10px 0;
+  }
+</style>
+
+<div class="report-balloon report-content">
+  <div class="report-section">
+    <div class="report-title"><%- result.title %></div>
+    <div><%- result.subtitle %></div>
+
+    <div class="report-subtitle"></div>
+    <div>
+      <button type='button' class='btn btn-sm map-modal-link full-width'
+              data-type='url'
+              data-url='geomap/render/telecom-ru/naselenniyPunkt/0/<%- item.id %>?template=geo/layers/connect'>
+        Информация о связи в населенном пункте
+      </button>
+    </div>
+
+    <div class="report-subtitle"></div>
+    <div>
+      <button type='button' class='btn btn-sm map-modal-link full-width'
+              data-type='url'
+              data-url='geomap/render/telecom-ru/naselenniyPunkt/0/<%- item.id %>?template=geo/layers/zdrav'>
+        Информация о здравоохранении в населенном пункте
+      </button>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,89 @@
+{
+  "type": "data",
+  "order": 50,
+  "code": "connect.ops",
+  "parent": "connect",
+  "caption": "Почта",
+  "hint": "Услуги почтовой связи в Хабаровском крае",
+  "layers": [
+    "ops",
+    "pochtamt",
+    "pops"
+  ],
+  "filter": [
+    {
+      "caption": "Тип ОПС",
+      "fields": [
+        {
+          "caption": "Список параметров для фильтра",
+          "type": "select",
+          "multiple": false,
+          "filteredClass": "ops@telecom-ru",
+          "targetProp": "gops",
+          "values": [
+            {
+              "value": "a",
+              "label": "ГОПС"
+            },
+            {
+              "value": "b",
+              "label": "СОПС"
+            },
+            {
+              "value": "c",
+              "label": "ПОПС"
+            },
+            {
+              "value": "d",
+              "label": "Почтамт"
+            },
+            {
+              "value": "msc",
+              "label": "МСЦ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "caption": "Класс ОПС",
+      "fields": [
+        {
+          "caption": "Список параметров для фильтра",
+          "type": "select",
+          "multiple": true,
+          "filteredClass": "ops@telecom-ru",
+          "targetProp": "class.clas",
+          "source": {
+            "className": "charactosp@telecom-ru",
+            "valueProp": null,
+            "labelProp": null
+          },
+          "eagerLoading": [
+            "class"
+          ]
+        }
+      ]
+    },
+    {
+      "caption": "Почтамт",
+      "fields": [
+        {
+          "caption": "Список параметров для фильтра",
+          "type": "select",
+          "multiple": true,
+          "filteredClass": "ops@telecom-ru",
+          "targetProp": "pochtamp.id",
+          "source": {
+            "className": "pochtamt@telecom-ru",
+            "valueProp": null,
+            "labelProp": null
+          },
+          "eagerLoading": [
+            "pochtamp"
+          ]
+        }
+      ]
+    }
+  ]
+}

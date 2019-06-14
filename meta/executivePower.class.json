@@ -1,0 +1,17 @@
+{
+  "isStruct": false,
+  "key": [],
+  "semantic": "",
+  "name": "executivePower",
+  "version": "",
+  "caption": "Орган исполнительной власти",
+  "ancestor": "organization",
+  "container": null,
+  "creationTracker": "",
+  "changeTracker": "",
+  "history": 0,
+  "journaling": false,
+  "compositeIndexes": null,
+  "properties": [],
+  "metaVersion": "2.0.61.17674"
+}

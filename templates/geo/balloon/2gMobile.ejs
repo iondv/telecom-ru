@@ -1,0 +1,39 @@
+<%
+let result = {
+  title: item.get('name')
+}
+
+if (item.get('chislennost')) {
+  result.title += ' (' + item.property('chislennost').evaluate() + ' чел.)';
+}
+
+let itemSvyaz = item.property('svyaz').evaluate();
+if (itemSvyaz) {
+%>
+
+<ul class='balloon-attrlist' style='width:275px'>
+  <li><%- result.title %><br>Мобильная связь в населенном пункте:</li>
+</ul>
+<ul class='mt10'>
+  <table>
+    <%
+      let coll = itemSvyaz.property('mobile').evaluate();
+    if (coll && coll.length) {
+      for (let elem of coll) {
+      let collSt = elem.property('mobileStandart').evaluate();
+    if (collSt && collSt.length)
+    {
+      for (let element of collSt) {
+    if (element == '2G')
+    {
+    if (elem.get('mobileOperator')) {
+    %>
+    <tr>
+      <td>
+        <li><%- elem.property('mobileOperator').evaluate() %></li>
+      </td>
+      <td class='map-modal-link'><%- element %></td>
+    </tr>
+    <% } } } } } } } %>
+  </table>
+</ul>

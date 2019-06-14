@@ -1,0 +1,30 @@
+{
+  "type": "data",
+  "order": 80,
+  "code": "connect.ams",
+  "parent": "connect",
+  "caption": "АМС",
+  "hint": "Антенно-мачтовые сооружения",
+  "layers": [
+    "ams"
+  ],
+  "filter" : [
+    {
+      "caption" : "Операторы АМС",
+      "fields" : [
+        {
+          "caption" : "Список параметров для фильтра",
+          "type" : "select",
+          "multiple" : false,
+          "filteredClass" : "ams@telecom-ru",
+          "targetProp" : "operator.id",
+          "source" : {
+            "className" : "operators@telecom-ru",
+            "valueProp" : null,
+            "labelProp" : null
+          }
+        }
+      ]
+    }
+  ]
+}

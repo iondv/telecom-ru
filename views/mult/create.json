@@ -1,0 +1,119 @@
+{
+  "tabs": [
+    {
+      "caption": "",
+      "fullFields": [
+        {
+          "caption": "Мультиплекс",
+          "type": 1,
+          "property": "name",
+          "size": 2,
+          "maskName": null,
+          "mask": null,
+          "mode": null,
+          "fields": [],
+          "columns": [],
+          "actions": null,
+          "commands": null,
+          "orderNumber": 20,
+          "required": false,
+          "visibility": null,
+          "enablement": null,
+          "obligation": null,
+          "readonly": false,
+          "selectionPaginated": true,
+          "validators": null,
+          "hint": "",
+          "historyDisplayMode": 0,
+          "tags": null,
+          "selConditions": [],
+          "selSorting": []
+        },
+        {
+          "caption": "Каналы",
+          "type": 3,
+          "property": "canal",
+          "size": 2,
+          "maskName": null,
+          "mask": null,
+          "mode": 3,
+          "fields": [],
+          "columns": [
+            {
+              "sorted": true,
+              "caption": "Наименование",
+              "type": 1,
+              "property": "name",
+              "size": 2,
+              "maskName": null,
+              "mask": null,
+              "mode": null,
+              "fields": [],
+              "columns": [],
+              "actions": null,
+              "commands": null,
+              "orderNumber": 5,
+              "required": false,
+              "visibility": null,
+              "enablement": null,
+              "obligation": null,
+              "readonly": false,
+              "selectionPaginated": true,
+              "validators": null,
+              "hint": "",
+              "historyDisplayMode": 0,
+              "tags": null,
+              "selConditions": [],
+              "selSorting": []
+            }
+          ],
+          "actions": null,
+          "commands": null,
+          "orderNumber": 30,
+          "required": false,
+          "visibility": null,
+          "enablement": null,
+          "obligation": null,
+          "readonly": false,
+          "selectionPaginated": true,
+          "validators": null,
+          "hint": "",
+          "historyDisplayMode": 0,
+          "tags": null,
+          "selConditions": [],
+          "selSorting": []
+        }
+      ],
+      "shortFields": []
+    }
+  ],
+  "actions": null,
+  "siblingFixBy": null,
+  "siblingNavigateBy": null,
+  "historyDisplayMode": 0,
+  "collectionFilters": null,
+  "version": null,
+  "overrideMode": 1,
+  "commands": [
+    {
+      "id": "SAVEANDCLOSE",
+      "caption": "Сохранить и закрыть",
+      "visibilityCondition": null,
+      "enableCondition": null,
+      "needSelectedItem": false,
+      "signBefore": false,
+      "signAfter": false
+    },
+    {
+      "id": "SAVE",
+      "caption": "Сохранить",
+      "visibilityCondition": null,
+      "enableCondition": null,
+      "needSelectedItem": false,
+      "signBefore": false,
+      "signAfter": false,
+      "isBulk": false
+    }
+  ],
+  "metaVersion": "2.0.61"
+}

@@ -1,0 +1,45 @@
+<%
+let result = {
+  title: item.get('name')
+}
+
+if (item.get('chislennost')) {
+  result.title += ' (' + item.property('chislennost').evaluate() + ' чел.)';
+}
+
+let itemSvyaz = item.property('svyaz').evaluate();
+if (itemSvyaz) {
+%>
+
+<ul class='balloon-attrlist' style='width:225px'>
+  <li><%- result.title %></li>
+</ul>
+<ul class='balloon-attrlist'><table>
+    <%
+      let coll = itemSvyaz.property('tv').evaluate();
+    if (coll && coll.length) {
+      for (let elem of coll) {
+      let collDtv = elem.property('digitalTV').evaluate();
+      let collAtv = elem.property('analogTV').evaluate();
+    %>
+    <tr>
+      <td style='vertical-align:top' class='map-modal-link'>Цифровое ТВ</td><td>
+      <%
+    if (collDtv && collDtv.length) {
+        for (let dtv of collDtv) {
+        if (dtv.get('dateOn')) {
+        %>
+        <li><%- dtv.property('mult').getDisplayValue() %></li>
+    <% } } } %>
+      </td></tr>
+    <tr>
+      <td style='vertical-align:top' class='map-modal-link'>Аналоговое ТВ</td><td>
+        <%
+        if (collAtv && collAtv.length) {
+          for (let atv of collAtv) {
+          if (atv.get('name')) {
+        %>
+        <li><%- atv.property('name').evaluate()
+          %></li>
+        <% } } } } } } %>
+      </td></tr></table></ul>

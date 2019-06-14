@@ -1,0 +1,12 @@
+{
+  "type": "data",
+  "order": 20,
+  "code": "connect.mobileKray",
+  "parent": "connect",
+  "caption": "Мобильная связь",
+  "hint": "Услуги мобильной связи в Хабаровском крае",
+  "layers": [
+    "allMobileKray"
+  ],
+  "filter": []
+}

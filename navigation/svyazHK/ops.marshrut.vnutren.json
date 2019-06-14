@@ -1,0 +1,14 @@
+{
+  "code": "ops.marshrut.vnutren",
+  "orderNumber": 1,
+  "type": 1,
+  "caption": "Внутрикраевые маршруты",
+  "classname": "vnutrGraf",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "pathChains": [],
+  "title": "",
+  "metaVersion": "2.0.0"
+}

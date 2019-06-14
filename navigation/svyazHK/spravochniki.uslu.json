@@ -1,0 +1,13 @@
+{
+  "code": "spravochniki.uslu",
+  "type": 1,
+  "caption": "Услуги",
+  "classname": "uslugi",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "pathChains": [],
+  "title": "",
+  "metaVersion": "2.0.0"
+}

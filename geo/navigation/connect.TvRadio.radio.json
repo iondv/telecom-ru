@@ -1,0 +1,31 @@
+{
+  "type": "data",
+  "order": 30,
+  "code": "connect.TvRadio.radio",
+  "parent": "connect.TvRadio",
+  "caption": "Радиостанции",
+  "hint": "Радиостанции в Хабаровском крае",
+  "layers": ["radio"],
+  "filter" : [
+    {
+      "caption" : "Радиостанции",
+      "fields" : [
+        {
+          "caption" : "Список параметров для фильтра",
+          "type" : "select",
+          "multiple" : true,
+          "filteredClass" : "naselenniyPunkt@telecom-ru",
+          "targetProp": "svyaz.radio.radioCanals.name.id",
+          "source" : {
+            "className" : "radioCanals@telecom-ru",
+            "valueProp" : null,
+            "labelProp" : null
+          },
+          "eagerLoading": [
+            "svyaz.radio.radioCanals.name"
+          ]
+        }
+      ]
+    }
+  ]
+}

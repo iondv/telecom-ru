@@ -1,0 +1,9 @@
+{
+  "type": "data",
+  "order": 30,
+  "code": "connect.internet",
+  "parent": "connect",
+  "caption": "Доступ к Интернет (ШПД)",
+  "hint": "Доступ к Интернет (ШПД)",
+  "layers": ["internet", "wireless"]
+}

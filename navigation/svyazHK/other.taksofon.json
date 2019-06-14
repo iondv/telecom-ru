@@ -1,0 +1,14 @@
+{
+  "code": "other.taksofon",
+  "orderNumber": 1,
+  "type": 1,
+  "caption": "Таксофоны",
+  "classname": "taksofon",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "pathChains": [],
+  "title": "",
+  "metaVersion": "2.0.0"
+}

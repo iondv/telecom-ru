@@ -1,0 +1,14 @@
+{
+  "code": "admin",
+  "orderNumber": 9,
+  "type": 0,
+  "caption": "Администрации",
+  "classname": null,
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "pathChains": [],
+  "title": "",
+  "metaVersion": "2.0.0"
+}

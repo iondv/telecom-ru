@@ -1,0 +1,44 @@
+<%
+let result = {
+  title: item.get('name'),
+  educationOrg: ''
+};
+
+if (item.get('chislennost')) {
+  result.title += ' (' + item.property('chislennost').evaluate() + ' чел.)';
+}
+
+let itemEducation = item.property('education').evaluate();
+if (itemEducation) {
+  let coll = itemEducation.property('educationOrg').evaluate();
+  if (coll && coll.length) {
+    for (let elem of coll) {
+      if (elem.get('name')) {
+        result.educationOrg += '<br>' + elem.get('name') + '<br>';
+      }
+      if (elem.get('address')) {
+        result.educationOrg += ' (Адрес: ' + elem.property('address').evaluate() + ')' + '<br>';
+      }
+      result.educationOrg += '<br>';
+    }
+  }
+}
+else {
+  result.educationOrg += '(' + 'Отсутствует' + ')';
+}
+%>
+<ul class='balloon-attrlist' style='width:225px'>
+  <li><b class='block mb10'><%- result.title %></b></li>
+
+  <style>
+    .bg-gray { background-color: #e6e6e6; }
+    .report-list .row { margin:0; padding:5px 0; }
+    .report-list .report-item { margin-top:10px; }
+  </style>
+
+  <li>Образовательная организация:
+    <ul class='comma-list'>
+      <li><%- result.educationOrg %></li>
+    </ul>
+  </li>
+</ul>

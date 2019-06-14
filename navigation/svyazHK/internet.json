@@ -1,0 +1,14 @@
+{
+  "code": "internet",
+  "orderNumber": 4,
+  "type": 0,
+  "caption": "Доступ к Интернет (ШПД)",
+  "classname": null,
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "pathChains": [],
+  "title": "",
+  "metaVersion": "2.0.0"
+}

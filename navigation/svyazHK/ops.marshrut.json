@@ -1,0 +1,14 @@
+{
+  "code": "ops.marshrut",
+  "orderNumber": 2,
+  "type": 0,
+  "caption": "Сортировка и доставка почты",
+  "classname": null,
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "pathChains": [],
+  "title": "",
+  "metaVersion": "2.0.0"
+}

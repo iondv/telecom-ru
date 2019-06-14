@@ -1,0 +1,110 @@
+<%
+let title = req.query.title;
+let regionTitle = item ? item.get('name') : 'Хабаровский край';
+let query = {
+  oktmo: req.query.oktmo,
+  _hsg_: 1
+};
+let params = {
+  items: [{
+    title: 'Стационарная связь',
+    url: '/report/public/telecom-ru@summaryArea/stationArea/stationArea',
+    query
+  }, {
+    title: 'Мобильная связь',
+    url: '/report/public/telecom-ru@summaryArea/mobileArea/mobileArea',
+    query
+  }, {
+    title: 'Интернет',
+    url: '/report/public/telecom-ru@summaryArea/internetArea/internetArea',
+    query
+  }, {
+    title: 'Телевидение',
+    url: '/report/public/telecom-ru@summaryArea/tvArea/tvArea',
+    query
+  }, {
+    title: 'Радиовещание',
+    url: '/report/public/telecom-ru@summaryArea/radioArea/radioArea',
+    query
+  }, {
+    title: 'ОПС',
+    url: '/report/public/telecom-ru@summaryArea/opsArea/opsArea',
+    query
+  }]
+};
+%>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Summary area report</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0"/>
+  <style>
+    body { font-family: Arial; }
+    .report-title { font-size:18px; text-transform: uppercase; margin:10px 0 20px; }
+    .report-lead { font-size:13px; margin:0 0 20px; }
+    .report-lead p { margin:5px 0 0 0; }
+    .report-item { margin:0 0 20px 0; }
+    .report-item-title { font-size:15px; margin: 0 0 10px; }
+    .report-item iframe { width:100%; border:0; height:50px; }
+  </style>
+  <script src="/geomap/vendor/jquery/jquery.min.js"></script>
+</head>
+<body>
+  <!-- applications\khv-svyaz-info\templates\geo\reports\summaryArea -->
+  <div id="report-zone" class="report-zone" data-params="<%= JSON.stringify(params) %>">
+    <div class="report-title"><%- item.get('name') %></div>
+    <div class="report-lead">
+    <%
+      let admin = item.property('admin').evaluate();
+      let centMunRaion = null;
+      if (admin) {
+        centMunRaion = admin.property('centMunRaion').evaluate();
+      }
+      if (centMunRaion) {
+    %>
+      <p><b>Административный центр - </b><%- centMunRaion %></p>
+    <%
+      }
+      var nps = item.property('oktmo_nasPunkta').evaluate();
+    %>
+      <p><b>Количество населенных пунктов: </b><%- nps ? nps.length : '' %></p>
+      <p><b>Численность населения, чел.: </b><%- item.property('chislennost').evaluate() %></p>
+    </div>
+    <div class="report-content"></div>
+  </div>
+
+<script>
+  (function () {
+    var $zone = $('#report-zone');
+    var $content = $zone.find('.report-content');
+    var params = $zone.data('params');
+    var loadingIndex = 0;
+
+    for (var i = 0; i < params.items.length; ++i) {
+      var item = params.items[i];
+      var query = item.query ? ('?'+ serializeQuery(item.query)) : '';
+      var result = '<div class="report-item"><h3 class="report-item-title">'+ item.title +'</h3><iframe src="'+
+        item.url + query +'"></iframe></div>';
+      $content.append(result);
+    }
+
+    $content.find('iframe').load(function (event) {
+      var doc = this.contentWindow.document;
+      this.style.height = (doc.body.scrollHeight + 5)+ 'px';
+    });
+
+    function serializeQuery(obj) {
+      var items = [];
+      for (var name in obj) {
+        if (obj.hasOwnProperty(name)) {
+          items.push(name +'='+ obj[name]);
+        }
+      }
+      return items.join('&');
+    }
+
+  })();
+</script>
+</body>
+</html>

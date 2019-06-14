@@ -1,0 +1,33 @@
+{
+  "type": "data",
+  "order": 10,
+  "code": "connect.mobileKray.2gMobileKray",
+  "parent": "connect.mobileKray",
+  "caption": "2G",
+  "hint": "Наличие мобильной связи 2G в населенных пунктах Хабаровского края",
+  "layers": [
+    "2gMobileKray"
+  ],
+  "filter": [
+    {
+      "caption": "Оператор",
+      "fields": [
+        {
+          "caption": "Список параметров для фильтра",
+          "type": "select",
+          "multiple": true,
+          "filteredClass": "naselenniyPunkt@telecom-ru",
+          "targetProp": "svyaz.mobile2G.mobileOperator.id",
+          "source": {
+            "className": "operators@telecom-ru",
+            "valueProp": null,
+            "labelProp": null
+          },
+          "eagerLoading": [
+            "svyaz.mobile2G.mobileOperator"
+          ]
+        }
+      ]
+    }
+  ]
+}

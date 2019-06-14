@@ -1,0 +1,14 @@
+{
+  "code": "television.com.tvOperSkyItem",
+  "orderNumber": 5,
+  "type": 1,
+  "caption": "Спутниковый оператор",
+  "classname": "tvOperSkyItem",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "pathChains": [],
+  "title": "",
+  "metaVersion": "2.0.0"
+}

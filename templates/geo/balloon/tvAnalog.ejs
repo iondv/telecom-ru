@@ -1,0 +1,30 @@
+<%
+let result = {
+  title: item.get('name')
+}
+
+if (item.get('chislennost')) {
+  result.title += ' (' + item.property('chislennost').evaluate() + ' чел.)';
+}
+
+let itemSvyaz = item.property('svyaz').evaluate();
+if (itemSvyaz) {
+%>
+
+<ul class='balloon-attrlist' style='width:225px'>
+  <li><%- result.title %></li>
+</ul>
+<ul class='mt10'>
+    <%
+      let coll = itemSvyaz.property('tv').evaluate();
+    if (coll && coll.length) {
+      for (let elem of coll) {
+      let collAtv = elem.property('analogTV').evaluate();
+      if (collAtv && collAtv.length) {
+        for (let atv of collAtv) {
+        %>
+        <li>
+          <%- atv.property('name').evaluate() %>
+        </li>
+  <% } } } } } %>
+</ul>

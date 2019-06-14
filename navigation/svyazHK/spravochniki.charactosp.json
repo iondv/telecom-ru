@@ -1,0 +1,13 @@
+{
+  "code": "spravochniki.charactosp",
+  "type": 1,
+  "caption": "Характеристика почтовых отделений",
+  "classname": "charactosp",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "pathChains": [],
+  "title": "",
+  "metaVersion": "2.0.0"
+}

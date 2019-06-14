@@ -1,0 +1,40 @@
+{
+  "code": "ams",
+  "order": 0,
+  "caption": "АМС",
+  "hint": "Антенно-мачтовые сооружения",
+  "data": [
+    {
+      "type": "Point",
+      "locationAttribute": "geocoord",
+      "matchMode": "intersect",
+      "options": {
+        "clusterHasBalloon": true,
+        "clusterPreset": "islands#invertedBrownClusterIcons",
+        "geoObjectHasBalloon": true,
+        "geoObjectOpenBalloonOnClick": true,
+        "geoObjectIconLayout" : "default#image",
+        "geoObjectIconImageHref" : "geomap/geoicons/ams.png"
+      },
+      "params": {
+        "balloonContentLayoutClass" : "<div class='map-ajax-balloon' data-url='geomap/render/telecom-ru/ams/0/{{ properties.itemId }}?template=geo/balloon/ams'><i class='fa fa-refresh fa-spin'></i></div>",
+        "clusterBalloonItemContentLayout" : "<div class='map-ajax-balloon' data-url='geomap/render/telecom-ru/ams/0/{{ properties.itemId }}?template=geo/balloon/ams'><i class='fa fa-refresh fa-spin'></i></div>"
+      },
+      "query": {
+        "className": "ams@telecom-ru",
+        "queryConditions": []
+      },
+      "handlers": {
+        "showBalloonOnHover": {
+          "delay": 300
+        }
+      }
+    }
+  ],
+  "filters" : [
+    {
+      "type" : "regions",
+      "osmIds" : [151223]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+<%
+let result = {
+  title: item.get('name')
+}
+
+if (item.get('chislennost')) {
+  result.title += ' (' + item.property('chislennost').evaluate() + ' чел.)';
+}
+
+let itemSvyaz = item.property('svyaz').evaluate();
+if (itemSvyaz) {
+%>
+
+<ul class='balloon-attrlist' style='width:225px'>
+  <li><%- result.title %></li>
+</ul>
+<ul class='mt10'>
+    <%
+      let coll = itemSvyaz.property('internet').evaluate();
+    if (coll && coll.length) {
+      for (let elem of coll) {
+      let collOp = elem.get('operatorwww');
+    if (collOp) {
+    %>
+        <li><a class='map-modal-link'
+               href='/registry/telecom-ru@shpd/view/internet@telecom-ru/<%- elem.id %>?readonly=on&condensed=on'><%- elem.property('operatorwww').evaluate() %></a>
+        </li>
+  <% } } } } %>
+</ul>

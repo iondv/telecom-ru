@@ -1,0 +1,14 @@
+{
+  "code": "passportObject",
+  "orderNumber": 20,
+  "type": 0,
+  "caption": "Связанные значения",
+  "classname": null,
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "pathChains": [],
+  "title": "",
+  "metaVersion": "2.0.0"
+}

@@ -1,0 +1,18 @@
+<%
+let result = {
+  title: item.get('name')
+}
+
+if (item.get('chislennost')) {
+  result.title += ' (' + item.property('chislennost').evaluate() + ' чел.)';
+}
+
+let itemSvyaz = item.property('svyaz').evaluate();
+if (itemSvyaz) {
+%>
+
+<ul class='balloon-attrlist' style='width:225px'>
+  <li><%- result.title %>
+    <% } %>
+  </li>
+</ul>

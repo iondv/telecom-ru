@@ -1,0 +1,39 @@
+<%
+let result = {
+  title: item.get('name'),
+  address: item.get('address')
+}
+
+let coll = item.property('raionObslu').evaluate();
+if (coll && coll.length) {
+  result.raionObslu = '<br>';
+  for (let elem of coll) {
+    result.raionObslu += ' ' + elem.get('name') + '<br>';
+  }
+} else {
+  result.raionObslu = 'нет';
+}
+
+%>
+
+<ul class='balloon-attrlist' style='width:225px'>
+  <li><b class='block mb10'><%- result.title %></b></li>
+
+  <li>Адрес:
+    <ul class='comma-list'>
+      <li><br><%- result.address %></li>
+    </ul>
+  </li>
+
+  <li>Районы обслуживания:
+    <ul class='comma-list'>
+      <li><%- result.raionObslu %></li>
+    </ul>
+  </li>
+
+</ul>
+<div>
+  <button type='button' class='btn btn-sm btn-primary map-modal-link' data-type='url'
+          data-url='geomap/render/telecom-ru/pochtamt/0/<%- item.id %>?template=geo/layers/pochtamt'>Подробно
+  </button>
+</div>

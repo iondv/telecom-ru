@@ -1,0 +1,33 @@
+{
+  "type": "data",
+  "order": 20,
+  "code": "connect.TvRadio.RadioTv.tvAnalog",
+  "parent": "connect.TvRadio.RadioTv",
+  "caption": "Аналоговое ТВ",
+  "hint": "Аналоговое ТВ в Хабаровском крае",
+  "layers": [
+    "tvAnalog"
+  ],
+  "filter": [
+    {
+      "caption": "Каналы аналогового ТВ",
+      "fields": [
+        {
+          "caption": "Список параметров для фильтра",
+          "type": "select",
+          "multiple": true,
+          "filteredClass": "naselenniyPunkt@telecom-ru",
+          "targetProp": "svyaz.tv.analogTV.name.id",
+          "source": {
+            "className": "tvSpr@telecom-ru",
+            "valueProp": null,
+            "labelProp": null
+          },
+          "eagerLoading": [
+            "svyaz.tv.analogTV.name"
+          ]
+        }
+      ]
+    }
+  ]
+}

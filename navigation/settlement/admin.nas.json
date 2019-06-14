@@ -1,0 +1,29 @@
+{
+  "code": "admin.nas",
+  "orderNumber": 2,
+  "type": 1,
+  "caption": "Администрации поселений",
+  "title": "Администрации поселений",
+  "classname": "adminTerritory",
+  "container": null,
+  "collection": null,
+  "conditions": [
+    {
+      "property": "typeTerr",
+      "operation": 0,
+      "value": ["nas"],
+      "nestedConditions": []
+    }
+  ],
+  "sorting": [],
+  "eagerLoading": {
+    "item": {
+      "adminTerritory": [
+        "adminTerritory.supOktmo",
+        "adminTerritory.chislennost"
+      ]
+    }
+  },
+  "pathChains": [],
+  "metaVersion": "2.0.0"
+}

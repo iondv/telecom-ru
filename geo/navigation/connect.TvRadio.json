@@ -1,0 +1,9 @@
+{
+  "type": "data",
+  "order": 40,
+  "code": "connect.TvRadio",
+  "parent": "connect",
+  "caption": "Теле и Радиовещание",
+  "hint": "Теле и Радиовещание в Хабаровском крае",
+  "layers": ["cetc","tvAnalog","ComTv","radio"]
+}

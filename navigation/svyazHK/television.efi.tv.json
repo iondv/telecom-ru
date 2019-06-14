@@ -1,0 +1,14 @@
+{
+  "code": "television.efi.tv",
+  "orderNumber": 2,
+  "type": 1,
+  "caption": "Паспорт ТВ",
+  "classname": "tv",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "pathChains": [],
+  "title": "",
+  "metaVersion": "2.0.0"
+}

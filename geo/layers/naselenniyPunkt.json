@@ -1,0 +1,69 @@
+{
+  "code": "naselenniyPunkt",
+  "order": 1,
+  "caption": "Населенные пункты",
+  "hint": "Населенные пункты",
+  "data": [
+    {
+      "type": "Point",
+      "locationAttribute": "geocoord",
+      "matchMode": "intersect",
+      "options": {
+        "clusterHasBalloon": true,
+        "clusterPreset": "islands#invertedDarkGreenClusterIcons",
+        "geoObjectHasBalloon": true,
+        "geoObjectOpenBalloonOnClick": true,
+        "geoObjectPreset": "islands#greenDotIconWithCaption"
+      },
+      "params": {
+        "balloonContentLayoutClass": "<div class='map-ajax-balloon' data-url='geomap/render/telecom-ru/naselenniyPunkt/0/{{ properties.itemId }}?template=geo/balloon/naselenniyPunkt'><i class='fa fa-refresh fa-spin'></i></div>",
+        "clusterBalloonItemContentLayout": "<div class='map-ajax-balloon' data-url='geomap/render/telecom-ru/naselenniyPunkt/0/{{ properties.itemId }}?template=geo/balloon/naselenniyPunkt'><i class='fa fa-refresh fa-spin'></i></div>"
+      },
+      "query": {
+        "className": "naselenniyPunkt@telecom-ru",
+        "queryConditions": [],
+        "eagerLoading": {
+          "info": [
+            "supOktmo",
+            "chislennost",
+            "svyaz.statsionar.operator",
+            "svyaz.internet.operatorwww",
+            "svyaz.statsionar.typeTks",
+            "svyaz.internet.typeShpd",
+            "svyaz.internet.typeTKS",
+            "svyaz.mobile.mobileStandart.standart",
+            "svyaz.mobile.mobileOperator.name",
+            "svyaz.radio.radioCanals.name",
+            "svyaz.tv.digitalTV.multipl.name",
+            "svyaz.tv.analogTV.name.name",
+            "svyaz.other.bsIskra.operator",
+            "svyaz.other.taksofon",
+            "svyaz.other.infomats",
+            "svyaz.ops",
+            "zdravNP.medicalOrg.name",
+            "zdravNP.medicalOrg.address",
+            "zdravNP.medicalOrg.internet.operator",
+            "zdravNP.medicalOrg.internet.typeTKS",
+            "zdravNP.medicalOrg.internet.volum"
+          ],
+          "map": [
+            "type"
+          ]
+        }
+      },
+      "handlers": {
+        "showBalloonOnHover": {
+          "delay": 900
+        }
+      }
+    }
+  ],
+  "filters": [
+    {
+      "type": "regions",
+      "osmIds": [
+        151223
+      ]
+    }
+  ]
+}

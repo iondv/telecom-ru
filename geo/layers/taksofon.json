@@ -1,0 +1,44 @@
+{
+  "code": "taksofon",
+  "order": 1,
+  "caption": "Таксофон",
+  "hint": "Таксофон",
+  "data": [
+    {
+      "type": "Point",
+      "locationAttribute": "geo",
+      "matchMode": "intersect",
+      "options": {
+        "clusterHasBalloon": true,
+        "clusterDisableClickZoom" : false,
+        "clusterPreset": "islands#invertedBrownClusterIcons",
+        "geoObjectHasBalloon": true,
+        "geoObjectOpenBalloonOnClick": true,
+        "geoObjectIconLayout" : "default#image",
+        "geoObjectIconImageHref" : "geomap/geoicons/taksofon.png"
+      },
+      "params": {
+        "balloonContentLayoutClass" : "<div class='map-ajax-balloon' data-url='geomap/render/telecom-ru/taksofon/0/{{ properties.itemId }}?template=geo/balloon/taksofon'><i class='fa fa-refresh fa-spin'></i></div>",
+        "clusterBalloonItemContentLayout" : "<div class='map-ajax-balloon' data-url='geomap/render/telecom-ru/taksofon/0/{{ properties.itemId }}?template=geo/balloon/taksofon'><i class='fa fa-refresh fa-spin'></i></div>"
+      },
+      "query": {
+        "className": "taksofon@telecom-ru",
+        "queryConditions": [],
+        "eagerLoading": {
+          "map": []
+        }
+      },
+      "handlers": {
+        "showBalloonOnHover": {
+          "delay": 300
+        }
+      }
+    }
+  ],
+  "filters" : [
+    {
+      "type" : "regions",
+      "osmIds" : [151223]
+    }
+  ]
+}

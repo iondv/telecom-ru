@@ -1,0 +1,55 @@
+{
+  "type": "data",
+  "order": 10,
+  "code": "connect.statsionar",
+  "parent": "connect",
+  "caption": "Стационарная связь",
+  "hint": "Стационарная связь в Хабаровском крае",
+  "layers": [
+    "statsionar"
+  ],
+  "filter": [
+    {
+      "caption": "Оператор",
+      "fields": [
+        {
+          "caption": "Список параметров для фильтра",
+          "type": "select",
+          "multiple": true,
+          "filteredClass": "naselenniyPunkt@telecom-ru",
+          "targetProp": "svyaz.statsionar.operator.id",
+          "source": {
+            "className": "operators@telecom-ru",
+            "valueProp": null,
+            "labelProp": null
+          },
+          "eagerLoading": [
+            "svyaz.statsionar.operator"
+          ]
+        }
+      ]
+    },
+    {
+      "caption": "Тип АТС",
+      "fields": [
+        {
+          "caption": "Список параметров для фильтра",
+          "type": "select",
+          "multiple": false,
+          "filteredClass": "naselenniyPunkt@telecom-ru",
+          "targetProp": "svyaz.statsionar.stacionSvyaz",
+          "values": [
+            {
+              "value": "a",
+              "label": "Цифра"
+            },
+            {
+              "value": "b",
+              "label": "Аналог"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

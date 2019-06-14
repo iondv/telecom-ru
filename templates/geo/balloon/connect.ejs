@@ -1,0 +1,131 @@
+<%
+let result = {
+  title: item.get('name'),
+  subtitle: '',
+  statsionar: '',
+  internet: '',
+  mobile: '',
+  tv: '',
+  radio: '',
+  ops: ''
+};
+
+if (item.get('supOktmo')) {
+  result.title += ', ' + item.property('supOktmo').evaluate() + '<br>';
+}
+if (item.get('chislennost')) {
+  result.subtitle += 'Численность ' + item.property('chislennost').evaluate() + ' чел.';
+}
+
+let itemSvyaz = item.property('svyaz').evaluate();
+if (itemSvyaz) {
+  let coll = itemSvyaz.property('statsionar').evaluate();
+  if (coll && coll.length) {
+    let elem = coll[0];
+    coll = elem.property('operator').evaluate();
+    if (coll) {
+      result.statsionar = coll;
+    }
+  } else {
+    result.statsionar = 'нет';
+  }
+
+  coll = itemSvyaz.property('mobile').evaluate();
+  if (coll && coll.length) {
+    let mobileNoNull = 0;
+    for (let elem of coll) {
+      let propOperator = elem.property('mobileOperator').evaluate();
+      if (propOperator) {
+        let propStandart = elem.property('mobileStandart').evaluate();
+        if (propStandart && propStandart.length && propStandart[0].get('standart') !== 'нет') {
+          mobileNoNull++;
+          result.mobile += ' ' + propOperator;
+        }
+      }
+    }
+    if (!mobileNoNull) {
+      result.mobile = 'нет';
+    }
+  } else {
+    result.mobile = 'нет';
+  }
+
+  coll = itemSvyaz.property('mobile').evaluate();
+  if (coll && coll.length) {
+    let mobileNoNull = 0;
+    for (let elem of coll) {
+      let propOperator = elem.property('mobileOperator').evaluate();
+      if (propOperator) {
+        let propStandart = elem.property('mobileStandart').evaluate();
+        if (propStandart && propStandart.length && propStandart[0].get('standart') !== 'нет') {
+          mobileNoNull++;
+        }
+      }
+    }
+    coll = itemSvyaz.property('internet').evaluate();
+    if (mobileNoNull || (coll && coll.length)) {
+      result.internet = 'есть';
+    } else {
+      result.internet = 'нет';
+    }
+  } else {
+    result.internet = 'нет';
+  }
+
+  coll = itemSvyaz.property('tv').evaluate();
+  if (coll && coll.length) {
+    result.tv = 'есть';
+  } else {
+    result.tv = 'нет';
+  }
+
+  coll = itemSvyaz.property('radio').evaluate();
+  if (coll && coll.length) {
+    result.radio = 'есть';
+  } else {
+    result.radio = 'нет';
+  }
+
+  coll = itemSvyaz.property('ops').evaluate();
+  if (coll && coll.length) {
+    result.ops = 'есть';
+  } else {
+    result.ops = 'нет';
+  }
+}
+%>
+
+<ul class='balloon-attrlist' style='width:225px'>
+  <li><b class='block mb10'><%- result.title %></b></li>
+  <li><%- result.subtitle %></li>
+
+  <li>Стационарная связь:
+    <ul class='comma-list'>
+      <li><%- result.statsionar %></li>
+    </ul>
+  </li>
+
+  <li>Мобильная связь:
+    <ul class='comma-list'>
+      <li><%- result.mobile %></li>
+    </ul>
+  </li>
+
+  <li>Интернет:
+    <ul class='comma-list'>
+      <li><%- result.internet %></li>
+    </ul>
+  </li>
+
+  <li>Телевидение: <%- result.tv %></li>
+
+  <li>Радио: <%- result.radio %></li>
+
+  <li>Отделение почтовой связи: <%- result.ops %></li>
+
+</ul>
+<div>
+  <button type='button' class='btn btn-sm btn-primary map-modal-link' data-type='url'
+          data-url='geomap/render/telecom-ru/connect/0/<%- item.id %>?template=geo/layers/connect'>Подробно
+  </button>
+</div>

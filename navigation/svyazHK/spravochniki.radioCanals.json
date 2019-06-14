@@ -1,0 +1,15 @@
+{
+  "code": "spravochniki.radioCanals",
+  "type": 1,
+  "caption": "Радиостанции",
+  "classname": "radioCanals",
+  "container": null,
+  "collection": null,
+  "url": null,
+  "hint": null,
+  "conditions": [],
+  "sorting": [],
+  "pathChains": [],
+  "title": "",
+  "metaVersion": "2.0.0"
+}

@@ -1,0 +1,33 @@
+{
+  "code": "municipalnieObrazovaniya",
+  "order": 0,
+  "caption": "Муниципальные образования",
+  "hint": "Муниципальные образования",
+  "data": [
+    {
+      "type": "Point",
+      "matchMode": "intersect",
+      "options": {
+      },
+      "params": {
+      },
+      "query": {
+        "className": "municipalnieObrazovaniya@telecom-ru",
+        "queryConditions": [],
+        "eagerLoading": {
+          "info": [
+            "admin.centMunRaion",
+            "oktmo_nasPunkta.chislennost"
+          ],
+          "map": []
+        }
+      },
+      "handlers": {
+      }
+    }
+  ],
+  "filters": [
+    {
+    }
+  ]
+}

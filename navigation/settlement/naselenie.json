@@ -1,0 +1,16 @@
+{
+  "code": "naselenie",
+  "orderNumber": 15,
+  "type": 1,
+  "title": "",
+  "caption": "Население",
+  "classname": "naselenie",
+  "container": null,
+  "collection": null,
+  "url": null,
+  "hint": null,
+  "conditions": [],
+  "selSorting": [],
+  "pathChains": [],
+  "metaVersion": "2.0.7"
+}

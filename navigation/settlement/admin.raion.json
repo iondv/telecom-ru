@@ -1,0 +1,28 @@
+{
+  "code": "admin.raion",
+  "orderNumber": 1,
+  "type": 1,
+  "caption": "Муниципальные районы",
+  "title": "Администрации муниципальных районов",
+  "classname": "adminTerritory",
+  "container": null,
+  "collection": null,
+  "conditions": [
+    {
+      "property": "typeTerr",
+      "operation": 0,
+      "value": ["raion"],
+      "nestedConditions": []
+    }
+  ],
+  "sorting": [],
+  "eagerLoading": {
+    "item": {
+      "adminTerritory": [
+        "linkMunRaion.admin"
+      ]
+    }
+  },
+  "pathChains": [],
+  "metaVersion": "2.0.0"
+}

@@ -1,0 +1,29 @@
+{
+  "type": "data",
+  "order": 1,
+  "code": "naselenniyPunkt",
+  "caption": "Населенные пункты",
+  "hint": "Населенные пункты",
+  "layers": [
+    "naselenniyPunkt"
+  ],
+  "filter" : [
+    {
+      "caption" : "Тип населенного пункта",
+      "fields" : [
+        {
+          "caption" : "Список параметров для фильтра",
+          "type" : "select",
+          "multiple" : true,
+          "filteredClass" : "naselenniyPunkt@telecom-ru",
+          "targetProp" : "type.id",
+          "source" : {
+            "className" : "typeNasPunk@telecom-ru",
+            "valueProp" : null,
+            "labelProp" : null
+          }
+        }
+      ]
+    }
+  ]
+}

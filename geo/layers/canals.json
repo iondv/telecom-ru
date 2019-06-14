@@ -1,0 +1,29 @@
+{
+  "code": "canals",
+  "order": 0,
+  "caption": "Каналы связи",
+  "hint": "Каналы связи",
+  "data": [
+    {
+      "type": "FeatureCollection",
+      "locationAttribute": "geoobject",
+      "matchMode": "intersect",
+      "options": {
+        "clusterize": false
+      },
+      "query": {
+        "className": "canals@telecom-ru",
+        "queryConditions": [],
+        "eagerLoading": {
+          "map": []
+        }
+      }
+    }
+  ],
+  "filters" : [
+    {
+      "type" : "regions",
+      "osmIds" : [151223]
+    }
+  ]
+}

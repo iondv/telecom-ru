@@ -1,0 +1,60 @@
+{
+  "code": "radio",
+  "order": 0,
+  "caption": "Радиостанции",
+  "hint": "Радиостанции",
+  "data": [
+    {
+      "type": "Point",
+      "locationAttribute": "geocoord",
+      "matchMode": "intersect",
+      "options": {
+        "clusterHasBalloon": true,
+        "clusterPreset": "islands#invertedDarkGreenClusterIcons",
+        "geoObjectHasBalloon": true,
+        "geoObjectOpenBalloonOnClick": true,
+        "geoObjectPreset": "islands#greenDotIconWithCaption"
+      },
+      "params": {
+        "balloonContentLayoutClass" : "<div class='map-ajax-balloon' data-url='geomap/render/telecom-ru/radio/0/{{ properties.itemId }}?template=geo/balloon/radio'><i class='fa fa-refresh fa-spin'></i></div>",
+        "clusterBalloonItemContentLayout" : "<div class='map-ajax-balloon' data-url='geomap/render/telecom-ru/radio/0/{{ properties.itemId }}?template=geo/balloon/radio'><i class='fa fa-refresh fa-spin'></i></div>"
+      },
+      "query": {
+        "className": "naselenniyPunkt@telecom-ru",
+        "queryConditions": [
+          {
+            "property": "svyaz.radio",
+            "operation": 10,
+            "value": null,
+            "nestedConditions": [
+              {
+              "property": "radioCanals",
+              "operation": 3,
+              "value": null,
+              "nestedConditions": []
+              }
+            ]
+          }
+        ],
+        "eagerLoading": {
+          "info": [
+            "svyaz.radio.radioCanals.name",
+            "chislennost"
+          ],
+          "map": []
+        }
+      },
+      "handlers": {
+        "showBalloonOnHover": {
+          "delay": 300
+        }
+      }
+    }
+  ],
+  "filters" : [
+    {
+      "type" : "regions",
+      "osmIds" : [151223]
+    }
+  ]
+}

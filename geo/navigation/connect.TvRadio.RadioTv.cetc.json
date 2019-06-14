@@ -1,0 +1,38 @@
+{
+  "type": "data",
+  "order": 10,
+  "code": "connect.TvRadio.RadioTv.cetc",
+  "parent": "connect.TvRadio.RadioTv",
+  "caption": "Цифровое эфирное ТВ",
+  "hint": "Цифровое эфирное ТВ в Хабаровском крае",
+  "layers": [
+    "cetc"
+  ],
+  "filter": [
+    {
+      "caption": "Мультиплекс",
+      "fields": [
+        {
+          "caption": "Список параметров для фильтра",
+          "type": "select",
+          "multiple": false,
+          "filteredClass": "naselenniyPunkt@telecom-ru",
+          "targetProp": "svyaz.tv.digitalTVDateOn.mult",
+          "values": [
+            {
+              "value": "a",
+              "label": "1 мультиплекс"
+            },
+            {
+              "value": "b",
+              "label": "2 мультиплекс"
+            }
+          ],
+          "eagerLoading": [
+            "svyaz.tv.digitalTVDateOn"
+          ]
+        }
+      ]
+    }
+  ]
+}

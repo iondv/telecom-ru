@@ -1,0 +1,58 @@
+{
+  "tabs": [
+    {
+      "caption": "",
+      "fullFields": [
+        {
+          "caption": "Наименование",
+          "type": 1,
+          "property": "name",
+          "size": 2,
+          "maskName": null,
+          "mask": null,
+          "mode": null,
+          "fields": [],
+          "columns": [],
+          "actions": null,
+          "orderNumber": 10,
+          "required": true,
+          "visibility": null,
+          "enablement": null,
+          "obligation": null,
+          "readonly": false,
+          "selectionPaginated": true,
+          "validators": null,
+          "hierarchyAttributes": null,
+          "commands": null,
+          "hint": "",
+          "historyDisplayMode": 0,
+          "tags": null
+        }
+      ],
+      "shortFields": []
+    }
+  ],
+  "actions": null,
+  "commands": [
+    {
+      "id": "SAVEANDCLOSE",
+      "caption": "Сохранить и закрыть",
+      "visibilityCondition": null,
+      "enableCondition": null,
+      "needSelectedItem": false,
+      "signBefore": false,
+      "signAfter": false
+    },
+    {
+      "id": "SAVE",
+      "caption": "Сохранить",
+      "visibilityCondition": null,
+      "enableCondition": null,
+      "needSelectedItem": false,
+      "signBefore": false,
+      "signAfter": false
+    }
+  ],
+  "overrideMode": 1,
+  "metaVersion": "2.0.0"
+}

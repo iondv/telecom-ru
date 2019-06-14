@@ -1,0 +1,57 @@
+{
+  "code": "pops",
+  "order": 0,
+  "caption": "ПОПС",
+  "hint": "ПОПС",
+  "data": [
+    {
+      "type": "Point",
+      "locationAttribute": "geocoord",
+      "matchMode": "intersect",
+      "options": {
+        "clusterHasBalloon": false,
+        "clusterPreset": "islands#invertedDarkBlueClusterIcons",
+        "geoObjectHasBalloon": true,
+        "geoObjectOpenBalloonOnClick": true,
+        "geoObjectIconLayout" : "default#image",
+        "geoObjectIconImageHref" : "geomap/geoicons/ops.png"
+      },
+      "params": {
+        "balloonContentLayoutClass" : "<div class='map-ajax-balloon' data-url='geomap/render/telecom-ru/ops/0/{{ properties.itemId }}?template=geo/balloon/ops'><i class='fa fa-refresh fa-spin'></i></div>"
+      },
+      "query": {
+        "className": "ops@telecom-ru",
+        "queryConditions": [
+          {
+            "property": "gops",
+            "operation": 0,
+            "value": [
+              "c"
+            ],
+            "nestedConditions": []
+          }
+        ],
+        "eagerLoading": {
+          "info": [
+            "class",
+            "pochtamp",
+            "naselenniyPunkt.chislennost",
+            "inOps"
+          ],
+          "map": []
+        }
+      },
+      "handlers": {
+        "showBalloonOnHover": {
+          "delay": 300
+        }
+      }
+    }
+  ],
+  "filters" : [
+    {
+      "type" : "regions",
+      "osmIds" : [151223]
+    }
+  ]
+}

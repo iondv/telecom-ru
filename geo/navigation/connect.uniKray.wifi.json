@@ -1,0 +1,33 @@
+{
+  "type": "data",
+  "order": 30,
+  "code": "connect.uniKray.wifi",
+  "parent": "connect.uniKray",
+  "caption": "Точки доступа Wi-Fi",
+  "hint": "Точки доступа Wi-Fi",
+  "layers": [
+    "wifi"
+  ],
+  "filter": [
+    {
+      "caption": "Оператор",
+      "fields": [
+        {
+          "caption": "Список параметров для фильтра",
+          "type": "select",
+          "multiple": true,
+          "filteredClass": "wifi@telecom-ru",
+          "targetProp": "operator.id",
+          "source": {
+            "className": "operators@telecom-ru",
+            "valueProp": null,
+            "labelProp": null
+          },
+          "eagerLoading": [
+            "operator"
+          ]
+        }
+      ]
+    }
+  ]
+}

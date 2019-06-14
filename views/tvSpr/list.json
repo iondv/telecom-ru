@@ -1,0 +1,69 @@
+{
+  "columns": [
+    {
+      "sorted": true,
+      "caption": "Название",
+      "type": 1,
+      "property": "name",
+      "size": 2,
+      "maskName": null,
+      "mask": null,
+      "mode": null,
+      "fields": [],
+      "hierarchyAttributes": null,
+      "columns": [],
+      "actions": null,
+      "commands": null,
+      "orderNumber": 0,
+      "required": false,
+      "visibility": null,
+      "enablement": null,
+      "obligation": null,
+      "readonly": true,
+      "selectionPaginated": true,
+      "validators": null,
+      "hint": null,
+      "historyDisplayMode": 0,
+      "tags": null
+    }
+  ],
+  "actions": null,
+  "allowSearch": true,
+  "pageSize": null,
+  "useEditModels": true,
+  "version": null,
+  "overrideMode": 1,
+  "commands": [
+    {
+      "id": "CREATE",
+      "caption": "Создать",
+      "visibilityCondition": null,
+      "enableCondition": null,
+      "needSelectedItem": false,
+      "signBefore": false,
+      "signAfter": false,
+      "isBulk": false
+    },
+    {
+      "id": "EDIT",
+      "caption": "Изменить",
+      "visibilityCondition": null,
+      "enableCondition": null,
+      "needSelectedItem": true,
+      "signBefore": false,
+      "signAfter": false,
+      "isBulk": false
+    },
+    {
+      "id": "DELETE",
+      "caption": "Удалить",
+      "visibilityCondition": null,
+      "enableCondition": null,
+      "needSelectedItem": true,
+      "signBefore": false,
+      "signAfter": false,
+      "isBulk": true
+    }
+  ],
+  "metaVersion": "2.0.7"
+}

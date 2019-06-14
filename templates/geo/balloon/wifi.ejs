@@ -1,0 +1,17 @@
+<%
+let result = {
+  title: ''
+}
+
+if (item.get('operator')) {
+  result.title += item.property('operator').evaluate();
+}
+
+if (item.get('adress')) {
+  result.title += ' (' + item.get('adress') + ')';
+}
+%>
+
+<ul class='balloon-attrlist'>
+  <li><%- result.title %></li>
+</ul>

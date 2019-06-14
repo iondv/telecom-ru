@@ -1,0 +1,9 @@
+{
+  "type": "data",
+  "order": 5,
+  "code": "naselenniyPunkt.plan",
+  "parent": "naselenniyPunkt",
+  "caption": "Планы развития",
+  "hint": "Планы развития",
+  "layers": ["plan"]
+}

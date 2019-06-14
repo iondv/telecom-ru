@@ -1,0 +1,13 @@
+{
+  "code": "spravochniki.typeAms",
+  "type": 1,
+  "caption": "Виды АМС",
+  "classname": "typeAms",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "pathChains": [],
+  "title": "",
+  "metaVersion": "2.0.0"
+}

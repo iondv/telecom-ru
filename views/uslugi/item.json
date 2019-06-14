@@ -1,0 +1,117 @@
+{
+  "tabs": [
+    {
+      "caption": "",
+      "fullFields": [
+        {
+          "caption": "Номер",
+          "type": 1,
+          "property": "nomer",
+          "size": 2,
+          "maskName": null,
+          "mask": null,
+          "mode": null,
+          "fields": [],
+          "columns": [],
+          "actions": null,
+          "orderNumber": 10,
+          "required": true,
+          "visibility": null,
+          "enablement": null,
+          "obligation": null,
+          "readonly": true,
+          "selectionPaginated": true,
+          "validators": null,
+          "hierarchyAttributes": null,
+          "commands": null,
+          "hint": "",
+          "historyDisplayMode": 0,
+          "tags": null
+        },
+        {
+          "caption": "Наименование услуги",
+          "type": 1,
+          "property": "name",
+          "size": 2,
+          "maskName": null,
+          "mask": null,
+          "mode": null,
+          "fields": [],
+          "columns": [],
+          "actions": null,
+          "orderNumber": 20,
+          "required": true,
+          "visibility": null,
+          "enablement": null,
+          "obligation": null,
+          "readonly": false,
+          "selectionPaginated": true,
+          "validators": null,
+          "hierarchyAttributes": null,
+          "commands": null,
+          "hint": "",
+          "historyDisplayMode": 0,
+          "tags": null
+        },
+        {
+          "caption": "Тип услуги",
+          "type": 1,
+          "property": "type",
+          "size": 2,
+          "maskName": null,
+          "mask": null,
+          "mode": null,
+          "fields": [],
+          "columns": [],
+          "actions": null,
+          "orderNumber": 30,
+          "required": true,
+          "visibility": null,
+          "enablement": null,
+          "obligation": null,
+          "readonly": false,
+          "selectionPaginated": true,
+          "validators": null,
+          "hierarchyAttributes": null,
+          "commands": null,
+          "hint": "",
+          "historyDisplayMode": 0,
+          "tags": null
+        }
+      ],
+      "shortFields": []
+    }
+  ],
+  "actions": null,
+  "commands": [
+    {
+      "id": "SAVEANDCLOSE",
+      "caption": "Сохранить и закрыть",
+      "visibilityCondition": null,
+      "enableCondition": null,
+      "needSelectedItem": false,
+      "signBefore": false,
+      "signAfter": false
+    },
+    {
+      "id": "SAVE",
+      "caption": "Сохранить",
+      "visibilityCondition": null,
+      "enableCondition": null,
+      "needSelectedItem": false,
+      "signBefore": false,
+      "signAfter": false
+    },
+    {
+      "id": "DELETE",
+      "caption": "Удалить",
+      "visibilityCondition": null,
+      "enableCondition": null,
+      "needSelectedItem": false,
+      "signBefore": false,
+      "signAfter": false
+    }
+  ],
+  "overrideMode": 1,
+  "metaVersion": "2.0.0"
+}

@@ -1,0 +1,536 @@
+{
+  "isStruct": false,
+  "key": [
+    "id"
+  ],
+  "semantic": "mobileOperator| |typeTks",
+  "name": "mobile",
+  "version": "",
+  "caption": "Сотовая связь",
+  "ancestor": null,
+  "container": null,
+  "creationTracker": "dateCreate",
+  "changeTracker": "dateModified",
+  "history": 0,
+  "journaling": true,
+  "compositeIndexes": [
+    {
+      "properties": [
+        "okato",
+        "mobileOperator"
+      ],
+      "unique": true
+    }
+  ],
+  "cacheDependencies": ["okato"],
+  "properties": [
+    {
+      "orderNumber": 10,
+      "name": "id",
+      "caption": "Идентификатор паспорта",
+      "type": 0,
+      "size": 24,
+      "decimals": 0,
+      "allowedFileTypes": null,
+      "maxFileCount": 0,
+      "nullable": false,
+      "readonly": false,
+      "indexed": false,
+      "unique": true,
+      "autoassigned": true,
+      "hint": null,
+      "defaultValue": null,
+      "refClass": "",
+      "itemsClass": "",
+      "backRef": "",
+      "backColl": "",
+      "binding": "",
+      "semantic": null,
+      "selConditions": [],
+      "selSorting": [],
+      "selectionProvider": null,
+      "indexSearch": false,
+      "eagerLoading": false,
+      "formula": null
+    },
+    {
+      "orderNumber": 20,
+      "name": "okato",
+      "caption": "Связь",
+      "type": 13,
+      "size": null,
+      "decimals": 0,
+      "allowedFileTypes": null,
+      "maxFileCount": 0,
+      "nullable": true,
+      "readonly": false,
+      "indexed": true,
+      "unique": false,
+      "autoassigned": false,
+      "hint": null,
+      "defaultValue": null,
+      "refClass": "svyaz",
+      "itemsClass": "",
+      "backRef": null,
+      "backColl": "",
+      "binding": "",
+      "semantic": null,
+      "selConditions": [],
+      "selSorting": [],
+      "selectionProvider": null,
+      "indexSearch": false,
+      "eagerLoading": false,
+      "formula": null
+    },
+    {
+      "orderNumber": 124,
+      "name": "supOktmoMobile",
+      "caption": "Муниципальный район [значение для формы списка]",
+      "type": 0,
+      "size": null,
+      "decimals": 0,
+      "allowedFileTypes": null,
+      "maxFileCount": 0,
+      "nullable": true,
+      "readonly": false,
+      "indexed": true,
+      "unique": false,
+      "autoassigned": false,
+      "hint": null,
+      "defaultValue": null,
+      "refClass": "",
+      "itemsClass": "",
+      "backRef": "",
+      "backColl": "",
+      "binding": "",
+      "semantic": null,
+      "selConditions": [],
+      "selSorting": [],
+      "selectionProvider": null,
+      "indexSearch": false,
+      "eagerLoading": false,
+      "formula": {
+        "concat": ["$okato.supOktmo"]
+      },
+      "cached": true
+    },
+    {
+      "orderNumber": 25,
+      "name": "mobileOperator",
+      "caption": "Оператор сотовой связи",
+      "type": 13,
+      "size": null,
+      "decimals": 0,
+      "allowedFileTypes": null,
+      "maxFileCount": 0,
+      "nullable": true,
+      "readonly": false,
+      "indexed": true,
+      "unique": false,
+      "autoassigned": false,
+      "hint": null,
+      "defaultValue": null,
+      "refClass": "operators",
+      "itemsClass": null,
+      "backRef": "",
+      "backColl": "",
+      "binding": "",
+      "semantic": null,
+      "selConditions": [],
+      "selSorting": [],
+      "selectionProvider": null,
+      "indexSearch": false,
+      "eagerLoading": false,
+      "formula": null
+    },
+    {
+      "orderNumber": 30,
+      "name": "mobileStandartBeeline",
+      "caption": "Мобильный стандарт оператора Билайн [расчетное для ПФ]",
+      "type": 0,
+      "size": 128,
+      "decimals": 0,
+      "allowedFileTypes": null,
+      "maxFileCount": 0,
+      "nullable": true,
+      "readonly": false,
+      "indexed": true,
+      "unique": false,
+      "autoassigned": false,
+      "hint": null,
+      "defaultValue": null,
+      "refClass": "",
+      "itemsClass": "",
+      "backRef": "",
+      "backColl": "",
+      "binding": "",
+      "semantic": null,
+      "selConditions": [],
+      "selSorting": [],
+      "selectionProvider": null,
+      "indexSearch": false,
+      "eagerLoading": false,
+      "formula": {
+        "if": [
+          {
+            "eq": [
+              "$mobileOperator.name",
+              "Билайн"
+            ]
+          },
+          {
+            "if": [
+              {
+                "nempty": [
+                  "$mobileStandart"
+                ]
+              },
+              {
+                "merge": [
+                  "$mobileStandart",
+                  "standart",
+                  null,
+                  1,
+                  "/"
+                ]
+              },
+              "нет"
+            ]
+          },
+          ""
+          
+        ]
+      }
+    },
+    {
+      "orderNumber": 30,
+      "name": "mobileStandartMegafon",
+      "caption": "Мобильный стандарт оператора Мегафон [расчетное для ПФ]",
+      "type": 0,
+      "size": 128,
+      "decimals": 0,
+      "allowedFileTypes": null,
+      "maxFileCount": 0,
+      "nullable": true,
+      "readonly": false,
+      "indexed": true,
+      "unique": false,
+      "autoassigned": false,
+      "hint": null,
+      "defaultValue": null,
+      "refClass": "",
+      "itemsClass": "",
+      "backRef": "",
+      "backColl": "",
+      "binding": "",
+      "semantic": null,
+      "selConditions": [],
+      "selSorting": [],
+      "selectionProvider": null,
+      "indexSearch": false,
+      "eagerLoading": false,
+      "formula": {
+        "if": [
+          {
+            "eq": [
+              "$mobileOperator.name",
+              "МегаФон"
+            ]
+          },
+          {
+            "if": [
+              {
+                "nempty": [
+                  "$mobileStandart"
+                ]
+              },
+              {
+                "merge": [
+                  "$mobileStandart",
+                  "standart",
+                  null,
+                  1,
+                  "/"
+                ]
+              },
+              "нет"
+            ]
+          },
+          ""
+        ]
+      }
+    },
+    {
+      "orderNumber": 30,
+      "name": "mobileStandartMTS",
+      "caption": "Мобильный стандарт оператора МТС [расчетное для ПФ]",
+      "type": 0,
+      "size": 128,
+      "decimals": 0,
+      "allowedFileTypes": null,
+      "maxFileCount": 0,
+      "nullable": true,
+      "readonly": false,
+      "indexed": true,
+      "unique": false,
+      "autoassigned": false,
+      "hint": null,
+      "defaultValue": null,
+      "refClass": "",
+      "itemsClass": "",
+      "backRef": "",
+      "backColl": "",
+      "binding": "",
+      "semantic": null,
+      "selConditions": [],
+      "selSorting": [],
+      "selectionProvider": null,
+      "indexSearch": false,
+      "eagerLoading": false,
+      "formula": {
+        "if": [
+          {
+            "eq": [
+              "$mobileOperator.name",
+              "МТС"
+            ]
+          },
+          {
+            "if": [
+              {
+                "nempty": [
+                  "$mobileStandart"
+                ]
+              },
+              {
+                "merge": [
+                  "$mobileStandart",
+                  "standart",
+                  null,
+                  1,
+                  "/"
+                ]
+              },
+              "нет"
+            ]
+          },
+          ""
+        ]
+      }
+    },
+    {
+      "orderNumber": 351,
+      "name": "verified",
+      "caption": "Статус верификации",
+      "type": 10,
+      "size": null,
+      "decimals": 0,
+      "allowedFileTypes": null,
+      "maxFileCount": 0,
+      "nullable": false,
+      "readonly": false,
+      "indexed": false,
+      "unique": false,
+      "autoassigned": false,
+      "hint": null,
+      "defaultValue": "true",
+      "refClass": "",
+      "itemsClass": "",
+      "backRef": "",
+      "backColl": "",
+      "binding": "",
+      "semantic": null,
+      "selConditions": [],
+      "selSorting": [],
+      "selectionProvider": null,
+      "indexSearch": false,
+      "eagerLoading": false,
+      "formula": null
+    },
+    {
+      "orderNumber": 352,
+      "name": "dateCreate",
+      "caption": "Дата создания",
+      "type": 9,
+      "size": null,
+      "decimals": 0,
+      "allowedFileTypes": null,
+      "maxFileCount": 0,
+      "nullable": true,
+      "readonly": false,
+      "indexed": true,
+      "unique": false,
+      "autoassigned": false,
+      "hint": null,
+      "defaultValue": null,
+      "refClass": "",
+      "itemsClass": "",
+      "backRef": "",
+      "backColl": "",
+      "binding": "",
+      "semantic": null,
+      "selConditions": [],
+      "selSorting": [],
+      "selectionProvider": null,
+      "indexSearch": false,
+      "eagerLoading": false,
+      "formula": null
+    },
+    {
+      "orderNumber": 352,
+      "name": "dateModified",
+      "caption": "Дата изменения",
+      "type": 9,
+      "size": null,
+      "decimals": 0,
+      "allowedFileTypes": null,
+      "maxFileCount": 0,
+      "nullable": true,
+      "readonly": false,
+      "indexed": true,
+      "unique": false,
+      "autoassigned": false,
+      "hint": null,
+      "defaultValue": null,
+      "refClass": "",
+      "itemsClass": "",
+      "backRef": "",
+      "backColl": "",
+      "binding": "",
+      "semantic": null,
+      "selConditions": [],
+      "selSorting": [],
+      "selectionProvider": null,
+      "indexSearch": false,
+      "eagerLoading": false,
+      "formula": null
+    },
+    {
+      "orderNumber": 300,
+      "name": "typeTks",
+      "caption": "Тип ТКС",
+      "type": 14,
+      "size": 10,
+      "decimals": 0,
+      "allowedFileTypes": null,
+      "maxFileCount": 0,
+      "nullable": true,
+      "readonly": false,
+      "indexed": true,
+      "unique": false,
+      "autoassigned": false,
+      "hint": null,
+      "defaultValue": null,
+      "refClass": "",
+      "itemsClass": "TypeTKS",
+      "backRef": "",
+      "backColl": "",
+      "binding": "",
+      "semantic": null,
+      "selConditions": [],
+      "selSorting": [
+        {
+          "property": "type",
+          "mode": 0
+        }
+      ],
+      "selectionProvider": null,
+      "indexSearch": false,
+      "eagerLoading": false,
+      "formula": null
+    },
+    {
+      "orderNumber": 351,
+      "name": "mobileSvyaz",
+      "caption": "Наличие мобильной связи",
+      "type": 10,
+      "size": null,
+      "decimals": 0,
+      "allowedFileTypes": null,
+      "maxFileCount": 0,
+      "nullable": false,
+      "readonly": false,
+      "indexed": false,
+      "unique": false,
+      "autoassigned": false,
+      "hint": null,
+      "defaultValue": "false",
+      "refClass": "",
+      "itemsClass": "",
+      "backRef": "",
+      "backColl": "",
+      "binding": "",
+      "semantic": null,
+      "selConditions": [],
+      "selSorting": [],
+      "selectionProvider": null,
+      "indexSearch": false,
+      "eagerLoading": false,
+      "formula": null
+    },
+    {
+      "orderNumber": 340,
+      "name": "mobileStandart",
+      "caption": "Стандарт мобильной связи",
+      "type": 14,
+      "size": 10,
+      "decimals": 0,
+      "allowedFileTypes": null,
+      "maxFileCount": 0,
+      "nullable": true,
+      "readonly": false,
+      "indexed": true,
+      "unique": false,
+      "autoassigned": false,
+      "hint": null,
+      "defaultValue": null,
+      "refClass": "",
+      "itemsClass": "mobileStandart",
+      "backRef": "",
+      "backColl": "",
+      "binding": "",
+      "semantic": null,
+      "selConditions": [],
+      "selSorting": [
+        {
+          "property": "standart",
+          "mode": 0
+        }
+      ],
+      "selectionProvider": null,
+      "indexSearch": false,
+      "eagerLoading": false,
+      "formula": null
+    },
+    {
+      "orderNumber": 350,
+      "name": "mobileInternet",
+      "caption": "Интернет",
+      "type": 10,
+      "size": null,
+      "decimals": 0,
+      "allowedFileTypes": null,
+      "maxFileCount": 0,
+      "nullable": false,
+      "readonly": false,
+      "indexed": false,
+      "unique": false,
+      "autoassigned": false,
+      "hint": null,
+      "defaultValue": "false",
+      "refClass": "",
+      "itemsClass": "",
+      "backRef": "",
+      "backColl": "",
+      "binding": "",
+      "semantic": null,
+      "selConditions": [],
+      "selSorting": [],
+      "selectionProvider": null,
+      "indexSearch": false,
+      "eagerLoading": false,
+      "formula": null
+    }
+  ],
+  "metaVersion": "2.0.61.15690"
+}

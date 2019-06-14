@@ -1,0 +1,13 @@
+{
+  "type": "data",
+  "order": 60,
+  "code": "connect.uniKray",
+  "parent": "connect",
+  "caption": "Универсальные услуги связи ",
+  "hint": "Универсальные услуги связи в Хабаровском крае",
+  "layers": [
+    "taksofon",
+    "wifi",
+    "infomat"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "code": "other.wifi",
+  "orderNumber": 3,
+  "type": 1,
+  "caption": "Точки доступа Wi-Fi",
+  "classname": "wifi",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "pathChains": [],
+  "title": "",
+  "metaVersion": "2.0.0"
+}

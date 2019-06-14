@@ -1,0 +1,53 @@
+{
+  "type": "data",
+  "order": 70,
+  "code": "connect.canals",
+  "parent": "connect",
+  "caption": "Каналы связи",
+  "hint": "Каналы связи",
+  "layers": [
+    "canal"
+  ],
+  "filter" : [
+    {
+      "caption" : "Тип ТКС",
+      "fields" : [
+        {
+          "caption" : "Список параметров для фильтра",
+          "type" : "select",
+          "multiple" : false,
+          "filteredClass" : "canals@telecom-ru",
+          "targetProp" : "typeTKS.id",
+          "source" : {
+            "className" : "TypeTKS@telecom-ru",
+            "valueProp" : null,
+            "labelProp" : null
+          },
+          "eagerLoading": [
+            "typeTKS"
+          ]
+        }
+      ]
+    },
+    {
+      "caption" : "Операторы",
+      "fields" : [
+        {
+          "caption" : "Список параметров для фильтра",
+          "type" : "select",
+          "multiple" : true,
+          "filteredClass" : "canals@telecom-ru",
+          "targetProp" : "operator.id",
+          "source" : {
+            "className" : "operators@telecom-ru",
+            "valueProp" : null,
+            "labelProp" : null
+          },
+          "eagerLoading": [
+            "operator"
+          ]
+        }
+      ]
+    }
+  ]
+}

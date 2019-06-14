@@ -1,0 +1,16 @@
+{
+  "code": "comerTv",
+  "orderNumber": 0,
+  "type": 1,
+  "title": "Коммерческое ТВ",
+  "caption": "Операторы коммерческого ТВ",
+  "classname": "tvOperCom",
+  "container": null,
+  "collection": null,
+  "url": null,
+  "hint": null,
+  "conditions": [],
+  "sorting": [],
+  "pathChains": [],
+  "metaVersion": "2.0.61"
+}

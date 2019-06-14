@@ -1,0 +1,14 @@
+{
+  "code": "television.efi",
+  "orderNumber": 1,
+  "type": 0,
+  "caption": "Эфирное ТВ",
+  "classname": null,
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "pathChains": [],
+  "title": "",
+  "metaVersion": "2.0.0"
+}

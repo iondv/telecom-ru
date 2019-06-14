@@ -1,0 +1,14 @@
+{
+  "code": "ops.marshrut.magMarsh",
+  "orderNumber": 0,
+  "type": 1,
+  "caption": "Магистральные маршруты",
+  "classname": "magGraf",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "pathChains": [],
+  "title": "",
+  "metaVersion": "2.0.0"
+}

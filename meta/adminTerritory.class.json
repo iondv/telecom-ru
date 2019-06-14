@@ -1,0 +1,285 @@
+{
+  "isStruct": false,
+  "key": [
+    "id"
+  ],
+  "semantic": "Администрация территории: |typeTerr|, |centNasPunkt| |centMunRaion",
+  "name": "adminTerritory",
+  "version": "",
+  "caption": "Администрация территории",
+  "ancestor": "organization",
+  "container": null,
+  "creationTracker": "dateCreate",
+  "changeTracker": "dateModified",
+  "history": 0,
+  "journaling": true,
+  "compositeIndexes": [
+    {
+      "properties": [
+        "typeTerr",
+        "centMunRaion",
+        "internet"
+      ],
+      "unique": false
+    }
+  ],
+  "cacheDependencies": ["centNasPunkt"],
+  "properties": [
+    {
+      "orderNumber": 15,
+      "name": "typeTerr",
+      "caption": "Тип территории",
+      "type": 0,
+      "size": 24,
+      "decimals": 0,
+      "allowedFileTypes": null,
+      "maxFileCount": 0,
+      "nullable": false,
+      "readonly": false,
+      "indexed": true,
+      "unique": false,
+      "autoassigned": false,
+      "hint": null,
+      "defaultValue": null,
+      "refClass": "",
+      "itemsClass": "",
+      "backRef": "",
+      "backColl": "",
+      "binding": "",
+      "semantic": null,
+      "selConditions": [],
+      "selSorting": [],
+      "selectionProvider": {
+        "type": "SIMPLE",
+        "list": [
+          {
+            "key": "nas",
+            "value": "Населенный пункт"
+          },
+          {
+            "key": "raion",
+            "value": "Муниципальный район"
+          },
+          {
+            "key": "gorod",
+            "value": "Городской округ"
+          }
+        ],
+        "matrix": [],
+        "parameters": [],
+        "hq": ""
+      },
+      "indexSearch": false,
+      "eagerLoading": false,
+      "formula": null
+    },
+    {
+      "orderNumber": 15,
+      "name": "adminTerrFormula",
+      "caption": "Администрация территории [вычислимое]",
+      "type": 0,
+      "size": 24,
+      "decimals": 0,
+      "allowedFileTypes": null,
+      "maxFileCount": 0,
+      "nullable": true,
+      "readonly": false,
+      "indexed": true,
+      "unique": false,
+      "autoassigned": false,
+      "hint": null,
+      "defaultValue": null,
+      "refClass": "",
+      "itemsClass": "",
+      "backRef": "",
+      "backColl": "",
+      "binding": "",
+      "semantic": null,
+      "selConditions": [],
+      "selSorting": [],
+      "selectionProvider": null,
+      "indexSearch": false,
+      "eagerLoading": false,
+      "formula": {
+        "concat": [
+          {
+            "if": [
+              {
+                "eq": [
+                  "$typeTerr",
+                  "nas"
+                ]
+              },
+              "Населенного пункта: ",
+              {
+                "if": [
+                  {
+                    "eq": [
+                      "$typeTerr",
+                      "raion"
+                    ]
+                  },
+                  "Муниципального района: ",
+                  "Городского округа: "
+                ]
+              }
+            ]
+          },
+          "$centNasPunkt.name",
+          ". ",
+          "\n",
+          "Адрес: ",
+          "$address.adressFormula",
+          ". "
+        ]
+      },
+      "cached": true
+    },
+    {
+      "orderNumber": 11,
+      "name": "centNasPunkt",
+      "caption": "Административный центр населенного пункта",
+      "type": 13,
+      "size": null,
+      "decimals": 0,
+      "allowedFileTypes": null,
+      "maxFileCount": 0,
+      "nullable": true,
+      "readonly": false,
+      "indexed": true,
+      "unique": false,
+      "autoassigned": false,
+      "hint": null,
+      "defaultValue": null,
+      "refClass": "naselenniyPunkt",
+      "itemsClass": "",
+      "backRef": "",
+      "backColl": "",
+      "binding": "",
+      "semantic": null,
+      "selConditions": [],
+      "selSorting": [],
+      "selectionProvider": null,
+      "indexSearch": false,
+      "eagerLoading": false,
+      "formula": null
+    },
+    {
+      "orderNumber": 25,
+      "name": "centMunRaion",
+      "caption": "Административный центр района/городского округа",
+      "type": 13,
+      "size": null,
+      "decimals": 0,
+      "allowedFileTypes": null,
+      "maxFileCount": 0,
+      "nullable": true,
+      "readonly": false,
+      "indexed": true,
+      "unique": false,
+      "autoassigned": false,
+      "hint": null,
+      "defaultValue": null,
+      "refClass": "naselenniyPunkt",
+      "itemsClass": null,
+      "backRef": "",
+      "backColl": "",
+      "binding": "",
+      "semantic": null,
+      "selConditions": [],
+      "selSorting": [],
+      "selectionProvider": null,
+      "indexSearch": false,
+      "eagerLoading": false,
+      "formula": null
+    },
+    {
+      "orderNumber": 90,
+      "name": "adminTerritory",
+      "caption": "Администрация управляет населенным пунктом",
+      "type": 14,
+      "size": null,
+      "decimals": 0,
+      "allowedFileTypes": null,
+      "maxFileCount": 0,
+      "nullable": true,
+      "readonly": false,
+      "indexed": false,
+      "unique": false,
+      "autoassigned": false,
+      "hint": null,
+      "defaultValue": null,
+      "refClass": "",
+      "itemsClass": "naselenniyPunkt",
+      "backRef": "adminNasPunkt",
+      "backColl": "",
+      "binding": "",
+      "semantic": null,
+      "selConditions": [],
+      "selSorting": [],
+      "selectionProvider": null,
+      "indexSearch": false,
+      "eagerLoading": false,
+      "formula": null
+    },
+    {
+      "orderNumber": 100,
+      "name": "linkMunRaion",
+      "caption": "Администрация управляет муниципальным районом/городским округом",
+      "type": 14,
+      "size": null,
+      "decimals": 0,
+      "allowedFileTypes": null,
+      "maxFileCount": 0,
+      "nullable": true,
+      "readonly": false,
+      "indexed": true,
+      "unique": false,
+      "autoassigned": false,
+      "hint": null,
+      "defaultValue": null,
+      "refClass": "",
+      "itemsClass": "municipalnieObrazovaniya",
+      "backRef": "admin",
+      "backColl": "",
+      "binding": "",
+      "semantic": null,
+      "selConditions": [],
+      "selSorting": [],
+      "selectionProvider": null,
+      "indexSearch": false,
+      "eagerLoading": false,
+      "formula": null
+    },
+    {
+      "orderNumber": 260,
+      "name": "dateModified",
+      "caption": "Дата изменения",
+      "type": 9,
+      "size": null,
+      "decimals": 0,
+      "allowedFileTypes": null,
+      "maxFileCount": 0,
+      "nullable": true,
+      "readonly": false,
+      "indexed": true,
+      "unique": false,
+      "autoassigned": false,
+      "hint": null,
+      "defaultValue": null,
+      "refClass": "",
+      "itemsClass": "",
+      "backRef": "",
+      "backColl": "",
+      "binding": "",
+      "semantic": null,
+      "selConditions": [],
+      "selSorting": [],
+      "selectionProvider": null,
+      "indexSearch": false,
+      "eagerLoading": false,
+      "formula": null
+    }
+  ],
+  "metaVersion": "2.0.61.15690"
+}

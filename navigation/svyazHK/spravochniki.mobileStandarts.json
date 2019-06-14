@@ -1,0 +1,13 @@
+{
+  "code": "spravochniki.mobileStandarts",
+  "type": 1,
+  "caption": "Стандарты мобильной связи",
+  "classname": "mobileStandart",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "pathChains": [],
+  "title": "",
+  "metaVersion": "2.0.0"
+}

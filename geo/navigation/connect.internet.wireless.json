@@ -1,0 +1,33 @@
+{
+  "type": "data",
+  "order": 20,
+  "code": "connect.internet.wireless",
+  "parent": "connect.internet",
+  "caption": "Беспроводной ШПД",
+  "hint": "Услуги Беспроводного ШПД в Хабаровском крае",
+  "layers": [
+    "wireless"
+  ],
+  "filter": [
+    {
+      "caption": "Оператор",
+      "fields": [
+        {
+          "caption": "Список параметров для фильтра",
+          "type": "select",
+          "multiple": true,
+          "filteredClass": "naselenniyPunkt@telecom-ru",
+          "targetProp": "svyaz.other.bsIskra.operator.id",
+          "source": {
+            "className": "operators@telecom-ru",
+            "valueProp": null,
+            "labelProp": null
+          },
+          "eagerLoading": [
+            "svyaz.other.bsIskra.operator"
+          ]
+        }
+      ]
+    }
+  ]
+}

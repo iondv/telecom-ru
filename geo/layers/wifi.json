@@ -1,0 +1,41 @@
+{
+  "code": "wifi",
+  "order": 0,
+  "caption": "Точка доступа Wi-Fi",
+  "hint": "Точка доступа Wi-Fi",
+  "data": [
+    {
+      "type": "Point",
+      "locationAttribute": "geo",
+      "matchMode": "intersect",
+      "options": {
+        "clusterHasBalloon": true,
+        "clusterDisableClickZoom" : false,
+        "clusterPreset": "islands#invertedDarkGreenClusterIcons",
+        "geoObjectHasBalloon": true,
+        "geoObjectOpenBalloonOnClick": true,
+        "geoObjectPreset": "islands#violetDotIconWithCaption"
+      },
+      "params": {
+        "balloonContentLayoutClass" : "<div class='map-ajax-balloon' data-url='geomap/render/telecom-ru/wifi/0/{{ properties.itemId }}?template=geo/balloon/wifi'><i class='fa fa-refresh fa-spin'></i></div>",
+        "clusterBalloonItemContentLayout" : "<div class='map-ajax-balloon' data-url='geomap/render/telecom-ru/wifi/0/{{ properties.itemId }}?template=geo/balloon/wifi'><i class='fa fa-refresh fa-spin'></i></div>"
+      },
+      "query": {
+        "className": "wifi@telecom-ru",
+        "queryConditions": [],
+        "eagerLoading": {}
+      },
+      "handlers": {
+        "showBalloonOnHover": {
+          "delay": 300
+        }
+      }
+    }
+  ],
+  "filters" : [
+    {
+      "type" : "regions",
+      "osmIds" : [151223]
+    }
+  ]
+}

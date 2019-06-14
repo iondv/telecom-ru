@@ -1,0 +1,53 @@
+{
+  "code": "medicalOrg",
+  "order": 0,
+  "caption": "Медицинская организация",
+  "hint": "Медицинская организация",
+  "data": [
+    {
+      "type": "Point",
+      "locationAttribute": "geocoord",
+      "matchMode": "intersect",
+      "options": {
+        "clusterHasBalloon": true,
+        "clusterPreset": "islands#invertedDarkGreenClusterIcons",
+        "geoObjectHasBalloon": true,
+        "geoObjectOpenBalloonOnClick": true,
+        "geoObjectPreset": "islands#greenDotIconWithCaption"
+      },
+      "params": {
+        "balloonContentLayoutClass" : "<div class='map-ajax-balloon' data-url='geomap/render/telecom-ru/medicalOrg/0/{{ properties.itemId }}?template=geo/balloon/medicalOrg'><i class='fa fa-refresh fa-spin'></i></div>",
+        "clusterBalloonItemContentLayout" : "<div class='map-ajax-balloon' data-url='geomap/render/telecom-ru/medicalOrg/0/{{ properties.itemId }}?template=geo/balloon/medicalOrg'><i class='fa fa-refresh fa-spin'></i></div>"
+      },
+      "query": {
+        "className": "naselenniyPunkt@telecom-ru",
+        "queryConditions": [
+          {
+            "property": "zdravNP.medicalOrg",
+            "operation": 3,
+            "value": null,
+            "nestedConditions": []
+          }
+        ],
+        "eagerLoading": {
+          "info": [
+            "zdravNP.medicalOrg",
+            "zdravNP.medicalOrg.address"
+          ],
+          "map": []
+        }
+      },
+      "handlers": {
+        "showBalloonOnHover": {
+          "delay": 300
+        }
+      }
+    }
+  ],
+  "filters" : [
+    {
+      "type" : "regions",
+      "osmIds" : [151223]
+    }
+  ]
+}

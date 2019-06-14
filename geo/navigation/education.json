@@ -1,0 +1,32 @@
+{
+  "type": "data",
+  "order": 5,
+  "code": "education",
+  "caption": "Образование",
+  "hint": "Образование",
+  "layers": [
+    "education"
+  ],
+  "filter": [
+    {
+      "caption": "Образовательная организация",
+      "fields": [
+        {
+          "caption": "Список параметров для фильтра",
+          "type": "select",
+          "multiple": true,
+          "filteredClass": "education@telecom-ru",
+          "targetProp": "educationOrg.id",
+          "source": {
+            "className": "educationOrg@telecom-ru",
+            "valueProp": null,
+            "labelProp": null
+          },
+          "eagerLoading": [
+            "educationOrg"
+          ]
+        }
+      ]
+    }
+  ]
+}

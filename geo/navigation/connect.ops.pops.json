@@ -1,0 +1,53 @@
+{
+  "type": "data",
+  "order": 30,
+  "code": "connect.ops.pops",
+  "parent": "connect.ops",
+  "caption": "ПОПС",
+  "hint": "ПОПС в Хабаровском крае",
+  "layers": [
+    "pops"
+  ],
+  "filter": [
+    {
+      "caption": "Класс ОПС",
+      "fields": [
+        {
+          "caption": "Список параметров для фильтра",
+          "type": "select",
+          "multiple": true,
+          "filteredClass": "ops@telecom-ru",
+          "targetProp": "class.clas",
+          "source": {
+            "className": "charactosp@telecom-ru",
+            "valueProp": null,
+            "labelProp": null
+          },
+          "eagerLoading": [
+            "class"
+          ]
+        }
+      ]
+    },
+    {
+      "caption": "Почтамт",
+      "fields": [
+        {
+          "caption": "Список параметров для фильтра",
+          "type": "select",
+          "multiple": true,
+          "filteredClass": "ops@telecom-ru",
+          "targetProp": "pochtamp.id",
+          "source": {
+            "className": "pochtamt@telecom-ru",
+            "valueProp": null,
+            "labelProp": null
+          },
+          "eagerLoading": [
+            "pochtamp"
+          ]
+        }
+      ]
+    }
+  ]
+}

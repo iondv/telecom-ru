@@ -1,0 +1,14 @@
+{
+  "code": "internet.bshpd",
+  "orderNumber": 4,
+  "type": 1,
+  "caption": "Беспроводной ШПД",
+  "classname": "bshpd",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "pathChains": [],
+  "title": "",
+  "metaVersion": "2.0.0"
+}

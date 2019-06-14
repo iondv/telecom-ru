@@ -1,0 +1,32 @@
+<%
+let result = {
+    title: item.get('name'),
+    medicalOrg: ''
+};
+
+if (item.get('chislennost')) {
+    result.title += ' (' + item.property('chislennost').evaluate() + ' чел.)';
+}
+
+let itemZdrav = item.property('zdravNP').evaluate();
+if (itemZdrav) {
+    result.medicalOrg = 'есть';
+} else {
+    result.medicalOrg = 'отсутствует';
+}
+%>
+<ul class='balloon-attrlist' style='width:225px'>
+    <li><b class='block mb10'><%- result.title %></b></li>
+
+    <li>Медицинская организация:
+        <ul class='comma-list'>
+            <li><%- result.medicalOrg %></li>
+        </ul>
+    </li>
+
+</ul>
+<div>
+    <button type='button' class='btn btn-sm btn-primary map-modal-link' data-type='url'
+            data-url='geomap/render/telecom-ru/naselenniyPunkt/0/<%- item.id %>?template=geo/layers/zdrav'>Подробно
+    </button>
+</div>

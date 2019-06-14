@@ -1,0 +1,29 @@
+{
+  "name": "telecom-ru",
+  "description": "Реестр связи ХК",
+  "version": "1.7.4",
+  "homepage": "https://github.com/iondv/telecom-ru",
+  "bugs": {
+    "url": "https://github.com/iondv/telecom-ru/issues"
+  },
+  "engines": {
+    "ion": "3.0.5"
+  },
+  "license": "Apache License 2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iondv/telecom-ru.git"
+  },
+  "ionModulesDependencies": {
+    "ionadmin": "3.0.1",
+    "registry": "3.0.5",
+    "geomap": "2.0.1",
+    "dashboard": "1.1.7",
+    "report": "2.0.1"
+  },
+  "ionMetaDependencies": {},
+  "devDependencies": {
+    "excel-data": "^2.0.1",
+    "xlsx": "^0.8.0"
+  }
+}

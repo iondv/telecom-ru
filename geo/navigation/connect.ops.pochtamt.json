@@ -1,0 +1,33 @@
+{
+  "type": "data",
+  "order": 10,
+  "code": "connect.ops.pochtamt",
+  "parent": "connect.ops",
+  "caption": "Почтамты",
+  "hint": "Почтамты в Хабаровском крае",
+  "layers": [
+    "pochtamt"
+  ],
+  "filter": [
+    {
+      "caption": "Районы обслуживания",
+      "fields": [
+        {
+          "caption": "Список параметров для фильтра",
+          "type": "select",
+          "multiple": true,
+          "filteredClass": "pochtamt@telecom-ru",
+          "targetProp": "raionObslu.id",
+          "source": {
+            "className": "municipalnieObrazovaniya@telecom-ru",
+            "valueProp": null,
+            "labelProp": null
+          },
+          "eagerLoading": [
+            "raionObslu"
+          ]
+        }
+      ]
+    }
+  ]
+}

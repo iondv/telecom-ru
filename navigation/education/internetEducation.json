@@ -1,0 +1,23 @@
+{
+  "code": "internetEducation",
+  "orderNumber": 0,
+  "type": 1,
+  "title": "",
+  "caption": "Подключение к интернет",
+  "classname": "adminInternet",
+  "container": null,
+  "collection": null,
+  "url": null,
+  "hint": null,
+  "conditions": [
+    {
+          "property": "_class",
+          "operation": 0,
+          "value": ["educationOrg@telecom-ru"],
+          "nestedConditions": []
+    }
+  ],
+  "sorting": [],
+  "pathChains": [],
+  "metaVersion": "2.0.61.15690"
+}

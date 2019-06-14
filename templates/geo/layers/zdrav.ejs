@@ -1,0 +1,108 @@
+<%
+let result = {
+  title: item.get('name'),
+  subtitle: '',
+  admin: item.get('administration'),
+  managerAdmin: item.get('managerAdministration'),
+  medical: ''
+}
+
+if (item.get('supOktmo')) {
+  result.subtitle = item.property('supOktmo').evaluate() +'<br>';
+}
+if (item.get('chislennost')) {
+  result.subtitle += 'Численность '+ item.property('chislennost').evaluate() + ' чел.';
+}
+
+let itemZdrav = item.property('zdravNP').evaluate();
+if (itemZdrav) {
+  let coll = itemZdrav.property('medicalOrg').evaluate();
+  if (coll && coll.length) {
+    for (let elem of coll) {
+      if (elem.get('name')) {
+        result.medical += '<b class="bg-gray">' + elem.get('name') + '</b>' + '<br>';
+      }
+      if (elem.get('address')) {
+        result.medical += 'Адрес: ' + elem.property('address').evaluate() + '<br>';
+      }
+      if (elem.get('internet')) {
+        result.medical += 'Интернет: ' + elem.property('internet').evaluate() + '<br>';
+      }
+      result.medical += '<br>';
+    }
+  }
+}
+else {
+  result.medical += '<b>' + 'Отсутствует' + '</b>';
+}
+
+%>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Summary report</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0"/>
+  <link href="/geomap/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .bg-gray { background-color: #e6e6e6; }
+    .bold { font-weight: bold; }
+    .report { padding:10px 15px; }
+    .report-title { margin:0 0 15px 0; font-size: 22px; }
+    .report-subtitle { margin:0 0 0 0; font-size: 16px; color:#888; }
+    .report-section-title { margin:20px 0; font-size:13px; text-transform: uppercase; color:#aaa; border-bottom:1px solid #ccc; }
+    .report-list .row { margin:0; padding:5px 0; }
+    .report-list .row .col-xs-6 { padding:0 4px 0 4px; }
+    .report-list .report-item { margin-top:10px; }
+    .report-item-title { font-weight: bold; text-transform: uppercase; padding:5px 0; }
+    .btn-close { margin-top:20px; width:100%; background: transparent; border:1px solid #ccc; }
+  </style>
+  <script src="/geomap/vendor/jquery/jquery.min.js"></script>
+</head>
+<body>
+<!-- applications\khv-svyaz-info\templates\geo\layers\naselenniyPunkt -->
+<div id="report-zone" class="report">
+
+  <h1 class="report-title"><%- result.title %></h1>
+  <h3 class="report-subtitle"><%- result.subtitle %></h3>
+
+  <div class="report-section">
+      <h3 class="report-section-title">Администрация</h3>
+      <div class="report-section-body">
+        <div class="report-item">
+          <div class="bold"><%- result.admin %></div> 
+        </div>
+
+        <div class="report-item">
+          <div><%- result.managerAdmin %></div>
+        </div>
+      </div>
+    </div>
+
+  <div class="report-content">
+
+    <div class="report-section">
+      <h3 class="report-section-title">Здравоохранение</h3>
+      <div class="report-section-body">
+        <div class="report-list">
+          <div><%- result.medical %></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="report-footer">
+  <button class="btn btn-close">Закрыть</button>
+</div>
+</div>
+
+<script>
+  jQuery('.btn-close').click(function () {
+    parent.imodal.close();
+  });
+</script>
+</body>
+</html>

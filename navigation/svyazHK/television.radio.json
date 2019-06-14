@@ -1,0 +1,14 @@
+{
+  "code": "television.radio",
+  "orderNumber": 4,
+  "type": 1,
+  "caption": "Паспорта радио",
+  "classname": "radio",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "pathChains": [],
+  "title": "",
+  "metaVersion": "2.0.0"
+}

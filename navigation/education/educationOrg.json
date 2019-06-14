@@ -1,0 +1,16 @@
+{
+  "code": "educationOrg",
+  "orderNumber": 0,
+  "type": 1,
+  "title": "",
+  "caption": "Образовательная организация",
+  "classname": "educationOrg",
+  "container": null,
+  "collection": null,
+  "url": null,
+  "hint": null,
+  "conditions": [],
+  "sorting": [],
+  "pathChains": [],
+  "metaVersion": "2.0.61.15690"
+}

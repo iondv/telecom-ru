@@ -1,0 +1,44 @@
+<%
+let result = {
+  title: item.get('name'),
+  medicalOrg: ''
+};
+
+if (item.get('chislennost')) {
+  result.title += ' (' + item.property('chislennost').evaluate() + ' чел.)';
+}
+
+let itemZdrav = item.property('zdravNP').evaluate();
+if (itemZdrav) {
+  let coll = itemZdrav.property('medicalOrg').evaluate();
+  if (coll && coll.length) {
+    for (let elem of coll) {
+      if (elem.get('name')) {
+        result.medicalOrg += '<br>' + elem.get('name') + '<br>';
+      }
+      if (elem.get('address')) {
+        result.medicalOrg += ' (Адрес: ' + elem.property('address').evaluate() + ')' + '<br>';
+      }
+      result.medicalOrg += '<br>';
+    }
+  }
+}
+else {
+  result.medicalOrg += '(' + 'Отсутствует' + ')';
+}
+%>
+<ul class='balloon-attrlist' style='width:225px'>
+  <li><b class='block mb10'><%- result.title %></b></li>
+
+  <style>
+    .bg-gray { background-color: #e6e6e6; }
+    .report-list .row { margin:0; padding:5px 0; }
+    .report-list .report-item { margin-top:10px; }
+  </style>
+
+  <li>Медицинская организация:
+    <ul class='comma-list'>
+      <li><%- result.medicalOrg %></li>
+    </ul>
+  </li>
+</ul>

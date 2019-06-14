@@ -1,0 +1,13 @@
+{
+  "code": "spravochniki.punkPosSort",
+  "type": 1,
+  "caption": "Пункты почтовой сортировки",
+  "classname": "punkPosSort",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "pathChains": [],
+  "title": "",
+  "metaVersion": "2.0.0"
+}

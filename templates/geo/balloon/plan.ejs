@@ -1,0 +1,30 @@
+<%
+let result = {
+  title: item.get('name')
+}
+
+if (item.get('chislennost')) {
+  result.title += ' (' + item.property('chislennost').evaluate() + ' чел.)';
+}
+%>
+
+<ul class='balloon-attrlist' style='width:225px'>
+  <li><%- result.title %></li>
+</ul>
+<ul class='mt10'>
+  <%
+  let coll = item.property('plan').evaluate();
+  if (coll && coll.length) {
+    for (let elem of coll) {
+  %>
+  <li><a class='map-modal-link'
+           href='/registry/telecom-ru@passportObject/view/plan@telecom-ru/<%- elem.id %>?readonly=on&condensed=on'><%- elem.property('comment').evaluate() %>
+      <%
+    let prop = elem.get('datePlan');
+  if(prop !== null) {
+    prop = moment(prop).format("DD.MM.YYYY");
+      %><%- ' Срок реализации: '+prop %><% } %>
+  </a>
+  </li>
+  <% } } %>
+</ul>

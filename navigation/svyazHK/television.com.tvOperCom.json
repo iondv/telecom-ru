@@ -1,0 +1,14 @@
+{
+  "code": "television.com.tvOperCom",
+  "orderNumber": 2,
+  "type": 1,
+  "caption": "Операторы коммерческого ТВ",
+  "classname": "tvOperCom",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "pathChains": [],
+  "title": "",
+  "metaVersion": "2.0.0"
+}

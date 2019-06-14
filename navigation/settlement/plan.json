@@ -1,0 +1,25 @@
+{
+  "code": "plan",
+  "orderNumber": 11,
+  "type": 1,
+  "title": "",
+  "caption": "План развития",
+  "classname": "plan",
+  "container": null,
+  "collection": null,
+  "url": null,
+  "hint": null,
+  "conditions": [
+    {
+      "property": "archive",
+      "operation": 0,
+      "value": [
+        "false"
+      ],
+      "nestedConditions": []
+    }
+  ],
+  "sorting": [],
+  "pathChains": [],
+  "metaVersion": "2.0.61.15690"
+}

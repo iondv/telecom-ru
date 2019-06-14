@@ -1,0 +1,14 @@
+{
+  "code": "television.com.packSky",
+  "orderNumber": 6,
+  "type": 1,
+  "caption": "Пакеты спутникового ТВ",
+  "classname": "packSky",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "pathChains": [],
+  "title": "",
+  "metaVersion": "2.0.0"
+}

@@ -1,0 +1,34 @@
+{
+  "type": "data",
+  "order": 80,
+  "code": "zdrav.medicalOrg",
+  "parent": "zdrav",
+  "caption": "Медицинская организация",
+  "hint": "Медицинская организация",
+  "layers": [
+    "medicalOrg"
+  ],
+  "filter" : [
+    {
+      "caption" : "Медицинская организация",
+      "fields" : [
+        {
+          "caption": "Список параметров для фильтра",
+          "type": "select",
+          "multiple": false,
+          "filteredClass": "medicalOrg@telecom-ru",
+          "targetProp": "typeMedicalOrg.id",
+          "source": {
+            "className": "typeMedicalOrg@telecom-ru",
+            "valueProp": null,
+            "labelProp": null
+          },
+          "eagerLoading": [
+            "zdravNP.medicalOrg",
+            "zdravNP.medicalOrg.address"
+          ]
+        }
+      ]
+    }
+  ]
+}

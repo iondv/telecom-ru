@@ -1,0 +1,14 @@
+{
+  "code": "spravochniki",
+  "orderNumber": 60,
+  "type": 0,
+  "caption": "Справочники связи",
+  "classname": null,
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "pathChains": [],
+  "title": "",
+  "metaVersion": "2.0.0"
+}

@@ -1,0 +1,33 @@
+{
+  "type": "data",
+  "order": 20,
+  "code": "connect.uniKray.infomat",
+  "parent": "connect.uniKray",
+  "caption": "Инфомат",
+  "hint": "Инфомат",
+  "layers": [
+    "infomat"
+  ],
+  "filter": [
+    {
+      "caption": "Оператор",
+      "fields": [
+        {
+          "caption": "Список параметров для фильтра",
+          "type": "select",
+          "multiple": true,
+          "filteredClass": "infomat@telecom-ru",
+          "targetProp": "operator.id",
+          "source": {
+            "className": "operators@telecom-ru",
+            "valueProp": null,
+            "labelProp": null
+          },
+          "eagerLoading": [
+            "operator"
+          ]
+        }
+      ]
+    }
+  ]
+}

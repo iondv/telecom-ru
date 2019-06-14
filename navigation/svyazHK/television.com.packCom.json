@@ -1,0 +1,14 @@
+{
+  "code": "television.com.packCom",
+  "orderNumber": 3,
+  "type": 1,
+  "caption": "Пакеты коммерческого ТВ",
+  "classname": "packCom",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "pathChains": [],
+  "title": "",
+  "metaVersion": "2.0.0"
+}

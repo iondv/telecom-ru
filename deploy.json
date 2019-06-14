@@ -1,0 +1,716 @@
+{
+  "namespace": "telecom-ru",
+  "globals": {
+    "pageEndContent": "<div><img src=\"https://mc.iondv.com/watch/github/app/telecom-ru\" style=\"position:absolute; left:-9999px;\" alt=\"iondv-metrics\" /></div>",
+    "pageTitle": "ИС Реестр связи",
+    "moduleTitles": {
+      "registry": "Реестр",
+      "geomap": "Геоданные",
+      "report": "Отчеты"
+    }
+  },
+  "deployer": "built-in",
+  "modules": {
+    "registry": {
+      "globals": {
+        "eagerLoading": {
+          "*": {
+            "svyaz@telecom-ru": {
+              "item": [
+                "statsionar.stacionSvyaz",
+                "statsionar.typeTks",
+                "internet.typeShpd",
+                "internet.typeTKS",
+                "mobile.mobileStandart",
+                "other.wifi.operator",
+                "other.infomats",
+                "other.bsIskra",
+                "tv.digitalTV.multipl",
+                "tv.analogTV",
+                "tv.analogTV.name",
+                "radio.radioCanals",
+                "tvcom.operatortv.operator"
+              ],
+              "list": [
+                "mobile.mobileOperator",
+                "cetc",
+                "tv.analogTV.name.name",
+                "tv.analog",
+                "tv.cetc",
+                "tv.digitalTV.multipl.name",
+                "tvcom.operatortv.operator.name",
+                "tv.tvOperCom",
+                "tvAnalog"
+              ]
+            },
+            "mobile@telecom-ru": {
+              "list": [
+                "okato.okato"
+              ]
+            },
+            "statsionar@telecom-ru": {
+              "list": [
+                "okato.okato"
+              ]
+            },
+            "internet@telecom-ru": {
+              "list": [
+                "okato.okato"
+              ]
+            },
+            "bshpd@telecom-ru": {
+              "list": [
+                "other.okato.okato"
+              ]
+            },
+            "cetc@telecom-ru": {
+              "list": [
+                "tvlink.okato.okato"
+              ]
+            },
+            "tv@telecom-ru": {
+              "list": [
+                "okato.okato",
+                "digitalTV.multipl",
+                "tvlink.okato.okato",
+                "analogTV.name"
+              ],
+              "item": [
+                "digitalTV.place"
+              ]
+            },
+            "tvAnalog@telecom-ru": {
+              "list": [
+                "tvlink.okato.okato"
+              ],
+              "item": []
+            },
+            "tvComer@telecom-ru": {
+              "list": [
+                "okato.okato",
+                "operatortv.operator"
+              ],
+              "item": [
+                "operatortv.pack"
+              ]
+            },
+            "tvOperCom@telecom-ru": {
+              "list": [
+                "name.okato.okato"
+              ],
+              "item": []
+            },
+            "packCom@telecom-ru": {
+              "list": [
+                "tvOper.operator"
+              ]
+            },
+            "radioLink@telecom-ru": {
+              "list": [
+                "rlink.okato.okato"
+              ],
+              "item": []
+            },
+            "radio@telecom-ru": {
+              "list": [
+                "okato.okato",
+                "radioCanals.name"
+              ]
+            },
+            "taksofon@telecom-ru": {
+              "list": [
+                "other.okato.okato"
+              ],
+              "item": []
+            },
+            "infomat@telecom-ru": {
+              "list": [
+                "other.okato.okato"
+              ],
+              "item": []
+            },
+            "wifi@telecom-ru": {
+              "list": [
+                "other.okato.okato"
+              ],
+              "item": []
+            },
+            "ams@telecom-ru": {
+              "list": [
+                "naselenniyPunkt.okato"
+              ]
+            },
+            "other@telecom-ru": {
+              "list": [
+                "okato.okato",
+                "bsIskra.operator",
+                "infomats.operator"
+              ]
+            },
+            "trafficPattern@telecom-ru": {
+              "list": [
+                "section.inPoint",
+                "section.inPointSyn"
+              ]
+            },
+            "ops@telecom-ru": {
+              "item": []
+            },
+            "adminTerritory@telecom-ru": {
+              "list": [
+                "internet.operator",
+                "internet.typeTKS"
+              ],
+              "item": []
+            },
+            "zdrav@telecom-ru": {
+              "item": [
+                "medicalOrg",
+                "medicalOrg.internet",
+                "medicalOrg.internet.operator",
+                "medicalOrg.internet.typeTKS"
+              ]
+            },
+            "education@telecom-ru": {
+              "item": [
+                "educationOrg",
+                "educationOrg.internet",
+                "educationOrg.internet.operator",
+                "educationOrg.internet.typeTKS",
+                "educationOrg.address",
+                "educationOrg.type",
+                "educationOrg.state"
+              ]
+            },
+            "medicalOrg@telecom-ru": {
+              "item": []
+            },
+            "adminInternet@telecom-ru": {
+              "list": [
+                "admin.centNasPunkt",
+                "admin.centMunRaion"
+              ]
+            },
+            "naselenniyPunkt@telecom-ru": {
+              "list": [
+                "adminNasPunkt.centNasPunkt",
+                "adminNasPunkt.centMunRaion",
+                "adminMun.centMunRaion"
+              ]
+            },
+            "municipalnieObrazovaniya@telecom-ru": {
+              "exportItem": [
+                "oktmo_nasPunkta",
+                "oktmo_nasPunkta.name",
+                "oktmo_nasPunkta.svyaz.statsionar.stacionSvyaz",
+                "oktmo_nasPunkta.chislennost.chislennost",
+                "oktmo_nasPunkta.svyaz.internet.operatorwww.name",
+                "oktmo_nasPunkta.svyaz.internet.typeTKS.type",
+                "oktmo_nasPunkta.svyaz.mobile.mobileOperator.name",
+                "oktmo_nasPunkta.svyaz.mobile.mobileStandart.standart",
+                "oktmo_nasPunkta.svyaz.tv.kolvoAnal",
+                "oktmo_nasPunkta.svyaz.other.wifi.operator.name",
+                "oktmo_nasPunkta.svyaz.other.infomats.operator.name",
+                "oktmo_nasPunkta.svyaz.other.taksofon.operator.name",
+                "oktmo_nasPunkta.svyaz.tv.digitalTV.multipl.name",
+                "oktmo_nasPunkta.svyaz.radio.radioCanals.name.name"
+              ]
+            },
+            "tvOperSky@telecom-ru": {
+              "list": [
+                "name.okato.okato",
+                "operator.operator"
+              ]
+            },
+            "tvOperSkyItem@telecom-ru": {
+              "list": [
+                "name",
+                "name.name.okato.okato"
+              ]
+            }
+          }
+        },
+        "listSearchOptions": {
+          "adminInternet@telecom-ru": {
+            "*": {
+              "searchBy": [
+                "admin",
+                "operator",
+                "typeTKS"
+              ],
+              "refDepth": 2
+            }
+          },
+          "svyaz@telecom-ru": {
+            "*": {
+              "searchBy": [
+                "okato",
+                "mobile",
+                "internet",
+                "statsionar",
+                "tvcom"
+              ],
+              "refDepth": 2
+            }
+          },
+          "zdrav@telecom-ru": {
+            "*": {
+              "searchBy": [
+                "okato",
+                "medicalOrg"
+              ]
+            }
+          },
+          "mobile@telecom-ru": {
+            "*": {
+              "searchBy": [
+                "okato",
+                "mobileOperator",
+                "typeTks",
+                "mobileStandart"
+              ],
+              "refDepth": 2
+            }
+          },
+          "statsionar@telecom-ru": {
+            "*": {
+              "searchBy": [
+                "okato",
+                "operator",
+                "stacionSvyaz",
+                "typeTks"
+              ],
+              "refDepth": 2
+            }
+          },
+          "pkd@telecom-ru": {
+            "*": {
+              "searchBy": [
+                "other"
+              ],
+              "refDepth": 3
+            }
+          },
+          "internet@telecom-ru": {
+            "*": {
+              "searchBy": [
+                "okato",
+                "typeShpd",
+                "typeTKS",
+                "operatorwww"
+              ],
+              "refDepth": 2
+            }
+          },
+          "bshpd@telecom-ru": {
+            "*": {
+              "searchBy": [
+                "other",
+                "operator",
+                "clients"
+              ],
+              "refDepth": 3
+            }
+          },
+          "cetc@telecom-ru": {
+            "*": {
+              "searchBy": [
+                "tvlink",
+                "mult",
+                "dateOn",
+                "tvk",
+                "place"
+              ],
+              "refDepth": 3
+            }
+          },
+          "tv@telecom-ru": {
+            "*": {
+              "searchBy": [
+                "okato",
+                "digitalTV",
+                "analogTV"
+              ],
+              "refDepth": 3
+            }
+          },
+          "tvAnalog@telecom-ru": {
+            "*": {
+              "searchBy": [
+                "tvlink",
+                "name",
+                "numb",
+                "place"
+              ],
+              "refDepth": 3
+            }
+          },
+          "tvComer@telecom-ru": {
+            "*": {
+              "searchBy": [
+                "okato",
+                "operatortv",
+                "operatorSky"
+              ],
+              "refDepth": 2
+            }
+          },
+          "tvOperCom@telecom-ru": {
+            "*": {
+              "searchBy": [
+                "name",
+                "operator",
+                "typeTv",
+                "pack",
+                "numb"
+              ],
+              "refDepth": 3
+            }
+          },
+          "packCom@telecom-ru": {
+            "*": {
+              "searchBy": [
+                "tvOper",
+                "name",
+                "cost"
+              ],
+              "refDepth": 2
+            }
+          },
+          "radioLink@telecom-ru": {
+            "*": {
+              "searchBy": [
+                "rlink",
+                "name",
+                "place",
+                "numb"
+              ],
+              "refDepth": 3
+            }
+          },
+          "radio@telecom-ru": {
+            "*": {
+              "searchBy": [
+                "okato",
+                "radio",
+                "radioCanals"
+              ],
+              "refDepth": {
+                "okato": 2,
+                "radioCanals": 4
+              }
+            }
+          },
+          "ams@telecom-ru": {
+            "*": {
+              "searchBy": [
+                "naselenniyPunkt",
+                "operator",
+                "type",
+                "height"
+              ],
+              "refDepth": 2
+            }
+          },
+          "other@telecom-ru": {
+            "*": {
+              "searchBy": [
+                "okato",
+                "pkd",
+                "infomats",
+                "bsIskra",
+                "taksofon"
+              ],
+              "refDepth": 4
+            }
+          }
+        },
+        "statics": {
+          "geoicons": "applications/telecom-ru/icons"
+        },
+        
+        "defaultPath": "telecom-ru@svyaz",
+        "inlineForm": true,
+        "navigation": {
+          "namespaces": {
+            "telecom-ru": "Реестр связи"
+          },
+          "menus": {
+            "left": [],
+            "right": [],
+            "bottom": [],
+            "top": [
+              "telecom-ru@settlement",
+              "telecom-ru@svyazHK",
+              "telecom-ru@zdrav",
+              "telecom-ru@education"
+            ]
+          }
+        },
+        "templates": [
+          "applications/telecom-ru/publicSheets"
+        ],
+        "refShortViewDelay": 1000,
+        "di": {
+          "pmItemToDocx": {
+            "module": "modules/registry/export/itemToDocx",
+            "initMethod": "init",
+            "initLevel": 0,
+            "options": {
+              "tplDir": "applications/telecom-ru/export/item",
+              "injectors": []
+            }
+          },
+          "export": {
+            "options": {
+              "configs": {
+                "municipalnieObrazovaniya@telecom-ru": {
+                  "munObraz": {
+                    "caption": "Доступность услуг связи в районе",
+                    "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+                    "extension": "docx",
+                    "type": "item",
+                    "preprocessor": "ion://pmItemToDocx"
+                  }
+                }
+              }
+            }
+          },
+          "dataRepo": {
+            "module": "core/impl/datarepository/ionDataRepository",
+            "options": {
+              "dataSource": "ion://Db",
+              "metaRepository": "ion://metaRepo",
+              "fileStorage": "ion://fileStorage",
+              "imageStorage": "ion://imageStorage",
+              "log": "ion://sysLog",
+              "keyProvider": {
+                "name": "keyProvider",
+                "module": "core/impl/meta/keyProvider",
+                "options": {
+                  "metaRepo": "ion://metaRepo"
+                }
+              },
+              "maxEagerDepth": 4
+            }
+          }
+        }
+      }
+    },
+    "geomap": {
+      "globals": {
+        "ymapControls": {
+          "loader": {
+            "position": {
+              "left": 330,
+              "top": 45
+            }
+          },
+          "rulerControl": null,
+          "typeSelector": {
+            "float": "right"
+          },
+          "zoomControl": {
+            "position": {
+              "right": 10,
+              "top": 10
+            }
+          }
+        },
+        "panels": {
+          "rightInfo": {
+            "type": "rightInfo"
+          },
+          "navFloat": {
+            "type": "float",
+            "cssClass": "map-nav-float nav-tree",
+            "cssStyle": "left:10px; top:46px; width: 310px; max-height:calc(100% - 163px);"
+          },
+          "filterFloat": {
+            "type": "float",
+            "title": "Фильтры",
+            "cssClass": "map-filter-float collapsible",
+            "cssStyle": "left:10px; bottom:10px; width: 310px; max-height:calc(100% - 163px);"
+          }
+        },
+        "hidePageHead": false,
+        "hidePageSidebar": true,
+        "stroke": {
+          "panel": {
+            "name": "filterFloat"
+          },
+          "path": {
+              "strokeColor": "#00ff00",
+              "strokeWidth": 6,
+              "opacity": 0.8
+          },
+          "polygon": {
+              "fillColor": "#00ff00",
+              "fillOpacity": 0.1,
+              "strokeColor": "#00ff00",
+              "strokeOpacity": 0.9,
+              "strokeWidth": 3
+          }
+        },
+        "namespaces": {
+          "telecom-ru": "Реестр связи"
+        },
+        "templates": [
+          "applications/telecom-ru/templates"
+        ],
+        "statics": {
+          "geoicons": "applications/telecom-ru/icons"
+        },
+        
+        "start": [
+          135.07,
+          48.48
+        ],
+        "zoom": 10,
+        "regions": {
+          "enabled": true,
+          "osmIds": [
+            "151223"
+          ],
+          "panel": {
+            "name": "filterFloat"
+          },
+          "levels": {
+            "4": {
+              "strokeWidth": 3,
+              "strokeColor": "#7e8dab",
+              "strokeStyle": "solid",
+              "strokeOpacity": 1,
+              "fillColor": "#ffffff",
+              "fillOpacity": 0
+            },
+            "6": {
+              "strokeWidth": 1,
+              "strokeColor": "#6e93c6",
+              "strokeStyle": "solid",
+              "strokeOpacity": 1,
+              "fillColor": "#ffffff",
+              "fillOpacity": 0
+            }
+          },
+          "activeLevels": {
+            "6": {
+              "strokeWidth": 2,
+              "strokeColor": "#a183cd",
+              "strokeStyle": "solid",
+              "strokeOpacity": 0.8,
+              "fillColor": "#ffffff",
+              "fillOpacity": 0
+            }
+          }  
+        },
+        "defaultNav": {
+          "namespace": "telecom-ru",
+          "node": "naselenniyPunkt"
+        },
+        "search": {
+          "enabled": true,
+          "timeout": 1000,
+          "panel": {
+            "name": "navFloat"
+          }
+        },
+        "formFilter": {
+          "panel": {
+            "name": "filterFloat"
+          }
+        },
+        "di": {
+          "dataRepo": {
+            "module": "core/impl/datarepository/ionDataRepository",
+            "options": {
+              "dataSource": "ion://Db",
+              "metaRepository": "ion://metaRepo",
+              "fileStorage": "ion://fileStorage",
+              "imageStorage": "ion://imageStorage",
+              "log": "ion://sysLog",
+              "keyProvider": {
+                "name": "keyProvider",
+                "module": "core/impl/meta/keyProvider",
+                "options": {
+                  "metaRepo": "ion://metaRepo"
+                }
+              },
+              "maxEagerDepth": 3
+            }
+          }
+        }
+      },
+      "import": {
+        "src": "applications/telecom-ru/geo",
+        "namespace": "telecom-ru"
+      }
+    },
+    "report": {
+      "globals": {
+        "namespaces": {
+          "telecom-ru": "Реестр связи"
+        },
+        "metaNav": {
+          "left": []
+        },
+        "defaultNav": {
+          "namespace": "telecom-ru",
+          "mine": "summaryArea",
+          "report": "pivotArea"
+        },
+        "mineBuilders": {
+          "telecom-ru": {
+            "summaryArea": {
+              "internet": "mineBuilder",
+              "internetInAdministartion": "mineBuilder",
+              "population": "mineBuilder",
+              "station": "mineBuilder",
+              "mobile": "mineBuilder",
+              "television": "mineBuilder",
+              "radio": "mineBuilder",
+              "ops": "mineBuilder",
+              "serviceGrid": "mineBuilder",
+              "sector_svyaz": "mineBuilder",
+              "mobiles": "mineBuilder"
+            }
+          }
+        },
+        "statics": {
+          "geoicons": "applications/telecom-ru/icons"
+        },
+        
+        "di": {
+        }
+      },
+      "import": {
+        "src": "applications/telecom-ru/bi",
+        "namespace": "telecom-ru"
+      }
+    },
+    "ionadmin": {
+      "globals": {
+        "defaultPath": "ionadmin",
+        "securityParams": {
+          "resourceTypes": {
+            "*": {
+              "title": "Вне групп"
+            },
+            "n:::": {
+              "title": "Навигация"
+            },
+            "c:::": {
+              "title": "Классы"
+            },
+            "ionadmin:::": {
+              "title": "Администрирование"
+            },
+            "sys:::url": null
+          }
+        }
+      }
+    }
+  }
+}
+
+

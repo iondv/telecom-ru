@@ -1,0 +1,71 @@
+{
+  "code": "cetc",
+  "order": 0,
+  "caption": "ЦЭТВ",
+  "hint": "ЦЭТВ",
+  "data": [
+    {
+      "type": "Point",
+      "locationAttribute": "geocoord",
+      "matchMode": "intersect",
+      "options": {
+        "clusterHasBalloon": true,
+        "clusterPreset": "islands#invertedDarkGreenClusterIcons",
+        "geoObjectHasBalloon": true,
+        "geoObjectOpenBalloonOnClick": true,
+        "geoObjectPreset": "islands#greenDotIconWithCaption"
+      },
+      "params": {
+        "balloonContentLayoutClass" : "<div class='map-ajax-balloon' data-url='geomap/render/telecom-ru/cetc/0/{{ properties.itemId }}?template=geo/balloon/cetc'><i class='fa fa-refresh fa-spin'></i></div>",
+        "clusterBalloonItemContentLayout" : "<div class='map-ajax-balloon' data-url='geomap/render/telecom-ru/cetc/0/{{ properties.itemId }}?template=geo/balloon/cetc'><i class='fa fa-refresh fa-spin'></i></div>"
+      },
+      "query": {
+        "className": "naselenniyPunkt@telecom-ru",
+        "queryConditions": [
+          {
+            "property": "svyaz.tv",
+            "operation": 10,
+            "nestedConditions": [
+              {
+                "property": "digitalTV",
+                "operation": 10,
+                "value": null,
+                "nestedConditions": [
+                  {
+                    "property": "multipl",
+                    "operation": 3,
+                    "value": null,
+                    "nestedConditions": []
+                  },
+                  {
+                    "property": "dateOn",
+                    "operation": 3,
+                    "value": null,
+                    "nestedConditions": []
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "eagerLoading": {
+          "info": [
+            "svyaz.tv.digitalTV.multipl",
+            "chislennost"
+          ]
+        }
+      },
+      "handlers": {
+        "showBalloonOnHover": {
+          "delay": 300
+        }
+      }
+    }
+  ],
+  "filters" : [
+    {
+      "type" : "regions",
+      "osmIds" : [151223]
+    }
+  ]
+}

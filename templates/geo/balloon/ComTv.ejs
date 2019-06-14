@@ -1,0 +1,34 @@
+<%
+let result = {
+  title: item.get('name')
+}
+
+if (item.get('chislennost')) {
+  result.title += ' (' + item.property('chislennost').evaluate() + ' чел.)';
+}
+
+let itemSvyaz = item.property('svyaz').evaluate();
+if (itemSvyaz) {
+%>
+
+<ul class='balloon-attrlist' style='width:225px'>
+  <li><%- result.title %></li>
+</ul>
+<ul class='mt10'>
+    <%
+      let coll = itemSvyaz.property('tvcom').evaluate();
+    if (coll && coll.length) {
+      for (let elem of coll) {
+      let collTv = elem.property('operatortv').evaluate();
+      if (collTv && collTv.length) {
+        for (let atv of collTv) {
+      let op = atv.property('operator').evaluate();
+
+      let tp = atv.property('typeTv').getDisplayValue();
+      if (atv.get('operator')) {
+    %>
+  <li><a class='map-modal-link' href='/registry/telecom-ru@comerTv/view/tvOperCom@telecom-ru/<%- atv.id %>?readonly=on&condensed=on'>
+      <%- op + ', ' + tp %>
+    </a></li>
+  <% } } } } } } %>
+</ul>

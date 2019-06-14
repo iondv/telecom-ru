@@ -1,0 +1,41 @@
+{
+  "code": "infomat",
+  "order": 0,
+  "caption": "Инфомат",
+  "hint": "Инфомат",
+  "data": [
+    {
+      "type": "Point",
+      "locationAttribute": "geo",
+      "matchMode": "intersect",
+      "options": {
+        "clusterHasBalloon": true,
+        "clusterDisableClickZoom" : false,
+        "clusterPreset": "islands#invertedDarkGreenClusterIcons",
+        "geoObjectHasBalloon": true,
+        "geoObjectOpenBalloonOnClick": true,
+        "geoObjectPreset": "islands#greenDotIconWithCaption"
+      },
+      "params": {
+        "balloonContentLayoutClass" : "<div class='map-ajax-balloon' data-url='geomap/render/telecom-ru/infomat/0/{{ properties.itemId }}?template=geo/balloon/infomat'><i class='fa fa-refresh fa-spin'></i></div>",
+        "clusterBalloonItemContentLayout" : "<div class='map-ajax-balloon' data-url='geomap/render/telecom-ru/infomat/0/{{ properties.itemId }}?template=geo/balloon/infomat'><i class='fa fa-refresh fa-spin'></i></div>"
+      },
+      "query": {
+        "className": "infomat@telecom-ru",
+        "queryConditions": [],
+        "eagerLoading": {}
+      },
+      "handlers": {
+        "showBalloonOnHover": {
+          "delay": 300
+        }
+      }
+    }
+  ],
+  "filters" : [
+    {
+      "type" : "regions",
+      "osmIds" : [151223]
+    }
+  ]
+}

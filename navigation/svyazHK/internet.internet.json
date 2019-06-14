@@ -1,0 +1,14 @@
+{
+  "code": "internet.internet",
+  "orderNumber": 2,
+  "type": 1,
+  "caption": "Проводной ШПД",
+  "classname": "internet",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "pathChains": [],
+  "title": "",
+  "metaVersion": "2.0.0"
+}

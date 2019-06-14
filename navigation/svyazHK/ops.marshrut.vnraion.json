@@ -1,0 +1,14 @@
+{
+  "code": "ops.marshrut.vnraion",
+  "orderNumber": 2,
+  "type": 1,
+  "caption": "Внутрирайонные маршруты",
+  "classname": "vnutRaion",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "pathChains": [],
+  "title": "",
+  "metaVersion": "2.0.0"
+}

@@ -1,0 +1,14 @@
+{
+  "code": "passportObject.vidTransOPS",
+  "orderNumber": 16,
+  "type": 1,
+  "caption": "Доставки до почтовых отделений",
+  "classname": "vidTransOPS",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "pathChains": [],
+  "title": "",
+  "metaVersion": "2.0.0"
+}

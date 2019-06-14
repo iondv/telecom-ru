@@ -1,0 +1,14 @@
+{
+  "code": "television.com.tvOperSky",
+  "orderNumber": 4,
+  "type": 1,
+  "caption": "Спутниковое ТВ",
+  "classname": "tvOperSky",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "pathChains": [],
+  "title": "",
+  "metaVersion": "2.0.0"
+}

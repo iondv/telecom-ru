@@ -1,0 +1,14 @@
+{
+  "code": "ops",
+  "orderNumber": 6,
+  "type": 0,
+  "caption": "Почта",
+  "classname": null,
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "pathChains": [],
+  "title": "",
+  "metaVersion": "2.0.0"
+}

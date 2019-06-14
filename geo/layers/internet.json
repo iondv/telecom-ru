@@ -1,0 +1,58 @@
+{
+  "code": "internet",
+  "order": 1,
+  "caption": "Проводной ШПД",
+  "hint": "Проводной ШПД",
+  "data": [
+    {
+      "type": "Point",
+      "locationAttribute": "geocoord",
+      "matchMode": "intersect",
+      "options": {
+        "clusterHasBalloon": true,
+        "clusterPreset": "islands#invertedNightClusterIcons",
+        "geoObjectHasBalloon": true,
+        "geoObjectOpenBalloonOnClick": true,
+        "geoObjectPreset": "islands#darkBlueDotIconWithCaption"
+      },
+      "params": {
+        "balloonContentLayoutClass" : "<div class='map-ajax-balloon' data-url='geomap/render/telecom-ru/internet/0/{{ properties.itemId }}?template=geo/balloon/internet'><i class='fa fa-refresh fa-spin'></i></div>",
+        "clusterBalloonItemContentLayout" : "<div class='map-ajax-balloon' data-url='geomap/render/telecom-ru/internet/0/{{ properties.itemId }}?template=geo/balloon/internet'><i class='fa fa-refresh fa-spin'></i></div>"
+      },
+      "query": {
+        "className": "naselenniyPunkt@telecom-ru",
+        "queryConditions": [
+          {
+            "property": "svyaz.internet",
+            "operation": 10,
+            "nestedConditions": [
+              {
+                "property": "operatorwww",
+                "operation": 3,
+                "value": null,
+                "nestedConditions": []
+              }
+            ]
+          }
+        ],
+        "eagerLoading": {
+          "info": [
+            "svyaz.internet.operatorwww",
+            "chislennost"
+          ]
+        }
+      },
+      "handlers": {
+        "showBalloonOnHover": {
+          "delay": 300
+        }
+      }
+    }
+  ],
+  "filters" : [
+    {
+      "type" : "regions",
+      "osmIds" : [151223]
+    }
+  ]
+}

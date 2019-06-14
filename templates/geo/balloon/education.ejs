@@ -1,0 +1,32 @@
+<%
+let result = {
+    title: item.get('name'),
+    educationOrg: ''
+};
+
+if (item.get('chislennost')) {
+    result.title += ' (' + item.property('chislennost').evaluate() + ' чел.)';
+}
+
+let itemEducation = item.property('education').evaluate();
+if (itemEducation) {
+    result.educationOrg = 'есть';
+} else {
+    result.educationOrg = 'отсутствует';
+}
+%>
+<ul class='balloon-attrlist' style='width:225px'>
+    <li><b class='block mb10'><%- result.title %></b></li>
+
+    <li>Образовательная организация:
+        <ul class='comma-list'>
+            <li><%- result.educationOrg %></li>
+        </ul>
+    </li>
+
+</ul>
+<div>
+    <button type='button' class='btn btn-sm btn-primary map-modal-link' data-type='url'
+            data-url='geomap/render/telecom-ru/naselenniyPunkt/0/<%- item.id %>?template=geo/layers/education'>Подробно
+    </button>
+</div>

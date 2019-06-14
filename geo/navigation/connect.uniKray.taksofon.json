@@ -1,0 +1,33 @@
+{
+  "type": "data",
+  "order": 10,
+  "code": "connect.uniKray.taksofon",
+  "parent": "connect.uniKray",
+  "caption": "Таксофон",
+  "hint": "Таксофон",
+  "layers": [
+    "taksofon"
+  ],
+  "filter": [
+    {
+      "caption": "Оператор",
+      "fields": [
+        {
+          "caption": "Список параметров для фильтра",
+          "type": "select",
+          "multiple": true,
+          "filteredClass": "taksofon@telecom-ru",
+          "targetProp": "operator.id",
+          "source": {
+            "className": "operators@telecom-ru",
+            "valueProp": null,
+            "labelProp": null
+          },
+          "eagerLoading": [
+            "operator"
+          ]
+        }
+      ]
+    }
+  ]
+}

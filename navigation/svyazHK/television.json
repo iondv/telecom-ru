@@ -1,0 +1,14 @@
+{
+  "code": "television",
+  "orderNumber": 5,
+  "type": 0,
+  "caption": "Теле и Радиовещание",
+  "classname": null,
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "pathChains": [],
+  "title": "",
+  "metaVersion": "2.0.0"
+}

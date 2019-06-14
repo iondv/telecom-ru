@@ -1,0 +1,16 @@
+{
+  "title": "Геоданные реестра",
+  "code": "layers",
+  "nodes": [
+    "naselenniyPunkt",
+    "connect",
+    "construction",
+    "education",
+    "zdrav",
+    "industry",
+    "transport"
+  ],
+  "template" : null,
+  "panel" : "navFloat",
+  "view": "layers"
+}

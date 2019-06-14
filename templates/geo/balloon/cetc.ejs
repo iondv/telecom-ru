@@ -1,0 +1,30 @@
+<%
+let result = {
+  title: item.get('name')
+}
+
+if (item.get('chislennost')) {
+  result.title += ' (' + item.property('chislennost').evaluate() + ' чел.)';
+}
+
+let itemSvyaz = item.property('svyaz').evaluate();
+if (itemSvyaz) {
+%>
+
+<ul class='balloon-attrlist' style='width:225px'>
+  <li><%- result.title %></li>
+</ul>
+<ul class='mt10'>
+    <%
+      let coll = itemSvyaz.property('tv').evaluate();
+    if (coll && coll.length) {
+      for (let elem of coll) {
+      let collDtv = elem.property('digitalTV').evaluate();
+      if (collDtv && collDtv.length) {
+        for (let dtv of collDtv) {
+        %>
+        <li><a class='map-modal-link' href='/registry/telecom-ru@cetv/view/cetc@telecom-ru/<%- dtv.id %>?readonly=on&condensed=on'>
+          <%- dtv.property('multipl').getDisplayValue() %>
+        </a></li>
+  <% } } } } } %>
+</ul>

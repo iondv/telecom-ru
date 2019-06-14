@@ -1,0 +1,33 @@
+{
+  "type": "data",
+  "order": 20,
+  "code": "connect.mobileKray.3gMobileKray",
+  "parent": "connect.mobileKray",
+  "caption": "3G",
+  "hint": "Наличие мобильной связи 3G в населенных пунктах Хабаровского края",
+  "layers": [
+    "3gMobileKray"
+  ],
+  "filter": [
+    {
+      "caption": "Оператор",
+      "fields": [
+        {
+          "caption": "Список параметров для фильтра",
+          "type": "select",
+          "multiple": true,
+          "filteredClass": "naselenniyPunkt@telecom-ru",
+          "targetProp": "svyaz.mobile3G.mobileOperator.id",
+          "source": {
+            "className": "operators@telecom-ru",
+            "valueProp": null,
+            "labelProp": null
+          },
+          "eagerLoading": [
+            "svyaz.mobile3G.mobileOperator"
+          ]
+        }
+      ]
+    }
+  ]
+}

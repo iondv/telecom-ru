@@ -1,0 +1,14 @@
+{
+  "code": "passportObject.other",
+  "orderNumber": 17,
+  "type": 1,
+  "caption": "Прочие паспорта",
+  "classname": "other",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "pathChains": [],
+  "title": "",
+  "metaVersion": "2.0.0"
+}

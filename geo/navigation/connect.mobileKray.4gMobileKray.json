@@ -1,0 +1,33 @@
+{
+  "type": "data",
+  "order": 30,
+  "code": "connect.mobileKray.4gMobileKray",
+  "parent": "connect.mobileKray",
+  "caption": "4G",
+  "hint": "Наличие мобильной связи 4G в населенных пунктах Хабаровского края",
+  "layers": [
+    "4gMobileKray"
+  ],
+  "filter": [
+    {
+      "caption": "Оператор",
+      "fields": [
+        {
+          "caption": "Список параметров для фильтра",
+          "type": "select",
+          "multiple": true,
+          "filteredClass": "naselenniyPunkt@telecom-ru",
+          "targetProp": "svyaz.mobile4G.mobileOperator.id",
+          "source": {
+            "className": "operators@telecom-ru",
+            "valueProp": null,
+            "labelProp": null
+          },
+          "eagerLoading": [
+            "svyaz.mobile4G.mobileOperator"
+          ]
+        }
+      ]
+    }
+  ]
+}

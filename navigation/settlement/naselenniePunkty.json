@@ -1,0 +1,25 @@
+{
+  "code": "naselenniePunkty",
+  "orderNumber": 0,
+  "type": 1,
+  "title": "",
+  "caption": "Населенные пункты",
+  "classname": "naselenniyPunkt",
+  "container": null,
+  "collection": null,
+  "url": null,
+  "hint": null,
+  "conditions": [],
+  "sorting": [],
+  "eagerLoading": {
+    "item": {
+      "naselenniyPunkt": [
+        "adminMun.linkMunRaion",
+        "adminMun.linkNasPunkt"
+      ],
+      "municipalnieObrazovaniya": ["name"]
+    }
+  },
+  "pathChains": [],
+  "metaVersion": "2.0.61.15690"
+}

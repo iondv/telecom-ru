@@ -1,0 +1,14 @@
+{
+  "code": "television.efi.cetc",
+  "orderNumber": 1,
+  "type": 1,
+  "caption": "Цифровое эфирное ТВ",
+  "classname": "cetc",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "pathChains": [],
+  "title": "",
+  "metaVersion": "2.0.0"
+}

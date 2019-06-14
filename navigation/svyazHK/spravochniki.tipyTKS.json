@@ -1,0 +1,13 @@
+{
+  "code": "spravochniki.tipyTKS",
+  "type": 1,
+  "caption": "Типы ТКС",
+  "classname": "TypeTKS",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "pathChains": [],
+  "title": "",
+  "metaVersion": "2.0.0"
+}

@@ -1,0 +1,26 @@
+<%
+let result = {
+  title: item.get('name'),
+  index: item.get('postIndex'),
+  opsType: item.property('gops').getDisplayValue(),
+  opsTowns: '',
+  address: item.get('adress'),
+  phone: item.get('tel')
+}
+
+let coll = item.property('naselenniyPunkt').evaluate();
+if (coll && coll.length) {
+  for (let elem of coll) {
+    result.opsTowns += ' ' + elem.property('okato').evaluate();
+  }
+} else {
+  result.opsTowns = 'нет';
+}
+
+%>
+
+<ul class='balloon-attrlist' style='width:225px'>
+
+  <li><%- result.title %> <%- result.index %>. Тип: <%- result.opsType %>. Адрес: <%- result.address %> Телефон ОПС: <%- result.phone %> Обслуживаемые населенные пункты: <%- result.opsTowns %></li>
+
+</ul><div><button type='button' class='btn btn-sm btn-primary map-modal-link' data-type='url' data-url='geomap/render/telecom-ru/ops/0/<%- item.id %>?template=geo/layers/ops'>Подробно</button></div>

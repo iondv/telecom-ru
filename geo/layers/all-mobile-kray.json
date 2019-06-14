@@ -1,0 +1,73 @@
+{
+  "code": "allMobileKray",
+  "order": 0,
+  "caption": "Мобильная связь",
+  "hint": "Наличие мобильной связи в населенных пунктах Хабаровского края",
+  "data": [
+    {
+      "type": "Point",
+      "locationAttribute": "geocoord",
+      "matchMode": "intersect",
+      "options": {
+        "clusterHasBalloon": true,
+        "clusterPreset": "islands#invertedDarkOrangeClusterIcons",
+        "geoObjectHasBalloon": true,
+        "geoObjectOpenBalloonOnClick": true,
+        "geoObjectPreset": "islands#darkOrangeDotIconWithCaption"
+      },
+      "params": {
+        "balloonContentLayoutClass": "<div class='map-ajax-balloon' data-url='geomap/render/telecom-ru/allMobileKray/0/{{ properties.itemId }}?template=geo/balloon/allMobile'><i class='fa fa-refresh fa-spin'></i></div>",
+        "clusterBalloonItemContentLayout": "<div class='map-ajax-balloon' data-url='geomap/render/telecom-ru/allMobileKray/0/{{ properties.itemId }}?template=geo/balloon/allMobile'><i class='fa fa-refresh fa-spin'></i></div>"
+      },
+      "query": {
+        "className": "naselenniyPunkt@telecom-ru",
+        "queryConditions": [
+          {
+            "property": "svyaz.mobile",
+            "operation": 10,
+            "nestedConditions": [
+              {
+                "property": "mobileStandart",
+                "operation": 10,
+                "value": null,
+                "nestedConditions": [
+                  {
+                    "property": "standart",
+                    "operation": 9,
+                    "value": [
+                      "2G",
+                      "3G",
+                      "4G"
+                    ],
+                    "nestedConditions": []
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "eagerLoading": {
+          "info": [
+            "chislennost",
+            "svyaz.mobile.mobileOperator",
+            "svyaz.mobile.mobileStandart"
+          ],
+          "map": []
+        }
+      },
+      "handlers": {
+        "showBalloonOnHover": {
+          "delay": 300
+        }
+      }
+    }
+  ],
+  "filters": [
+    {
+      "type": "regions",
+      "osmIds": [
+        151223
+      ]
+    }
+  ]
+}

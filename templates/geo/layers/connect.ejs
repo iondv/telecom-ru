@@ -1,0 +1,423 @@
+<%
+let result = {
+  title: item.get('name'),
+  subtitle: '',
+  admin: item.get('administration'),
+  managerAdmin: item.get('managerAdministration'),
+  statsionar: '',
+  internet: '',
+  mobile: '',
+  bsIskra: '',
+  digitalTV: '',
+  analogTV: '',
+  comerTV: '',
+  radio: '',
+  taksofon: '',
+  infomat: '',
+  ops: '',
+  plan: ''
+};
+
+if (item.get('supOktmo')) {
+  result.subtitle = item.property('supOktmo').evaluate() +'<br>';
+}
+if (item.get('chislennost')) {
+  result.subtitle += 'Численность '+ item.property('chislennost').evaluate() + ' чел.';
+}
+
+let itemSvyaz = item.property('svyaz').evaluate();
+if (itemSvyaz) {
+  let coll = itemSvyaz.property('statsionar').evaluate();
+  if (coll && coll.length) {
+    let elem = coll[0];
+    let operLink = elem.property('operator').evaluate();
+    if (operLink) {
+      const operUrl = operLink.property('urlweb').evaluate();
+      if (operUrl) {
+        if (operUrl.indexOf('http') === 0) {
+          result.statsionar += '<a href=' + operUrl + '>' + operLink + '</a>';
+        } else {
+          result.statsionar += '<a href=http://' + operUrl + '>' + operLink + '</a>';
+        }
+      } else { 
+        result.statsionar += operLink;
+      }
+    }
+    if (elem.get('stacionSvyaz') === "a") {
+      result.statsionar += ', АТС – цифровая';
+    }
+    if (elem.get('stacionSvyaz') === "b") {
+      result.statsionar += ', АТС – аналоговая';
+    }
+    let collType = elem.property('typeTks').evaluate();
+    if (collType && collType.length) {
+      result.statsionar += ", ТКС - " + collType;
+    }
+  } else {
+    result.statsionar = 'нет';
+  }
+
+  coll = itemSvyaz.property('internet').evaluate();
+  if (coll && coll.length) {
+    for (let elem of coll) {
+      let prop = elem.property('operatorwww').evaluate();
+      if (prop) {
+        const operUrl = prop.property('urlweb').evaluate();
+        if (operUrl) {
+          if (operUrl.indexOf('http') === 0) {
+            result.internet += '<a href=' + operUrl + '>' + prop + '</a>';
+          } else {
+            result.internet += '<a href=http://' + operUrl + '>' + prop + '</a>';
+          }
+        } else { 
+          result.internet += prop;
+        }
+      }
+      prop = elem.property('typeShpd').evaluate();
+      if (prop && prop.length) {
+        result.internet += ', ' + prop;
+      }
+      prop = elem.property('typeTKS').evaluate();
+      if (prop && prop.length) {
+        result.internet += ', ТКС - ' + prop;
+      }
+      result.internet += '<br>';
+    }
+  } else {
+    result.internet = 'нет';
+  }
+
+  coll = itemSvyaz.property('mobile').evaluate();
+  if (coll && coll.length) {
+    let mobileTempColl = '';
+    for (let elem of coll) {
+      let mobileTempItem = '';
+      let prop = elem.property('mobileStandart').evaluate();
+      if (prop && prop.length) {
+        mobileTempItem += ' - ' + prop;
+      }
+      prop = elem.property('mobileOperator').evaluate();
+      if (prop) {
+        const operUrl = prop.property('urlweb').evaluate();
+        if (operUrl && mobileTempItem != ' - нет') {
+          if (operUrl.indexOf('http') === 0) {
+            result.mobile += '<a href=' + operUrl + '>' + prop + '</a>' + mobileTempItem + '<br>';
+          } else {
+            result.mobile += '<a href=http://' + operUrl + '>' + prop + '</a>' + mobileTempItem + '<br>';
+          }
+        } else { 
+          result.mobile += prop + mobileTempItem + '<br>' ;
+        }
+      }
+    }
+    if (mobileTempColl != '') {
+      result.mobile += mobileTempColl;
+    }
+  }
+
+  coll = itemSvyaz.property('other').evaluate();
+  if (coll && coll.length && coll[0].property('bsIskra').evaluate()) {
+    for (let elem of coll[0].property('bsIskra').evaluate()) {
+      let prop = elem.property('operator').evaluate();
+      if (prop) {
+        const operUrl = prop.property('urlweb').evaluate();
+        if (operUrl) {
+          if (operUrl.indexOf('http') === 0) {
+            result.bsIskra += '<a href=' + operUrl + '>' + prop + '</a>';
+          } else {
+            result.bsIskra += '<a href=http://' + operUrl + '>' + prop + '</a>';
+          }
+        } else { 
+          result.bsIskra += prop;
+        }
+      } else {
+        result.bsIskra = 'нет';
+      }
+      result.bsIskra += '<br>';
+    }
+  } else {
+    result.bsIskra = 'нет';
+  }
+
+  let tvColl = itemSvyaz.property('tv').evaluate();
+  if (tvColl && tvColl.length) {
+    let digTv = tvColl[0].property('digitalTV').evaluate();
+    if (digTv && digTv.length) {
+      for (let elem of digTv) {
+        let mult = elem.property('multipl').evaluate();
+        if (mult) {
+          result.digitalTV += mult.property('name').evaluate();
+        }
+        result.digitalTV += '<br>';
+      }
+    } else {
+      result.digitalTV = 'нет';
+    }
+  } else {
+    result.digitalTV = 'нет';
+}
+
+  coll = itemSvyaz.property('tv').evaluate();
+  if (coll && coll.length) {
+    coll = coll[0].property('analogTV').evaluate();
+    if (coll && coll.length) {
+      for (let elem of coll) {
+        let prop = elem.property('name').evaluate();
+        if (prop) {
+          result.analogTV += prop;
+        }
+        result.analogTV += '<br>';
+      }
+    } else {
+      result.analogTV = 'нет';
+    }
+  } else {
+    result.analogTV = 'нет';
+  }
+
+  coll = itemSvyaz.property('tvcom').evaluate();
+  if (coll && coll.length) {
+    coll = coll[0].property('operatortv').evaluate();
+    if (coll && coll.length) {
+      for (let elem of coll) {
+        let prop = elem.property('operator').evaluate();
+        if (prop) {
+          result.comerTV += prop;
+        }
+        result.comerTV += '<br>';
+      }
+    } else {
+      result.comerTV = 'нет';
+    }
+  } else {
+    result.comerTV = 'нет';
+  }
+
+  coll = itemSvyaz.property('radio').evaluate();
+  if (coll && coll.length) {
+    coll = coll[0].property('radioCanals').evaluate();
+    if (coll && coll.length) {
+      let radioTempColl = '';
+      for (let elem of coll) {
+        let radioTempItem = '';
+        let prop = elem.property('numb').evaluate();
+        if (prop && prop.length) {
+          radioTempItem += ' (' + prop + ' МГц)';
+        }
+        prop = elem.property('name').evaluate();
+        if (prop && radioTempItem != ' (нет)') {
+          radioTempColl += prop + radioTempItem + '<br>';
+        }
+      }
+      if (radioTempColl != '') {
+        result.radio += radioTempColl;
+      } else {
+        result.radio += 'нет';
+      }
+    } else {
+      result.radio = 'нет';
+    }
+  } else {
+    result.radio = 'нет';
+  }
+
+  coll = itemSvyaz.property('other').evaluate();
+  if (coll && coll.length && coll[0].property('taksofon').evaluate()) {
+    coll = coll[0].property('taksofon').evaluate();
+    result.taksofon = coll.length + ' шт.';
+  } else {
+    result.taksofon = 'нет';
+  }
+
+  coll = itemSvyaz.property('other').evaluate();
+  if (coll && coll.length && coll[0].property('infomats').evaluate()) {
+    coll = coll[0].property('infomats').evaluate();
+    result.infomat = coll.length + ' шт.';
+  } else {
+    result.infomat = 'нет';
+  }
+
+  coll = itemSvyaz.property('ops').evaluate();
+  if (coll && coll.length) {
+    for (let elem of coll) {
+      if (elem.get('postIndex')) {
+        result.ops += elem.get('postIndex') + '. '
+      }
+      switch (elem.get('gops')) {
+        case 'a':
+          result.ops += 'Тип: ГОПС. ';
+          break;
+        case 'b':
+          result.ops += 'Тип: СОПС. ';
+          break;
+        case 'c':
+          result.ops += 'Тип: ПОПС. ';
+          break;
+        case 'd':
+          result.ops += 'Тип: Почтамт. ';
+          break;
+        case 'msc':
+          result.ops += 'Тип: МСЦ. ';
+          break;
+      }
+      if (elem.get('adress')) {
+        result.ops += 'Адрес: ' + elem.get('adress') + '. ';
+      }
+      if (elem.get('tel')) {
+        result.ops += 'Телефон ОПС: ' + elem.get('tel');
+      }
+      result.ops += '<br>';
+    }
+  } else {
+    result.ops = 'нет';
+  }
+}
+
+coll = item.property('plan').evaluate();
+if (coll && coll.length) {
+  for (let elem of coll) {
+    let prop = elem.property('comment').evaluate();
+    result.plan += prop;
+    prop = elem.get('datePlan');
+    if(prop !== null) {
+      prop = moment(prop).format("DD.MM.YYYY");
+      result.plan += ' Срок реализации: ' + prop;
+    }
+    result.plan += '<br>';
+  }
+} else {
+  result.plan = 'нет';
+}
+
+%>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Summary report</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0"/>
+  <link href="/geomap/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .bg-gray { background-color: #e6e6e6; }
+    .bold { font-weight: bold; }
+    .report { padding:10px 15px; }
+    .report-title { margin:0 0 15px 0; font-size: 22px; }
+    .report-subtitle { margin:0 0 0 0; font-size: 16px; color:#888; }
+    .report-section-title { margin:20px 0; font-size:13px; text-transform: uppercase; color:#aaa; border-bottom:1px solid #ccc; }
+    .report-list .row { margin:0; padding:5px 0; }
+    .report-list .row .col-xs-6 { padding:0 4px 0 4px; }
+    .report-list .report-item { margin-top:10px; }
+    .report-item-title { font-weight: bold; text-transform: uppercase; padding:5px 0; }
+    .btn-close { margin-top:20px; width:100%; background: transparent; border:1px solid #ccc; }
+  </style>
+  <script src="/geomap/vendor/jquery/jquery.min.js"></script>
+</head>
+<body>
+  <!-- applications\khv-svyaz-info\templates\geo\layers\naselenniyPunkt -->
+  <div id="report-zone" class="report">
+
+    <h1 class="report-title"><%- result.title %></h1>
+    <h3 class="report-subtitle"><%- result.subtitle %></h3>
+
+    <div class="report-section">
+      <h3 class="report-section-title">Администрация</h3>
+      <div class="report-section-body">
+        <div class="report-item">
+          <div class="bold"><%- result.admin %></div> 
+        </div>
+
+        <div class="report-item">
+          <div><%- result.managerAdmin %></div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="report-content"></div>
+
+      <div class="report-section">
+        <h3 class="report-section-title">Связь</h3>
+        <div class="report-section-body">
+          <div class="report-list">
+
+            <div class="report-item row bg-gray">
+              <div class="col-xs-6 bold">Стационарная телефония</div>
+              <div class="col-xs-6"><%- result.statsionar %></div>
+            </div>
+            <div class="report-item row">
+              <div class="col-xs-6 bold">Мобильная связь</div>
+              <div class="col-xs-6"><%- result.mobile %></div>
+            </div>
+
+            <div class="report-item">
+              <div class="report-item-title bg-gray">Доступ к Интернет</div>
+              <div class="row">
+                <div class="col-xs-6">Проводной</div>
+                <div class="col-xs-6"><%- result.internet %></div>
+              </div>
+              <div class="row bg-gray">
+                <div class="col-xs-6">БШПД</div>
+                <div class="col-xs-6"><%- result.bsIskra %></div>
+              </div>
+            </div>
+
+            <div class="report-item">
+              <div class="report-item-title">Телевидение</div>
+              <div class="row bg-gray">
+                <div class="col-xs-6">Цифровое</div>
+                <div class="col-xs-6"><%- result.digitalTV %></div>
+              </div>
+              <div class="row">
+                <div class="col-xs-6">Аналоговое</div>
+                <div class="col-xs-6"><%- result.analogTV %></div>
+              </div>
+              <div class="row bg-gray">
+                <div class="col-xs-6">Кабельное</div>
+                <div class="col-xs-6"><%- result.comerTV %></div>
+              </div>
+            </div>
+
+            <div class="report-item row">
+              <div class="col-xs-6 bold">Радиовещание</div>
+              <div class="col-xs-6"><%- result.radio %></div>
+            </div>
+
+            <div class="report-item">
+              <div class="report-item-title bg-gray">Универсальные услуги связи</div>
+              <div class="row">
+                <div class="col-xs-6">Таксофон</div>
+                <div class="col-xs-6"><%- result.taksofon %></div>
+              </div>
+              <div class="row bg-gray">
+                <div class="col-xs-6">Инфомат</div>
+                <div class="col-xs-6"><%- result.infomat %></div>
+              </div>
+            </div>
+
+            <div class="report-item row">
+              <div class="col-xs-6 bold">Планы развития</div>
+              <div class="col-xs-6"><%- result.plan %></div>
+            </div>
+
+            <div class="report-item row bg-gray">
+              <div class="col-xs-6 bold">Отделение почтовой связи</div>
+              <div class="col-xs-6"><%- result.ops %></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="report-footer">
+      <button class="btn btn-close">Закрыть</button>
+    </div>
+  </div>
+
+  <script>
+    jQuery('.btn-close').click(function () {
+        parent.imodal.close();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "code": "spravochniki.trafficSection",
+  "type": 1,
+  "caption": "Секции схемы движения",
+  "classname": "trafficSection",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "pathChains": [],
+  "title": "",
+  "metaVersion": "2.0.0"
+}

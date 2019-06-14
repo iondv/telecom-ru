@@ -1,0 +1,14 @@
+{
+  "code": "television.radioLink",
+  "orderNumber": 3,
+  "type": 1,
+  "caption": "Радиовещание",
+  "classname": "radioLink",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "pathChains": [],
+  "title": "",
+  "metaVersion": "2.0.0"
+}

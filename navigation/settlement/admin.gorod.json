@@ -1,0 +1,21 @@
+{
+  "code": "admin.gorod",
+  "orderNumber": 1,
+  "type": 1,
+  "caption": "Городские округа",
+  "title": "Администрации городских округов",
+  "classname": "adminTerritory",
+  "container": null,
+  "collection": null,
+  "conditions": [
+    {
+      "property": "typeTerr",
+      "operation": 0,
+      "value": ["gorod"],
+      "nestedConditions": []
+    }
+  ],
+  "sorting": [],
+  "pathChains": [],
+  "metaVersion": "2.0.0"
+}

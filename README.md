@@ -57,7 +57,7 @@ The app is free for everyone but available only in Russian.
 ```
 curl -L -s https://github.com/iondv/iondv-app/archive/master.zip > iondv-app.zip &&\
   unzip -p iondv-app.zip iondv-app-master/iondv-app > iondv-app &&\
-  bash iondv-app -q -m localhost:27017 telecom-ru
+  bash iondv-app -q -i -m localhost:27017 telecom-ru
 ```
 Где вместо `localhost:27017` нужно указать адрес MongoDb. После запуска открыть ссылку 'http://localhost:8888', учетная запись бек офиса **demo**, пароль **ion-demo**.
 

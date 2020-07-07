@@ -17,11 +17,11 @@
         "geoObjectPreset": "islands#greenDotIconWithCaption"
       },
       "params": {
-        "balloonContentLayoutClass" : "<div class='map-ajax-balloon' data-url='geomap/render/telecom-ru/3gMobileKray/0/{{ properties.itemId }}?template=geo/balloon/3gMobile'><i class='fa fa-refresh fa-spin'></i></div>",
-        "clusterBalloonItemContentLayout" : "<div class='map-ajax-balloon' data-url='geomap/render/telecom-ru/3gMobileKray/0/{{ properties.itemId }}?template=geo/balloon/3gMobile'><i class='fa fa-refresh fa-spin'></i></div>"
+        "balloonContentLayoutClass" : "<div class='map-ajax-balloon' data-url='geomap/render/telecom-en/3gMobileKray/0/{{ properties.itemId }}?template=geo/balloon/3gMobile'><i class='fa fa-refresh fa-spin'></i></div>",
+        "clusterBalloonItemContentLayout" : "<div class='map-ajax-balloon' data-url='geomap/render/telecom-en/3gMobileKray/0/{{ properties.itemId }}?template=geo/balloon/3gMobile'><i class='fa fa-refresh fa-spin'></i></div>"
       },
       "query": {
-        "className": "naselenniyPunkt@telecom-ru",
+        "className": "naselenniyPunkt@telecom-en",
         "queryConditions": [
           {
             "property": "svyaz.mobile",

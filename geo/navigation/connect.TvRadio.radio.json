@@ -14,10 +14,10 @@
           "caption" : "Список параметров для фильтра",
           "type" : "select",
           "multiple" : true,
-          "filteredClass" : "naselenniyPunkt@telecom-ru",
+          "filteredClass" : "naselenniyPunkt@telecom-en",
           "targetProp": "svyaz.radio.radioCanals.name.id",
           "source" : {
-            "className" : "radioCanals@telecom-ru",
+            "className" : "radioCanals@telecom-en",
             "valueProp" : null,
             "labelProp" : null
           },

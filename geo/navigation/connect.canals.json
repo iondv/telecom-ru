@@ -16,10 +16,10 @@
           "caption" : "Список параметров для фильтра",
           "type" : "select",
           "multiple" : false,
-          "filteredClass" : "canals@telecom-ru",
+          "filteredClass" : "canals@telecom-en",
           "targetProp" : "typeTKS.id",
           "source" : {
-            "className" : "TypeTKS@telecom-ru",
+            "className" : "TypeTKS@telecom-en",
             "valueProp" : null,
             "labelProp" : null
           },
@@ -36,10 +36,10 @@
           "caption" : "Список параметров для фильтра",
           "type" : "select",
           "multiple" : true,
-          "filteredClass" : "canals@telecom-ru",
+          "filteredClass" : "canals@telecom-en",
           "targetProp" : "operator.id",
           "source" : {
-            "className" : "operators@telecom-ru",
+            "className" : "operators@telecom-en",
             "valueProp" : null,
             "labelProp" : null
           },

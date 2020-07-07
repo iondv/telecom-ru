@@ -16,11 +16,11 @@
         "geoObjectPreset": "islands#greenDotIconWithCaption"
       },
       "params": {
-        "balloonContentLayoutClass": "<div class='map-ajax-balloon' data-url='geomap/render/telecom-ru/naselenniyPunkt/0/{{ properties.itemId }}?template=geo/balloon/naselenniyPunkt'><i class='fa fa-refresh fa-spin'></i></div>",
-        "clusterBalloonItemContentLayout": "<div class='map-ajax-balloon' data-url='geomap/render/telecom-ru/naselenniyPunkt/0/{{ properties.itemId }}?template=geo/balloon/naselenniyPunkt'><i class='fa fa-refresh fa-spin'></i></div>"
+        "balloonContentLayoutClass": "<div class='map-ajax-balloon' data-url='geomap/render/telecom-en/naselenniyPunkt/0/{{ properties.itemId }}?template=geo/balloon/naselenniyPunkt'><i class='fa fa-refresh fa-spin'></i></div>",
+        "clusterBalloonItemContentLayout": "<div class='map-ajax-balloon' data-url='geomap/render/telecom-en/naselenniyPunkt/0/{{ properties.itemId }}?template=geo/balloon/naselenniyPunkt'><i class='fa fa-refresh fa-spin'></i></div>"
       },
       "query": {
-        "className": "naselenniyPunkt@telecom-ru",
+        "className": "naselenniyPunkt@telecom-en",
         "queryConditions": [],
         "eagerLoading": {
           "info": [

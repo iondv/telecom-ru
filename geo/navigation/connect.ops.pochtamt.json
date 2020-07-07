@@ -16,10 +16,10 @@
           "caption": "Список параметров для фильтра",
           "type": "select",
           "multiple": true,
-          "filteredClass": "pochtamt@telecom-ru",
+          "filteredClass": "pochtamt@telecom-en",
           "targetProp": "raionObslu.id",
           "source": {
-            "className": "municipalnieObrazovaniya@telecom-ru",
+            "className": "municipalnieObrazovaniya@telecom-en",
             "valueProp": null,
             "labelProp": null
           },

@@ -15,10 +15,10 @@
           "caption" : "Список параметров для фильтра",
           "type" : "select",
           "multiple" : true,
-          "filteredClass" : "naselenniyPunkt@telecom-ru",
+          "filteredClass" : "naselenniyPunkt@telecom-en",
           "targetProp" : "type.id",
           "source" : {
-            "className" : "typeNasPunk@telecom-ru",
+            "className" : "typeNasPunk@telecom-en",
             "valueProp" : null,
             "labelProp" : null
           }

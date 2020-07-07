@@ -13,7 +13,7 @@
     {
           "property": "_class",
           "operation": 0,
-          "value": ["medicalOrg@telecom-ru"],
+          "value": ["medicalOrg@telecom-en"],
           "nestedConditions": []
     }
   ],

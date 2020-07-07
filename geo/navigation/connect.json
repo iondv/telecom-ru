@@ -10,7 +10,7 @@
   "viewer": {
     "type": "regionReport",
     "panel": "rightInfo",
-    "url": "geomap/render/telecom-ru/municipalnieObrazovaniya/0/{oktmo}?template=geo/reports/summaryArea&notFound=geo/reports/summaryRegion",
+    "url": "geomap/render/telecom-en/municipalnieObrazovaniya/0/{oktmo}?template=geo/reports/summaryArea&notFound=geo/reports/summaryRegion",
     "defaultOktmo": "08000000",
     "excludes": null
   },
@@ -22,10 +22,10 @@
           "caption": "Список параметров для фильтра",
           "type": "select",
           "multiple": true,
-          "filteredClass": "naselenniyPunkt@telecom-ru",
+          "filteredClass": "naselenniyPunkt@telecom-en",
           "targetProp": "type.id",
           "source": {
-            "className": "typeNasPunk@telecom-ru",
+            "className": "typeNasPunk@telecom-en",
             "valueProp": null,
             "labelProp": null
           },

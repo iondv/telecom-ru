@@ -16,10 +16,10 @@
           "caption": "Список параметров для фильтра",
           "type": "select",
           "multiple": true,
-          "filteredClass": "naselenniyPunkt@telecom-ru",
+          "filteredClass": "naselenniyPunkt@telecom-en",
           "targetProp": "svyaz.mobile4G.mobileOperator.id",
           "source": {
-            "className": "operators@telecom-ru",
+            "className": "operators@telecom-en",
             "valueProp": null,
             "labelProp": null
           },

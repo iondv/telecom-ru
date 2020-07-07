@@ -16,7 +16,7 @@
           "caption": "Список параметров для фильтра",
           "type": "select",
           "multiple": false,
-          "filteredClass": "naselenniyPunkt@telecom-ru",
+          "filteredClass": "naselenniyPunkt@telecom-en",
           "targetProp": "svyaz.tvcom.operatortv.typeTv",
           "values": [
             {
@@ -49,10 +49,10 @@
           "caption": "Список параметров для фильтра",
           "type": "select",
           "multiple": true,
-          "filteredClass": "naselenniyPunkt@telecom-ru",
+          "filteredClass": "naselenniyPunkt@telecom-en",
           "targetProp": "svyaz.tvcom.operatortv.operator.id",
           "source": {
-            "className": "operators@telecom-ru",
+            "className": "operators@telecom-en",
             "valueProp": null,
             "labelProp": null
           },

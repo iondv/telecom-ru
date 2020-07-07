@@ -12,7 +12,7 @@
         "clusterize": false
       },
       "query": {
-        "className": "canals@telecom-ru",
+        "className": "canals@telecom-en",
         "queryConditions": [],
         "eagerLoading": {
           "map": []

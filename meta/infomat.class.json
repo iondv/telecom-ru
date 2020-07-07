@@ -97,7 +97,7 @@
       "unique": false,
       "autoassigned": false,
       "hint": null,
-      "defaultValue": "get(operators@telecom-ru, name, КБ Искра)",
+      "defaultValue": "get(operators@telecom-en, name, КБ Искра)",
       "refClass": "operators",
       "itemsClass": "",
       "backRef": "",

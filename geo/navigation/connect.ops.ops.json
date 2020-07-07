@@ -16,7 +16,7 @@
           "caption": "Список параметров для фильтра",
           "type": "select",
           "multiple": false,
-          "filteredClass": "ops@telecom-ru",
+          "filteredClass": "ops@telecom-en",
           "targetProp": "gops",
           "values": [
             {
@@ -38,10 +38,10 @@
           "caption": "Список параметров для фильтра",
           "type": "select",
           "multiple": true,
-          "filteredClass": "ops@telecom-ru",
+          "filteredClass": "ops@telecom-en",
           "targetProp": "class.clas",
           "source": {
-            "className": "charactosp@telecom-ru",
+            "className": "charactosp@telecom-en",
             "valueProp": null,
             "labelProp": null
           },
@@ -58,10 +58,10 @@
           "caption": "Список параметров для фильтра",
           "type": "select",
           "multiple": true,
-          "filteredClass": "ops@telecom-ru",
+          "filteredClass": "ops@telecom-en",
           "targetProp": "pochtamp.id",
           "source": {
-            "className": "pochtamt@telecom-ru",
+            "className": "pochtamt@telecom-en",
             "valueProp": null,
             "labelProp": null
           },

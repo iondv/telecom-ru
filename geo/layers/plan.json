@@ -16,12 +16,12 @@
         "geoObjectPreset": "islands#greenDotIconWithCaption"
       },
       "params": {
-        "balloonContentLayoutClass" : "<div class='map-ajax-balloon' data-url='geomap/render/telecom-en/plan/0/{{ properties.itemId }}?template=geo/balloon/plan'><i class='fa fa-refresh fa-spin'></i></div>",
-        "clusterBalloonItemContentLayout" : "<div class='map-ajax-balloon' data-url='geomap/render/telecom-en/plan/0/{{ properties.itemId }}?template=geo/balloon/plan'><i class='fa fa-refresh fa-spin'></i></div>",
-        "balloonContentLayoutClass0" : "{{  properties.balloonContent }} <ul class='mt10'>{% for iplan in properties.item.plan %} <li><a class='map-modal-link' href='/registry/telecom-en@passportObject.plan/view/plan@telecom-en/{{iplan._id}}?readonly=on&condensed=on'>{{iplan.__string}}</a></li> {% endfor %}</ul>"
+        "balloonContentLayoutClass" : "<div class='map-ajax-balloon' data-url='geomap/render/telecom-ru/plan/0/{{ properties.itemId }}?template=geo/balloon/plan'><i class='fa fa-refresh fa-spin'></i></div>",
+        "clusterBalloonItemContentLayout" : "<div class='map-ajax-balloon' data-url='geomap/render/telecom-ru/plan/0/{{ properties.itemId }}?template=geo/balloon/plan'><i class='fa fa-refresh fa-spin'></i></div>",
+        "balloonContentLayoutClass0" : "{{  properties.balloonContent }} <ul class='mt10'>{% for iplan in properties.item.plan %} <li><a class='map-modal-link' href='/registry/telecom-ru@passportObject.plan/view/plan@telecom-ru/{{iplan._id}}?readonly=on&condensed=on'>{{iplan.__string}}</a></li> {% endfor %}</ul>"
       },
       "query": {
-        "className": "naselenniyPunkt@telecom-en",
+        "className": "naselenniyPunkt@telecom-ru",
         "queryConditions": [
           {
             "property": "plan",

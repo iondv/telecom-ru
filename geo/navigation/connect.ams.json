@@ -16,10 +16,10 @@
           "caption" : "Список параметров для фильтра",
           "type" : "select",
           "multiple" : false,
-          "filteredClass" : "ams@telecom-en",
+          "filteredClass" : "ams@telecom-ru",
           "targetProp" : "operator.id",
           "source" : {
-            "className" : "operators@telecom-en",
+            "className" : "operators@telecom-ru",
             "valueProp" : null,
             "labelProp" : null
           }

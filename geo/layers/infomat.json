@@ -17,11 +17,11 @@
         "geoObjectPreset": "islands#greenDotIconWithCaption"
       },
       "params": {
-        "balloonContentLayoutClass" : "<div class='map-ajax-balloon' data-url='geomap/render/telecom-en/infomat/0/{{ properties.itemId }}?template=geo/balloon/infomat'><i class='fa fa-refresh fa-spin'></i></div>",
-        "clusterBalloonItemContentLayout" : "<div class='map-ajax-balloon' data-url='geomap/render/telecom-en/infomat/0/{{ properties.itemId }}?template=geo/balloon/infomat'><i class='fa fa-refresh fa-spin'></i></div>"
+        "balloonContentLayoutClass" : "<div class='map-ajax-balloon' data-url='geomap/render/telecom-ru/infomat/0/{{ properties.itemId }}?template=geo/balloon/infomat'><i class='fa fa-refresh fa-spin'></i></div>",
+        "clusterBalloonItemContentLayout" : "<div class='map-ajax-balloon' data-url='geomap/render/telecom-ru/infomat/0/{{ properties.itemId }}?template=geo/balloon/infomat'><i class='fa fa-refresh fa-spin'></i></div>"
       },
       "query": {
-        "className": "infomat@telecom-en",
+        "className": "infomat@telecom-ru",
         "queryConditions": [],
         "eagerLoading": {}
       },

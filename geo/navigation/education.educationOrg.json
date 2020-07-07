@@ -16,10 +16,10 @@
           "caption": "Список параметров для фильтра",
           "type": "select",
           "multiple": false,
-          "filteredClass": "educationOrg@telecom-en",
+          "filteredClass": "educationOrg@telecom-ru",
           "targetProp": "type.id",
           "source": {
-            "className": "typeEducation@telecom-en",
+            "className": "typeEducation@telecom-ru",
             "valueProp": null,
             "labelProp": null
           },

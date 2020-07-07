@@ -15,10 +15,10 @@
           "caption": "Список параметров для фильтра",
           "type": "select",
           "multiple": true,
-          "filteredClass": "zdrav@telecom-en",
+          "filteredClass": "zdrav@telecom-ru",
           "targetProp": "medicalOrg.id",
           "source": {
-            "className": "medicalOrg@telecom-en",
+            "className": "medicalOrg@telecom-ru",
             "valueProp": null,
             "labelProp": null
           },

@@ -12,7 +12,7 @@
       "params": {
       },
       "query": {
-        "className": "municipalnieObrazovaniya@telecom-en",
+        "className": "municipalnieObrazovaniya@telecom-ru",
         "queryConditions": [],
         "eagerLoading": {
           "info": [

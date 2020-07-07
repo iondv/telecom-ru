@@ -17,11 +17,11 @@
         "geoObjectPreset": "islands#violetDotIconWithCaption"
       },
       "params": {
-        "balloonContentLayoutClass" : "<div class='map-ajax-balloon' data-url='geomap/render/telecom-en/wifi/0/{{ properties.itemId }}?template=geo/balloon/wifi'><i class='fa fa-refresh fa-spin'></i></div>",
-        "clusterBalloonItemContentLayout" : "<div class='map-ajax-balloon' data-url='geomap/render/telecom-en/wifi/0/{{ properties.itemId }}?template=geo/balloon/wifi'><i class='fa fa-refresh fa-spin'></i></div>"
+        "balloonContentLayoutClass" : "<div class='map-ajax-balloon' data-url='geomap/render/telecom-ru/wifi/0/{{ properties.itemId }}?template=geo/balloon/wifi'><i class='fa fa-refresh fa-spin'></i></div>",
+        "clusterBalloonItemContentLayout" : "<div class='map-ajax-balloon' data-url='geomap/render/telecom-ru/wifi/0/{{ properties.itemId }}?template=geo/balloon/wifi'><i class='fa fa-refresh fa-spin'></i></div>"
       },
       "query": {
-        "className": "wifi@telecom-en",
+        "className": "wifi@telecom-ru",
         "queryConditions": [],
         "eagerLoading": {}
       },

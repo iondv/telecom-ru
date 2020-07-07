@@ -16,7 +16,7 @@
           "caption": "Список параметров для фильтра",
           "type": "select",
           "multiple": false,
-          "filteredClass": "naselenniyPunkt@telecom-en",
+          "filteredClass": "naselenniyPunkt@telecom-ru",
           "targetProp": "svyaz.tv.digitalTVDateOn.mult",
           "values": [
             {

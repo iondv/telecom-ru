@@ -17,10 +17,10 @@
         "geoObjectIconImageHref" : "geomap/geoicons/ops.png"
       },
       "params": {
-        "balloonContentLayoutClass" : "<div class='map-ajax-balloon' data-url='geomap/render/telecom-en/ops/0/{{ properties.itemId }}?template=geo/balloon/ops'><i class='fa fa-refresh fa-spin'></i></div>"
+        "balloonContentLayoutClass" : "<div class='map-ajax-balloon' data-url='geomap/render/telecom-ru/ops/0/{{ properties.itemId }}?template=geo/balloon/ops'><i class='fa fa-refresh fa-spin'></i></div>"
       },
       "query": {
-        "className": "ops@telecom-en",
+        "className": "ops@telecom-ru",
         "queryConditions": [
           {
             "property": "gops",

@@ -16,10 +16,10 @@
           "caption": "Список параметров для фильтра",
           "type": "select",
           "multiple": true,
-          "filteredClass": "wifi@telecom-en",
+          "filteredClass": "wifi@telecom-ru",
           "targetProp": "operator.id",
           "source": {
-            "className": "operators@telecom-en",
+            "className": "operators@telecom-ru",
             "valueProp": null,
             "labelProp": null
           },

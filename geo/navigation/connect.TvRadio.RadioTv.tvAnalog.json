@@ -16,10 +16,10 @@
           "caption": "Список параметров для фильтра",
           "type": "select",
           "multiple": true,
-          "filteredClass": "naselenniyPunkt@telecom-en",
+          "filteredClass": "naselenniyPunkt@telecom-ru",
           "targetProp": "svyaz.tv.analogTV.name.id",
           "source": {
-            "className": "tvSpr@telecom-en",
+            "className": "tvSpr@telecom-ru",
             "valueProp": null,
             "labelProp": null
           },

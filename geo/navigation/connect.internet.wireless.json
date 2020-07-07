@@ -16,10 +16,10 @@
           "caption": "Список параметров для фильтра",
           "type": "select",
           "multiple": true,
-          "filteredClass": "naselenniyPunkt@telecom-en",
+          "filteredClass": "naselenniyPunkt@telecom-ru",
           "targetProp": "svyaz.other.bsIskra.operator.id",
           "source": {
-            "className": "operators@telecom-en",
+            "className": "operators@telecom-ru",
             "valueProp": null,
             "labelProp": null
           },

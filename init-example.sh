@@ -1,14 +1,14 @@
-node bin/import --src ./applications/telecom-en --ns telecom-en
-node bin/setup telecom-en --reset
-node bin/import-data --src ./applications/telecom-en/data --ns telecom-en
+node bin/import --src ./applications/telecom-ru --ns telecom-ru
+node bin/setup telecom-ru --reset
+node bin/import-data --src ./applications/telecom-ru/data --ns telecom-ru
 node bin/adduser --name demo --pwd ion-demo
 node bin/acl --u demo@local --role admin --p full
 #node bin/adduser --name anonymous
-node bin/acl.js --u anonymous --role anonymous --p read --res geolayer:::naselenniyPunkt@telecom-en geolayer:::connect@telecom-en geolayer:::pochtamt@telecom-en geolayer:::ops@telecom-en geolayer:::pops@telecom-en geolayer:::municipalnieObrazovaniya@telecom-en
-node bin/acl.js --u anonymous --role anonymous --p read --res geolayer:::tvAnalog@telecom-en geolayer:::taksofon@telecom-en geolayer:::tv@telecom-en geolayer:::statsionar@telecom-en geolayer:::radio@telecom-en geolayer:::internet@telecom-en geolayer:::infomat@telecom-en geolayer:::wifi@telecom-en geolayer:::univer@telecom-en geolayer:::tvOperSky@telecom-en geolayer:::tvOperCom@telecom-en
-node bin/acl.js --u anonymous --role anonymous --p read --res geolayer:::allMobileKray@telecom-en geolayer:::ComTv@telecom-en geolayer:::2gMobileKray@telecom-en geolayer:::3gMobileKray@telecom-en geolayer:::4gMobileKray@telecom-en geolayer:::wireless@telecom-en geolayer:::cetc@telecom-en geolayer:::zdrav@telecom-en geolayer:::medicalOrg@telecom-en
+node bin/acl.js --u anonymous --role anonymous --p read --res geolayer:::naselenniyPunkt@telecom-ru geolayer:::connect@telecom-ru geolayer:::pochtamt@telecom-ru geolayer:::ops@telecom-ru geolayer:::pops@telecom-ru geolayer:::municipalnieObrazovaniya@telecom-ru
+node bin/acl.js --u anonymous --role anonymous --p read --res geolayer:::tvAnalog@telecom-ru geolayer:::taksofon@telecom-ru geolayer:::tv@telecom-ru geolayer:::statsionar@telecom-ru geolayer:::radio@telecom-ru geolayer:::internet@telecom-ru geolayer:::infomat@telecom-ru geolayer:::wifi@telecom-ru geolayer:::univer@telecom-ru geolayer:::tvOperSky@telecom-ru geolayer:::tvOperCom@telecom-ru
+node bin/acl.js --u anonymous --role anonymous --p read --res geolayer:::allMobileKray@telecom-ru geolayer:::ComTv@telecom-ru geolayer:::2gMobileKray@telecom-ru geolayer:::3gMobileKray@telecom-ru geolayer:::4gMobileKray@telecom-ru geolayer:::wireless@telecom-ru geolayer:::cetc@telecom-ru geolayer:::zdrav@telecom-ru geolayer:::medicalOrg@telecom-ru
 node bin/acl.js --u anonymous --role anonymous --p read --res n:::khv-svyaz-info@shpd n:::khv-svyaz-info@statsion n:::khv-svyaz-info@cetv n:::khv-svyaz-info@comerTv
-node bin/acl.js --u anonymous --role anonymous --p read --res c:::tvOperCom@telecom-en c:::cetc@telecom-en c:::statsionar@telecom-en c:::internet@telecom-en c:::svyaz@telecom-en c:::naselenniyPunkt@telecom-en c:::operators@telecom-en c:::tvComer@telecom-en c:::tv@telecom-en c:::mult@telecom-en
+node bin/acl.js --u anonymous --role anonymous --p read --res c:::tvOperCom@telecom-ru c:::cetc@telecom-ru c:::statsionar@telecom-ru c:::internet@telecom-ru c:::svyaz@telecom-ru c:::naselenniyPunkt@telecom-ru c:::operators@telecom-ru c:::tvComer@telecom-ru c:::tv@telecom-ru c:::mult@telecom-ru
 
 export WORKER_COUNT=2
 node bin/cluster

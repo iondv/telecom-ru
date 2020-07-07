@@ -17,11 +17,11 @@
         "geoObjectIconImageHref" : "geomap/geoicons/ops.png"
       },
       "params": {
-        "balloonContentLayoutClass" : "<div class='map-ajax-balloon' data-url='geomap/render/telecom-en/pochtamt/0/{{ properties.itemId }}?template=geo/balloon/pochtamt'><i class='fa fa-refresh fa-spin'></i></div>",
-        "clusterBalloonItemContentLayout": "<div class='map-ajax-balloon' data-url='geomap/render/telecom-en/pochtamt/0/{{ properties.itemId }}?template=geo/balloon/pochtamt'><i class='fa fa-refresh fa-spin'></i></div>"
+        "balloonContentLayoutClass" : "<div class='map-ajax-balloon' data-url='geomap/render/telecom-ru/pochtamt/0/{{ properties.itemId }}?template=geo/balloon/pochtamt'><i class='fa fa-refresh fa-spin'></i></div>",
+        "clusterBalloonItemContentLayout": "<div class='map-ajax-balloon' data-url='geomap/render/telecom-ru/pochtamt/0/{{ properties.itemId }}?template=geo/balloon/pochtamt'><i class='fa fa-refresh fa-spin'></i></div>"
       },
       "query": {
-        "className": "pochtamt@telecom-en",
+        "className": "pochtamt@telecom-ru",
         "queryConditions": [],
         "eagerLoading": {
           "info": [

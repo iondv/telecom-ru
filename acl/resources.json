@@ -1,0 +1,315 @@
+[
+  {
+    "id": "*"
+  },
+  {
+    "id": "ionadmin:::profiling-slow-query",
+    "name": "Profiling Slow queries"
+  },
+  {
+    "id": "ws:::gen-ws-token",
+    "name": "Web service security token generation"
+  },
+  {
+    "id": "ionadmin:::recache",
+    "name": "Semantics cache recalculation"
+  },
+  {
+    "id": "ionadmin:::notify",
+    "name": "Notifications"
+  },
+  {
+    "id": "ionadmin:::dashboard",
+    "name": "Control panel"
+  },
+  {
+    "id": "ionadmin:::security-users",
+    "name": "Security Users"
+  },
+  {
+    "id": "ionadmin:::security-roles",
+    "name": "Security Roles"
+  },
+  {
+    "id": "ionadmin:::security-resources",
+    "name": "Security Resources"
+  },
+  {
+    "id": "ionadmin:::security-sync",
+    "name": "Security Sync"
+  },
+  {
+    "id": "ionadmin:::accesslog",
+    "name": "Access log"
+  },
+  {
+    "id": "ionadmin:::activity",
+    "name": "Activity"
+  },
+  {
+    "id": "ionadmin:::changelog",
+    "name": "Changelog"
+  },
+  {
+    "id": "ionadmin:::authlog",
+    "name": "Auth log"
+  },
+  {
+    "id": "ionadmin:::backup",
+    "name": "Backups"
+  },
+  {
+    "id": "ionadmin:::schedule",
+    "name": "Scheduling"
+  },
+  {
+    "id": "ionadmin:::token",
+    "name": "Security token generator"
+  },
+  {
+    "id": "geonav:::connect.uniKray.taksofon@telecom-ru"
+  },
+  {
+    "id": "geonav:::connect.uniKray.infomat@telecom-ru"
+  },
+  {
+    "id": "geonav:::naselenniyPunkt@telecom-ru"
+  },
+  {
+    "id": "geolayer:::naselenniyPunkt@telecom-ru"
+  },
+  {
+    "id": "geodata:::naselenniyPunkt@telecom-ru@0"
+  },
+  {
+    "id": "geonav:::naselenniyPunkt.plan@telecom-ru"
+  },
+  {
+    "id": "geolayer:::plan@telecom-ru"
+  },
+  {
+    "id": "geodata:::plan@telecom-ru@0"
+  },
+  {
+    "id": "geonav:::connect@telecom-ru"
+  },
+  {
+    "id": "geolayer:::connect@telecom-ru"
+  },
+  {
+    "id": "geodata:::connect@telecom-ru@0"
+  },
+  {
+    "id": "geonav:::connect.uniKray@telecom-ru"
+  },
+  {
+    "id": "geolayer:::taksofon@telecom-ru"
+  },
+  {
+    "id": "geodata:::taksofon@telecom-ru@0"
+  },
+  {
+    "id": "geolayer:::wifi@telecom-ru"
+  },
+  {
+    "id": "geodata:::wifi@telecom-ru@0"
+  },
+  {
+    "id": "geolayer:::infomat@telecom-ru"
+  },
+  {
+    "id": "geodata:::infomat@telecom-ru@0"
+  },
+  {
+    "id": "geonav:::connect.uniKray.wifi@telecom-ru"
+  },
+  {
+    "id": "geonav:::connect.ops@telecom-ru"
+  },
+  {
+    "id": "geolayer:::ops@telecom-ru"
+  },
+  {
+    "id": "geodata:::ops@telecom-ru@0"
+  },
+  {
+    "id": "geolayer:::pochtamt@telecom-ru"
+  },
+  {
+    "id": "geodata:::pochtamt@telecom-ru@0"
+  },
+  {
+    "id": "geolayer:::pops@telecom-ru"
+  },
+  {
+    "id": "geodata:::pops@telecom-ru@0"
+  },
+  {
+    "id": "geonav:::connect.ops.pops@telecom-ru"
+  },
+  {
+    "id": "geonav:::connect.ops.ops@telecom-ru"
+  },
+  {
+    "id": "geonav:::connect.ops.pochtamt@telecom-ru"
+  },
+  {
+    "id": "geonav:::connect.mobileKray@telecom-ru"
+  },
+  {
+    "id": "geolayer:::allMobileKray@telecom-ru"
+  },
+  {
+    "id": "geodata:::allMobileKray@telecom-ru@0"
+  },
+  {
+    "id": "geonav:::connect.mobileKray.2gMobileKray@telecom-ru"
+  },
+  {
+    "id": "geolayer:::2gMobileKray@telecom-ru"
+  },
+  {
+    "id": "geodata:::2gMobileKray@telecom-ru@0"
+  },
+  {
+    "id": "geonav:::connect.mobileKray.3gMobileKray@telecom-ru"
+  },
+  {
+    "id": "geolayer:::3gMobileKray@telecom-ru"
+  },
+  {
+    "id": "geodata:::3gMobileKray@telecom-ru@0"
+  },
+  {
+    "id": "geonav:::connect.mobileKray.4gMobileKray@telecom-ru"
+  },
+  {
+    "id": "geolayer:::4gMobileKray@telecom-ru"
+  },
+  {
+    "id": "geodata:::4gMobileKray@telecom-ru@0"
+  },
+  {
+    "id": "geonav:::connect.statsionar@telecom-ru"
+  },
+  {
+    "id": "geolayer:::statsionar@telecom-ru"
+  },
+  {
+    "id": "geodata:::statsionar@telecom-ru@0"
+  },
+  {
+    "id": "geonav:::connect.TvRadio@telecom-ru"
+  },
+  {
+    "id": "geolayer:::cetc@telecom-ru"
+  },
+  {
+    "id": "geodata:::cetc@telecom-ru@0"
+  },
+  {
+    "id": "geolayer:::tvAnalog@telecom-ru"
+  },
+  {
+    "id": "geodata:::tvAnalog@telecom-ru@0"
+  },
+  {
+    "id": "geolayer:::ComTv@telecom-ru"
+  },
+  {
+    "id": "geodata:::ComTv@telecom-ru@0"
+  },
+  {
+    "id": "geolayer:::radio@telecom-ru"
+  },
+  {
+    "id": "geodata:::radio@telecom-ru@0"
+  },
+  {
+    "id": "geonav:::connect.TvRadio.ComTv@telecom-ru"
+  },
+  {
+    "id": "geonav:::connect.TvRadio.radio@telecom-ru"
+  },
+  {
+    "id": "geonav:::connect.TvRadio.RadioTv@telecom-ru"
+  },
+  {
+    "id": "geonav:::connect.TvRadio.RadioTv.tvAnalog@telecom-ru"
+  },
+  {
+    "id": "geonav:::connect.TvRadio.RadioTv.cetc@telecom-ru"
+  },
+  {
+    "id": "geonav:::connect.ams@telecom-ru"
+  },
+  {
+    "id": "geolayer:::ams@telecom-ru"
+  },
+  {
+    "id": "geodata:::ams@telecom-ru@0"
+  },
+  {
+    "id": "geonav:::connect.canals@telecom-ru"
+  },
+  {
+    "id": "geonav:::connect.internet@telecom-ru"
+  },
+  {
+    "id": "geolayer:::internet@telecom-ru"
+  },
+  {
+    "id": "geodata:::internet@telecom-ru@0"
+  },
+  {
+    "id": "geolayer:::wireless@telecom-ru"
+  },
+  {
+    "id": "geodata:::wireless@telecom-ru@0"
+  },
+  {
+    "id": "geonav:::connect.internet.internet@telecom-ru"
+  },
+  {
+    "id": "geonav:::connect.internet.wireless@telecom-ru"
+  },
+  {
+    "id": "geonav:::education@telecom-ru"
+  },
+  {
+    "id": "geolayer:::education@telecom-ru"
+  },
+  {
+    "id": "geodata:::education@telecom-ru@0"
+  },
+  {
+    "id": "geonav:::education.educationOrg@telecom-ru"
+  },
+  {
+    "id": "geolayer:::educationOrg@telecom-ru"
+  },
+  {
+    "id": "geodata:::educationOrg@telecom-ru@0"
+  },
+  {
+    "id": "geonav:::zdrav@telecom-ru"
+  },
+  {
+    "id": "geolayer:::zdrav@telecom-ru"
+  },
+  {
+    "id": "geodata:::zdrav@telecom-ru@0"
+  },
+  {
+    "id": "geonav:::zdrav.medicalOrg@telecom-ru"
+  },
+  {
+    "id": "geolayer:::medicalOrg@telecom-ru"
+  },
+  {
+    "id": "geodata:::medicalOrg@telecom-ru@0"
+  },
+  {
+    "id": "geonav:::registry@telecom-ru"
+  }
+]

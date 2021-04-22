@@ -1,6 +1,6 @@
 <!-- layout/top-menu -->
 <% if (user && user.id() !== 'anonymous') { %>
-<div id="top-menu" class="top-menu" style="left: 60px">
+<div id="top-menu" class="top-menu">
 
     <% sysMenu.forEach(function (item) { %>
     <% let id = `n_sysMenu_${item.name.replace('.', '_')}`; %>
